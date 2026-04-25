@@ -1,0 +1,38 @@
+name: Update stock data
+
+on:
+  schedule:
+    # 평일 UTC 22:00 = KST 07:00 (미국 정규장 마감 후, 한국 아침)
+    - cron: "0 22 * * 1-5"
+  workflow_dispatch: {}   # 수동 실행 가능
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install --upgrade pip yfinance pandas
+
+      - name: Fetch data
+        run: python scripts/fetch_stock_data.py
+
+      - name: Commit data.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data.json; then
+            echo "no changes — skipping commit"
+            exit 0
+          fi
+          git add data.json
+          git commit -m "chore(data): auto-update stock data $(date -u +%Y-%m-%d)"
+          git push

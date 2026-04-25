@@ -1,0 +1,31 @@
+{
+  "generatedAt": "2026-04-25T22:00:00+00:00",
+  "source": "mock-initial",
+  "stocks": [
+    {
+      "ticker": "AAPL",
+      "currentPrice": 172.45,
+      "rsi14": 52,
+      "pct52wHigh": 0.94,
+      "mdd1y": 18.3,
+      "avgVolume": 12450.5
+    },
+    {
+      "ticker": "MSFT",
+      "currentPrice": 408.10,
+      "rsi14": 58,
+      "pct52wHigh": 0.97,
+      "mdd1y": 14.2,
+      "avgVolume": 9820.7
+    },
+    {
+      "ticker": "NVDA",
+      "currentPrice": 875.20,
+      "rsi14": 64,
+      "pct52wHigh": 0.92,
+      "mdd1y": 25.1,
+      "avgVolume": 28430.3
+    }
+  ],
+  "failed": []
+}

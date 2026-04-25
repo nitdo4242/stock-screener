@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>미국 주식 검색기</title>
+<style>
+:root {
+  --bg-1:#f8fafc; --bg-2:#eef4ff;
+  --panel:rgba(255,255,255,0.88);
+  --text:#0f172a; --muted:#64748b;
+  --line:#d7e1ef; --line-strong:#c4d3e7;
+  --accent:#2563eb; --accent-soft:rgba(37,99,235,0.12);
+  --success:#16a34a; --success-soft:#dcfce7;
+  --warn:#a16207;   --warn-soft:#fef3c7;
+  --danger:#dc2626; --danger-soft:#fee2e2;
+  --favorite:#f59e0b;
+  --shadow:0 18px 45px rgba(15,23,42,0.08);
+  --card-bg:rgba(255,255,255,0.94);
+  --card-border:rgba(203,213,225,0.82);
+  --metric-bg:#f8fbff; --metric-border:#e2e8f0;
+  --margin-bg:#f1f5f9; --break-bg:#f8fafc;
+  --input-bg:#f8fbff; --input-text:#0f172a;
+  --select-text:#475569;
+}
+html[data-theme="dark"] {
+  --bg-1:#0b1220; --bg-2:#101a2c;
+  --panel:rgba(17,24,39,0.86);
+  --text:#e5e7eb; --muted:#94a3b8;
+  --line:#27354a; --line-strong:#33425a;
+  --accent:#60a5fa; --accent-soft:rgba(96,165,250,0.18);
+  --success:#34d399; --success-soft:rgba(34,197,94,0.18);
+  --warn:#fcd34d;   --warn-soft:rgba(250,204,21,0.18);
+  --danger:#f87171; --danger-soft:rgba(248,113,113,0.18);
+  --favorite:#fbbf24;
+  --shadow:0 18px 45px rgba(0,0,0,0.45);
+  --card-bg:rgba(17,24,39,0.92);
+  --card-border:rgba(71,85,105,0.55);
+  --metric-bg:#0f172a; --metric-border:#1f2a3a;
+  --margin-bg:#111827; --break-bg:#0f172a;
+  --input-bg:#111827; --input-text:#e5e7eb;
+  --select-text:#cbd5e1;
+}
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; }
+body {
+  min-height:100vh; padding:24px;
+  font-family:"Segoe UI","Noto Sans KR",-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(59,130,246,0.16), transparent 28%),
+    radial-gradient(circle at top right, rgba(14,165,233,0.12), transparent 24%),
+    linear-gradient(135deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.container { max-width:1280px; margin:0 auto; }
+header { margin-bottom:28px; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+.header-left { flex:1; min-width:260px; }
+header h1 {
+  margin:0 0 8px;
+  font-size:clamp(28px,4vw,40px);
+  font-weight:900; letter-spacing:-0.03em;
+  background:linear-gradient(90deg,#1d4ed8,#0f766e);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+html[data-theme="dark"] header h1 {
+  background:linear-gradient(90deg,#60a5fa,#34d399);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+header p { margin:0; color:var(--muted); font-size:14px; line-height:1.6; }
+.header-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.meta-chip {
+  padding:6px 10px; border-radius:999px;
+  font-size:11px; font-weight:700; color:var(--muted);
+  background:var(--panel); border:1px solid var(--line);
+}
+.icon-btn {
+  width:38px; height:38px;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--line); border-radius:12px;
+  background:var(--panel); color:var(--text);
+  font-size:16px; cursor:pointer;
+  transition:all 0.16s ease;
+}
+.icon-btn:hover { border-color:var(--accent); color:var(--accent); transform:translateY(-1px); }
+
+.panel {
+  background:var(--panel); backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.7);
+  border-radius:22px; padding:22px;
+  box-shadow:var(--shadow); margin-bottom:24px;
+}
+html[data-theme="dark"] .panel { border-color:rgba(51,65,85,0.5); }
+.panel-head {
+  display:flex; justify-content:space-between; align-items:center;
+  gap:12px; margin-bottom:18px; flex-wrap:wrap;
+}
+.panel h2 {
+  margin:0; font-size:13px;
+  letter-spacing:0.12em; text-transform:uppercase; color:var(--muted);
+}
+.panel-note { font-size:12px; color:var(--muted); }
+.panel-actions { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.btn {
+  padding:8px 14px; border-radius:10px;
+  border:1px solid var(--line); background:var(--input-bg);
+  color:var(--text); font-size:12px; font-weight:700;
+  cursor:pointer; transition:all 0.15s ease;
+}
+.btn:hover { border-color:var(--accent); color:var(--accent); }
+.btn-primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-primary:hover { filter:brightness(1.1); color:#fff; }
+
+.search-wrap { position:relative; margin-bottom:16px; }
+.search-wrap input {
+  width:100%; padding:14px 16px 14px 44px;
+  border:1px solid var(--line); border-radius:14px;
+  background:var(--input-bg); color:var(--input-text);
+  font-size:15px; outline:none;
+  transition:border-color 0.16s, box-shadow 0.16s, background 0.16s;
+}
+.search-wrap input:focus {
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px var(--accent-soft);
+}
+.search-wrap::before {
+  content:"🔍"; position:absolute;
+  left:14px; top:50%; transform:translateY(-50%);
+  font-size:15px; opacity:0.7;
+}
+.search-clear {
+  position:absolute; right:10px; top:50%; transform:translateY(-50%);
+  border:none; background:transparent; color:var(--muted);
+  font-size:18px; cursor:pointer; padding:4px 8px; display:none;
+}
+.search-clear.visible { display:block; }
+
+.filter-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));
+  gap:14px;
+}
+.field { display:flex; flex-direction:column; gap:7px; }
+.field label { font-size:12px; font-weight:700; color:var(--select-text); }
+.field input[type="number"],
+.field input[type="text"],
+.field select,
+.results-actions select {
+  width:100%;
+  border:1px solid var(--line); border-radius:12px;
+  padding:11px 12px;
+  background:var(--input-bg); font-size:14px;
+  color:var(--input-text); outline:none;
+  transition:border-color 0.16s, box-shadow 0.16s, background 0.16s;
+}
+.field input:focus, .field select:focus, .results-actions select:focus {
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px var(--accent-soft);
+}
+.field.checkbox {
+  flex-direction:row; align-items:center; gap:10px;
+  min-height:46px; padding:10px 12px;
+  border:1px solid var(--line); border-radius:12px;
+  background:var(--input-bg);
+}
+.field.checkbox input { width:16px; height:16px; margin:0; accent-color:var(--accent); cursor:pointer; }
+.field.checkbox label { margin:0; font-size:13px; cursor:pointer; }
+
+.weights-panel { margin-top:6px; }
+.weights-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:14px;
+}
+.weight-row { display:flex; flex-direction:column; gap:8px; }
+.weight-head {
+  display:flex; justify-content:space-between; align-items:center;
+  font-size:12px; font-weight:700; color:var(--select-text);
+}
+.weight-head .val { color:var(--accent); font-weight:800; }
+.weight-row input[type="range"] { width:100%; accent-color:var(--accent); }
+.weights-sum {
+  margin-top:10px; font-size:11px; color:var(--muted);
+}
+.weights-sum strong { color:var(--text); }
+
+.results-header {
+  display:flex; justify-content:space-between; align-items:center;
+  gap:16px; margin-bottom:16px; flex-wrap:wrap;
+}
+.results-title { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.results-header h2 { margin:0; font-size:20px; font-weight:800; color:var(--text); }
+.count-badge {
+  padding:6px 12px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent);
+  font-size:12px; font-weight:800;
+}
+.results-actions { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.results-actions label { font-size:12px; font-weight:700; color:var(--select-text); }
+.results-actions select { min-width:180px; background:var(--input-bg); }
+
+.compare-bar {
+  display:none;
+  position:sticky; top:10px; z-index:20;
+  background:var(--panel); backdrop-filter:blur(14px);
+  border:1px solid var(--accent);
+  border-radius:14px; padding:10px 14px;
+  margin-bottom:16px;
+  box-shadow:var(--shadow);
+  align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+}
+.compare-bar.visible { display:flex; }
+.compare-bar .chips { display:flex; gap:6px; flex-wrap:wrap; }
+.compare-chip {
+  padding:4px 10px; border-radius:999px;
+  background:var(--accent-soft); color:var(--accent);
+  font-size:12px; font-weight:800;
+  display:inline-flex; align-items:center; gap:6px;
+}
+.compare-chip button {
+  background:none; border:none; color:inherit;
+  font-size:14px; cursor:pointer; line-height:1;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(290px, 1fr));
+  gap:18px;
+}
+.card {
+  position:relative; overflow:hidden;
+  background:var(--card-bg);
+  border:1px solid var(--card-border);
+  border-radius:18px; padding:18px;
+  box-shadow:0 14px 28px rgba(15,23,42,0.05);
+  transition:transform 0.16s, box-shadow 0.16s, border-color 0.16s;
+  cursor:pointer;
+}
+.card:hover { transform:translateY(-3px); box-shadow:0 22px 38px rgba(15,23,42,0.1); border-color:var(--accent); }
+.card.selected { border-color:var(--accent); box-shadow:0 0 0 2px var(--accent-soft), 0 22px 38px rgba(15,23,42,0.1); }
+.card::before {
+  content:""; position:absolute; inset:0 auto auto 0;
+  width:100%; height:4px;
+  background:linear-gradient(90deg,#3b82f6,#14b8a6); opacity:0.85;
+}
+.card-head {
+  display:flex; justify-content:space-between; align-items:flex-start;
+  gap:12px; margin-bottom:14px;
+}
+.card-title { flex:1; min-width:0; }
+.card-ticker { font-size:24px; font-weight:900; letter-spacing:-0.03em; color:var(--text); }
+.card-name { margin-top:3px; font-size:12px; color:var(--muted); }
+.card-actions { display:flex; align-items:flex-end; gap:8px; flex-direction:column; }
+.sector-tag {
+  padding:5px 9px; border-radius:999px;
+  font-size:11px; font-weight:800; white-space:nowrap;
+  background:#e0f2fe; color:#075985;
+}
+html[data-theme="dark"] .sector-tag { background:rgba(14,165,233,0.18); color:#7dd3fc; }
+.sector-tag.etf { background:#dcfce7; color:#166534; }
+html[data-theme="dark"] .sector-tag.etf { background:rgba(34,197,94,0.18); color:#86efac; }
+.div-growth-pill {
+  display:inline-block; margin-top:6px;
+  padding:3px 8px; border-radius:999px;
+  font-size:10px; font-weight:800;
+  background:#ecfdf5; color:#047857; border:1px solid #a7f3d0;
+}
+html[data-theme="dark"] .div-growth-pill { background:rgba(5,150,105,0.18); color:#6ee7b7; border-color:rgba(110,231,183,0.35); }
+
+.icon-ctrl {
+  width:34px; height:34px;
+  border:1px solid var(--line); border-radius:10px;
+  background:var(--card-bg); color:#94a3b8;
+  font-size:15px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:all 0.14s ease;
+}
+.favorite-btn { width:38px; height:38px; border-radius:12px; font-size:18px; }
+.icon-ctrl:hover { transform:scale(1.06); border-color:var(--accent); color:var(--accent); }
+.favorite-btn:hover { border-color:#fbbf24; color:#f59e0b; }
+.favorite-btn.active {
+  color:var(--favorite);
+  border-color:rgba(245,158,11,0.45);
+  background:rgba(245,158,11,0.12);
+}
+.compare-btn.active {
+  color:var(--accent);
+  border-color:var(--accent);
+  background:var(--accent-soft);
+}
+
+.metrics {
+  display:grid; grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:10px; margin-bottom:14px;
+}
+.metric {
+  padding:10px 11px; border-radius:12px;
+  background:var(--metric-bg); border:1px solid var(--metric-border);
+}
+.metric-label {
+  font-size:10px; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--muted); font-weight:700;
+}
+.metric-value { margin-top:4px; font-size:15px; font-weight:800; color:var(--text); }
+.metric-value.na { color:var(--muted); font-style:italic; }
+
+.margin-box {
+  display:flex; justify-content:space-between; align-items:center;
+  gap:12px; padding:13px 14px; border-radius:14px;
+  background:var(--margin-bg); margin-bottom:10px;
+}
+.margin-label { font-size:12px; font-weight:700; color:var(--muted); }
+.margin-value { font-size:20px; font-weight:900; }
+.margin-positive { color:var(--success); }
+.margin-negative { color:var(--danger); }
+
+.signal {
+  padding:11px 12px; border-radius:12px;
+  text-align:center; font-size:13px; font-weight:800;
+}
+.signal-buy   { background:var(--success-soft); color:#166534; border:1px solid rgba(34,197,94,0.28); }
+.signal-hold  { background:var(--warn-soft);    color:var(--warn); border:1px solid rgba(245,158,11,0.35); }
+.signal-sell  { background:var(--danger-soft);  color:#991b1b; border:1px solid rgba(239,68,68,0.28); }
+html[data-theme="dark"] .signal-buy { color:#86efac; }
+html[data-theme="dark"] .signal-sell { color:#fca5a5; }
+
+.score-box {
+  display:flex; justify-content:space-between; align-items:center;
+  gap:12px; padding:12px 14px; border-radius:14px;
+  background:linear-gradient(135deg, rgba(37,99,235,0.08), rgba(20,184,166,0.08));
+  border:1px solid rgba(37,99,235,0.18); margin-bottom:10px;
+}
+html[data-theme="dark"] .score-box {
+  background:linear-gradient(135deg, rgba(96,165,250,0.12), rgba(52,211,153,0.12));
+  border-color:rgba(96,165,250,0.28);
+}
+.score-label {
+  font-size:11px; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--accent); font-weight:800;
+}
+.score-value {
+  font-size:26px; font-weight:900;
+  color:#0f766e; letter-spacing:-0.02em;
+}
+html[data-theme="dark"] .score-value { color:#5eead4; }
+.score-value .score-suffix { font-size:12px; font-weight:700; color:var(--muted); margin-left:2px; }
+.score-bar {
+  flex:1; height:8px; border-radius:999px;
+  background:rgba(15,23,42,0.08); overflow:hidden; max-width:100px;
+}
+html[data-theme="dark"] .score-bar { background:rgba(148,163,184,0.18); }
+.score-bar-fill { height:100%; background:linear-gradient(90deg,#3b82f6,#14b8a6); border-radius:999px; }
+
+.breakdown {
+  margin-top:12px; padding:12px 14px;
+  border-radius:12px; background:var(--break-bg);
+  border:1px dashed var(--line-strong);
+}
+.breakdown-title {
+  font-size:10px; letter-spacing:0.08em;
+  text-transform:uppercase; color:var(--muted);
+  font-weight:800; margin-bottom:8px;
+}
+.breakdown-list { display:flex; flex-direction:column; gap:6px; }
+.breakdown-item {
+  font-size:12px; color:var(--select-text); font-weight:600;
+  line-height:1.5; display:flex; justify-content:space-between; gap:8px;
+}
+.breakdown-item .pts { color:var(--accent); font-weight:800; white-space:nowrap; }
+
+.empty {
+  grid-column:1 / -1; padding:64px 20px;
+  text-align:center; border-radius:20px;
+  border:1px dashed var(--line-strong);
+  background:var(--panel); color:var(--muted); line-height:1.7;
+}
+
+/* Modal */
+.modal-overlay {
+  display:none;
+  position:fixed; inset:0;
+  background:rgba(15,23,42,0.6); backdrop-filter:blur(4px);
+  z-index:50; align-items:center; justify-content:center;
+  padding:20px;
+}
+.modal-overlay.visible { display:flex; }
+.modal {
+  background:var(--panel); backdrop-filter:blur(16px);
+  border:1px solid var(--line);
+  border-radius:20px; padding:24px;
+  max-width:1100px; width:100%;
+  max-height:90vh; overflow:auto;
+  box-shadow:var(--shadow);
+}
+.modal-head {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-bottom:16px; gap:12px;
+}
+.modal-head h3 { margin:0; font-size:20px; font-weight:800; color:var(--text); }
+.modal-close {
+  width:34px; height:34px; border-radius:10px;
+  border:1px solid var(--line); background:var(--input-bg);
+  color:var(--text); font-size:18px; cursor:pointer;
+}
+.compare-table {
+  width:100%; border-collapse:collapse;
+  font-size:13px; color:var(--text);
+}
+.compare-table th, .compare-table td {
+  padding:10px 12px; border-bottom:1px solid var(--line);
+  text-align:left; vertical-align:top;
+}
+.compare-table thead th {
+  background:var(--metric-bg); font-weight:800;
+  color:var(--select-text); font-size:12px;
+  letter-spacing:0.05em; text-transform:uppercase;
+}
+.compare-table td.num { text-align:right; font-variant-numeric:tabular-nums; }
+.compare-table tr.best td { background:rgba(34,197,94,0.08); }
+
+.toast {
+  position:fixed; bottom:24px; left:50%;
+  transform:translateX(-50%) translateY(20px);
+  background:var(--text); color:var(--bg-1);
+  padding:12px 18px; border-radius:12px;
+  font-size:13px; font-weight:700;
+  opacity:0; transition:opacity 0.2s, transform 0.2s;
+  z-index:100; pointer-events:none;
+}
+.toast.visible { opacity:1; transform:translateX(-50%) translateY(0); }
+
+@media (max-width:760px) {
+  body { padding:18px; }
+  .panel, .card { border-radius:18px; }
+  .results-actions { width:100%; }
+  .results-actions select { width:100%; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <h1>미국 주식 검색기</h1>
+        <p>S&amp;P 500, Nasdaq 100, 배당 ETF 종목을 가중치 기반 종합 점수(100점 만점)로 평가합니다. 카드를 클릭하면 Yahoo Finance 상세 차트가 열립니다.</p>
+      </div>
+      <div class="header-meta">
+        <span class="meta-chip" id="data-date">데이터 기준일: 2026-04-19</span>
+        <button class="icon-btn" id="theme-toggle" title="다크 모드 전환" aria-label="다크 모드 전환">🌙</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>검색 &amp; 필터</h2>
+        <div class="panel-note" id="weights-note">가중치: 안전마진 40 · ROE 30 · EBITDA 20 · 배당 10</div>
+      </div>
+
+      <div class="search-wrap">
+        <input type="text" id="f-search" placeholder="티커 또는 회사명으로 검색 (예: AAPL, 애플, tech)" autocomplete="off" />
+        <button type="button" class="search-clear" id="search-clear" aria-label="검색 지우기">✕</button>
+      </div>
+
+      <div class="filter-grid">
+        <div class="field"><label for="f-per-min">최소 PER</label><input type="number" id="f-per-min" placeholder="0" step="0.1" /></div>
+        <div class="field"><label for="f-per">최대 PER</label><input type="number" id="f-per" value="80" step="0.1" /></div>
+        <div class="field"><label for="f-pbr-min">최소 PBR</label><input type="number" id="f-pbr-min" placeholder="0" step="0.1" /></div>
+        <div class="field"><label for="f-pbr">최대 PBR</label><input type="number" id="f-pbr" value="999" step="0.1" /></div>
+        <div class="field"><label for="f-roe">최소 ROE (%)</label><input type="number" id="f-roe" placeholder="제한 없음" step="0.1" /></div>
+        <div class="field"><label for="f-div">최소 배당수익률 (%)</label><input type="number" id="f-div" value="0" step="0.1" /></div>
+        <div class="field"><label for="f-score">최소 종합점수</label><input type="number" id="f-score" value="0" step="1" /></div>
+        <div class="field">
+          <label for="f-sector">섹터</label>
+          <select id="f-sector">
+            <option value="ALL">전체</option>
+            <option value="Tech">Tech</option>
+            <option value="Consumer">Consumer</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Energy">Energy</option>
+            <option value="Financial">Financial</option>
+            <option value="Communication">Communication</option>
+            <option value="Industrial">Industrial</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Materials">Materials</option>
+            <option value="RealEstate">Real Estate</option>
+            <option value="ETF">ETF</option>
+          </select>
+        </div>
+        <div class="field"><label for="f-rsi-min">RSI 최소 (0~100)</label><input type="number" id="f-rsi-min" placeholder="제한 없음" min="0" max="100" step="1" /></div>
+        <div class="field"><label for="f-rsi-max">RSI 최대 (0~100)</label><input type="number" id="f-rsi-max" placeholder="제한 없음" min="0" max="100" step="1" /></div>
+        <div class="field"><label for="f-max-52w">52주 최고가 대비 (%) 이하</label><input type="number" id="f-max-52w" placeholder="예: 95" min="0" max="100" step="1" /></div>
+        <div class="field checkbox"><input type="checkbox" id="f-ebitda" /><label for="f-ebitda">EBITDA 성장 필수</label></div>
+        <div class="field checkbox"><input type="checkbox" id="f-div-growth" /><label for="f-div-growth">5년 연속 배당 성장</label></div>
+        <div class="field checkbox"><input type="checkbox" id="f-favorites-only" /><label for="f-favorites-only">관심 종목만 보기</label></div>
+        <div class="field checkbox"><input type="checkbox" id="f-exclude-loss" /><label for="f-exclude-loss">적자 기업 제외 (PER N/A·ROE&lt;0)</label></div>
+      </div>
+    </section>
+
+    <section class="panel weights-panel">
+      <div class="panel-head">
+        <h2>가중치 조정 (총합 자동 정규화)</h2>
+        <div class="panel-actions">
+          <button type="button" class="btn" id="weights-reset">기본값 복원</button>
+        </div>
+      </div>
+      <div class="weights-grid">
+        <div class="weight-row">
+          <div class="weight-head"><span>🎯 안전 마진</span><span class="val" id="w-margin-val">40</span></div>
+          <input type="range" id="w-margin" min="0" max="100" step="1" value="40" />
+        </div>
+        <div class="weight-row">
+          <div class="weight-head"><span>💰 수익성 (ROE)</span><span class="val" id="w-roe-val">30</span></div>
+          <input type="range" id="w-roe" min="0" max="100" step="1" value="30" />
+        </div>
+        <div class="weight-row">
+          <div class="weight-head"><span>📈 현금흐름 (EBITDA)</span><span class="val" id="w-ebitda-val">20</span></div>
+          <input type="range" id="w-ebitda" min="0" max="100" step="1" value="20" />
+        </div>
+        <div class="weight-row">
+          <div class="weight-head"><span>💵 배당</span><span class="val" id="w-div-val">10</span></div>
+          <input type="range" id="w-div" min="0" max="100" step="1" value="10" />
+        </div>
+      </div>
+      <div class="weights-sum">합계: <strong id="w-sum">100</strong> · 자동으로 100점 만점 기준으로 정규화됩니다.</div>
+    </section>
+
+    <div class="compare-bar" id="compare-bar">
+      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+        <strong style="font-size:13px;">비교 선택:</strong>
+        <div class="chips" id="compare-chips"></div>
+      </div>
+      <div style="display:flex; gap:8px;">
+        <button class="btn" id="compare-clear">전체 해제</button>
+        <button class="btn btn-primary" id="compare-open">비교 보기</button>
+      </div>
+    </div>
+
+    <div class="results-header">
+      <div class="results-title">
+        <h2>추천 종목</h2>
+        <span class="count-badge" id="count">0개 종목</span>
+      </div>
+      <div class="results-actions">
+        <label for="sort-select">정렬</label>
+        <select id="sort-select">
+          <option value="score">종합 점수 높은 순</option>
+          <option value="margin">안전 마진 높은 순</option>
+          <option value="roe">ROE 높은 순</option>
+          <option value="dividend">배당수익률 높은 순</option>
+          <option value="signal">신호순</option>
+          <option value="ticker">티커순(A→Z)</option>
+        </select>
+        <button class="btn" id="copy-tickers" title="현재 결과의 티커를 쉼표로 구분해 복사 (구글 시트 GOOGLEFINANCE용)">📋 티커 복사</button>
+        <button class="btn" id="export-csv" title="현재 결과를 CSV로 내보내기">📥 CSV</button>
+        <button class="btn" id="export-favs" title="관심종목 JSON 내보내기">⭐ 내보내기</button>
+        <button class="btn" id="import-favs" title="관심종목 JSON 가져오기">⬆️ 가져오기</button>
+        <input type="file" id="import-file" accept="application/json" style="display:none" />
+      </div>
+    </div>
+
+    <div id="results" class="grid"></div>
+  </div>
+
+  <div class="modal-overlay" id="compare-modal">
+    <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal-head">
+        <h3>📊 종목 비교</h3>
+        <button class="modal-close" id="compare-close" aria-label="닫기">✕</button>
+      </div>
+      <div id="compare-body"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+<script>
+/* =========================================================
+ * 0) CONSTANTS
+ * ========================================================= */
+const FAVORITES_KEY   = "stockScreenerFavorites";
+const THEME_KEY       = "stockScreenerTheme";
+const WEIGHTS_KEY     = "stockScreenerWeights";
+const DATA_DATE       = "2026-04-19";
+const COMPARE_MAX     = 4;
+
+/* 신호 정렬 랭크 — 함수 외부 상수로 고정 (sort 콜백 호출마다 재생성 방지) */
+const SIGNAL_RANK = Object.freeze({ buy:0, hold:1, sell:2 });
+
+/* 정규화 범위(Min/Max) */
+const NORM = {
+  margin:   { min:-0.20, max:0.50 },
+  roe:      { min:0,     max:60   },
+  divYield: { min:0,     max:6.0  }
+};
+
+/* ETF 전용 정규화 범위 (낮을수록 좋은 지표는 Scorer에서 역정규화 처리) */
+const NORM_ETF = {
+  margin:       { min:-0.10, max:0.30 },
+  expenseRatio: { min:0.03,  max:1.00 },  // 낮을수록 좋음
+  mdd1y:        { min:15,    max:70   },  // 낮을수록 좋음
+  avgVolume:    { min:5,     max:5000 }   // 높을수록 좋음 (일평균 거래대금 $M)
+};
+
+/* 기본 가중치(가변) */
+const DEFAULT_WEIGHTS = { margin:40, roe:30, ebitda:20, divYield:10 };
+let WEIGHT = { ...DEFAULT_WEIGHTS };
+
+/* ETF 전용 기본 가중치 (고정) */
+const DEFAULT_WEIGHTS_ETF = { margin:20, expense:25, mdd:30, volume:25 };
+
+/* =========================================================
+ * 1) DATABASE
+ * ========================================================= */
+const Database = {
+  stocks: [
+    /* ===== Tech ===== */
+    { ticker:"AAPL",  name:"애플",                  sector:"Tech", per:28.5, pbr:38.2, roe:150.0, divYield:0.50, currentPrice:170, targetPrice:200, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"MSFT",  name:"마이크로소프트",        sector:"Tech", per:35.2, pbr:12.5, roe:35.0,  divYield:0.70, currentPrice:400, targetPrice:450, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"NVDA",  name:"엔비디아",              sector:"Tech", per:70.0, pbr:45.0, roe:70.0,  divYield:0.02, currentPrice:850, targetPrice:950, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"AVGO",  name:"브로드컴",              sector:"Tech", per:32.0, pbr:9.5,  roe:40.0,  divYield:1.60, currentPrice:1300,targetPrice:1450,ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"ORCL",  name:"오라클",                sector:"Tech", per:30.0, pbr:45.0, roe:130.0, divYield:1.30, currentPrice:125, targetPrice:140, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"CRM",   name:"세일즈포스",            sector:"Tech", per:45.0, pbr:4.5,  roe:10.5,  divYield:0.00, currentPrice:290, targetPrice:320, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"ADBE",  name:"어도비",                sector:"Tech", per:42.0, pbr:13.0, roe:35.0,  divYield:0.00, currentPrice:500, targetPrice:580, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"AMD",   name:"AMD",                   sector:"Tech", per:50.0, pbr:4.0,  roe:6.0,   divYield:0.00, currentPrice:160, targetPrice:200, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"INTC",  name:"인텔",                  sector:"Tech", per:25.0, pbr:1.3,  roe:2.0,   divYield:1.60, currentPrice:35,  targetPrice:42,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"QCOM",  name:"퀄컴",                  sector:"Tech", per:18.5, pbr:7.5,  roe:40.0,  divYield:2.10, currentPrice:165, targetPrice:190, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"TXN",   name:"텍사스인스트루먼트",    sector:"Tech", per:25.0, pbr:10.0, roe:40.0,  divYield:2.80, currentPrice:180, targetPrice:195, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"IBM",   name:"IBM",                   sector:"Tech", per:22.0, pbr:8.0,  roe:30.0,  divYield:3.50, currentPrice:190, targetPrice:205, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"CSCO",  name:"시스코",                sector:"Tech", per:17.0, pbr:5.0,  roe:28.0,  divYield:3.20, currentPrice:50,  targetPrice:56,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"ACN",   name:"액센추어",              sector:"Tech", per:28.0, pbr:7.0,  roe:28.0,  divYield:1.80, currentPrice:330, targetPrice:365, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"NOW",   name:"서비스나우",            sector:"Tech", per:80.0, pbr:20.0, roe:17.0,  divYield:0.00, currentPrice:750, targetPrice:830, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"INTU",  name:"인튜이트",              sector:"Tech", per:55.0, pbr:9.5,  roe:18.0,  divYield:0.60, currentPrice:640, targetPrice:700, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"AMAT",  name:"어플라이드머티어리얼즈",sector:"Tech", per:22.0, pbr:8.5,  roe:45.0,  divYield:0.80, currentPrice:210, targetPrice:240, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"LRCX",  name:"램리서치",              sector:"Tech", per:28.0, pbr:12.0, roe:50.0,  divYield:1.00, currentPrice:900, targetPrice:1000,ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"KLAC",  name:"KLA",                   sector:"Tech", per:30.0, pbr:22.0, roe:70.0,  divYield:0.90, currentPrice:700, targetPrice:770, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"MU",    name:"마이크론",              sector:"Tech", per:30.0, pbr:2.5,  roe:6.0,   divYield:0.40, currentPrice:100, targetPrice:125, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"PANW",  name:"팔로알토네트웍스",      sector:"Tech", per:48.0, pbr:18.0, roe:38.0,  divYield:0.00, currentPrice:320, targetPrice:360, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"CRWD",  name:"크라우드스트라이크",    sector:"Tech", per:75.0, pbr:25.0, roe:20.0,  divYield:0.00, currentPrice:320, targetPrice:370, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"SNPS",  name:"시놉시스",              sector:"Tech", per:55.0, pbr:11.0, roe:22.0,  divYield:0.00, currentPrice:550, targetPrice:605, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"CDNS",  name:"케이던스",              sector:"Tech", per:60.0, pbr:17.0, roe:28.0,  divYield:0.00, currentPrice:290, targetPrice:320, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"ADI",   name:"아나로그디바이스",      sector:"Tech", per:30.0, pbr:2.8,  roe:10.0,  divYield:1.80, currentPrice:220, targetPrice:245, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"MRVL",  name:"마벨",                  sector:"Tech", per:40.0, pbr:2.5,  roe:5.0,   divYield:0.40, currentPrice:75,  targetPrice:90,  ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"FTNT",  name:"포티넷",                sector:"Tech", per:42.0, pbr:40.0, roe:90.0,  divYield:0.00, currentPrice:70,  targetPrice:80,  ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"ANET",  name:"아리스타네트웍스",      sector:"Tech", per:38.0, pbr:10.0, roe:32.0,  divYield:0.00, currentPrice:290, targetPrice:325, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"MCHP",  name:"마이크로칩",            sector:"Tech", per:28.0, pbr:5.0,  roe:18.0,  divYield:2.00, currentPrice:85,  targetPrice:98,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"ADSK",  name:"오토데스크",            sector:"Tech", per:50.0, pbr:22.0, roe:35.0,  divYield:0.00, currentPrice:260, targetPrice:290, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"WDAY",  name:"워크데이",              sector:"Tech", per:45.0, pbr:8.0,  roe:12.0,  divYield:0.00, currentPrice:250, targetPrice:285, ebitdaGrowing:true,  divGrowth:false },
+
+    /* ===== Communication ===== */
+    { ticker:"GOOGL", name:"알파벳(A)",             sector:"Communication", per:25.0, pbr:7.0,  roe:28.0,  divYield:0.00, currentPrice:155, targetPrice:180, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"GOOG",  name:"알파벳(C)",             sector:"Communication", per:25.0, pbr:7.0,  roe:28.0,  divYield:0.00, currentPrice:156, targetPrice:181, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"META",  name:"메타",                  sector:"Communication", per:27.0, pbr:8.0,  roe:30.0,  divYield:0.50, currentPrice:480, targetPrice:560, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"NFLX",  name:"넷플릭스",              sector:"Communication", per:40.0, pbr:12.0, roe:26.0,  divYield:0.00, currentPrice:620, targetPrice:680, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"DIS",   name:"디즈니",                sector:"Communication", per:30.0, pbr:1.9,  roe:4.5,   divYield:0.80, currentPrice:110, targetPrice:125, ebitdaGrowing:false, divGrowth:false },
+    { ticker:"CMCSA", name:"컴캐스트",              sector:"Communication", per:12.0, pbr:2.1,  roe:17.0,  divYield:2.90, currentPrice:43,  targetPrice:50,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"T",     name:"AT&T",                  sector:"Communication", per:9.0,  pbr:1.3,  roe:12.0,  divYield:6.50, currentPrice:17,  targetPrice:20,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"VZ",    name:"버라이즌",              sector:"Communication", per:9.5,  pbr:1.8,  roe:20.0,  divYield:6.80, currentPrice:40,  targetPrice:45,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"TMUS",  name:"T-모바일",              sector:"Communication", per:22.0, pbr:3.2,  roe:13.0,  divYield:1.30, currentPrice:165, targetPrice:180, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"CHTR",  name:"차터커뮤니케이션",      sector:"Communication", per:12.0, pbr:4.0,  roe:30.0,  divYield:0.00, currentPrice:300, targetPrice:345, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"EA",    name:"일렉트로닉아츠",        sector:"Communication", per:28.0, pbr:4.5,  roe:14.0,  divYield:0.60, currentPrice:140, targetPrice:158, ebitdaGrowing:true,  divGrowth:true  },
+
+    /* ===== Consumer ===== */
+    { ticker:"AMZN",  name:"아마존",                sector:"Consumer", per:50.0, pbr:7.5,  roe:15.0,  divYield:0.00, currentPrice:180, targetPrice:215, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"TSLA",  name:"테슬라",                sector:"Consumer", per:60.0, pbr:12.0, roe:20.0,  divYield:0.00, currentPrice:200, targetPrice:210, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"HD",    name:"홈디포",                sector:"Consumer", per:24.0, pbr:250.0,roe:1100.0,divYield:2.40, currentPrice:360, targetPrice:395, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"MCD",   name:"맥도날드",              sector:"Consumer", per:24.0, pbr:40.0, roe:180.0, divYield:2.30, currentPrice:290, targetPrice:315, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"NKE",   name:"나이키",                sector:"Consumer", per:28.0, pbr:10.0, roe:35.0,  divYield:1.50, currentPrice:95,  targetPrice:110, ebitdaGrowing:false, divGrowth:true  },
+    { ticker:"SBUX",  name:"스타벅스",              sector:"Consumer", per:25.0, pbr:50.0, roe:300.0, divYield:2.50, currentPrice:90,  targetPrice:105, ebitdaGrowing:false, divGrowth:true  },
+    { ticker:"KO",    name:"코카콜라",              sector:"Consumer", per:24.1, pbr:10.5, roe:40.0,  divYield:3.00, currentPrice:60,  targetPrice:68,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"PEP",   name:"펩시코",                sector:"Consumer", per:22.0, pbr:11.5, roe:50.0,  divYield:3.00, currentPrice:170, targetPrice:185, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"PG",    name:"프록터앤갬블",          sector:"Consumer", per:25.0, pbr:8.0,  roe:30.0,  divYield:2.40, currentPrice:160, targetPrice:172, ebitdaGrowing:false, divGrowth:true  },
+    { ticker:"WMT",   name:"월마트",                sector:"Consumer", per:28.0, pbr:6.5,  roe:22.0,  divYield:1.30, currentPrice:60,  targetPrice:68,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"COST",  name:"코스트코",              sector:"Consumer", per:48.0, pbr:16.0, roe:30.0,  divYield:0.55, currentPrice:720, targetPrice:780, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"TGT",   name:"타겟",                  sector:"Consumer", per:18.0, pbr:5.0,  roe:30.0,  divYield:3.00, currentPrice:150, targetPrice:170, ebitdaGrowing:false, divGrowth:true  },
+    { ticker:"LOW",   name:"로우스",                sector:"Consumer", per:20.0, pbr:25.0, roe:60.0,  divYield:1.80, currentPrice:240, targetPrice:265, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"MDLZ",  name:"몬델리즈",              sector:"Consumer", per:22.0, pbr:3.5,  roe:15.0,  divYield:2.30, currentPrice:72,  targetPrice:80,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"BKNG",  name:"부킹홀딩스",            sector:"Consumer", per:26.0, pbr:50.0, roe:120.0, divYield:0.90, currentPrice:3600,targetPrice:4000,ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"MAR",   name:"메리어트",              sector:"Consumer", per:28.0, pbr:30.0, roe:100.0, divYield:1.00, currentPrice:250, targetPrice:275, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"CMG",   name:"치폴레",                sector:"Consumer", per:55.0, pbr:18.0, roe:42.0,  divYield:0.00, currentPrice:3000,targetPrice:3250,ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"ABNB",  name:"에어비앤비",            sector:"Consumer", per:22.0, pbr:12.0, roe:50.0,  divYield:0.00, currentPrice:160, targetPrice:185, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"ORLY",  name:"오라일리오토",          sector:"Consumer", per:28.0, pbr:45.0, roe:1000.0,divYield:0.00, currentPrice:1050,targetPrice:1150,ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"GM",    name:"GM",                    sector:"Consumer", per:6.0,  pbr:0.8,  roe:14.0,  divYield:1.00, currentPrice:44,  targetPrice:55,  ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"F",     name:"포드",                  sector:"Consumer", per:12.0, pbr:1.1,  roe:12.0,  divYield:5.50, currentPrice:12,  targetPrice:14,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"YUM",   name:"얌브랜즈",              sector:"Consumer", per:25.0, pbr:0.0,  roe:-100.0,divYield:1.90, currentPrice:140, targetPrice:155, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"CL",    name:"콜게이트",              sector:"Consumer", per:26.0, pbr:200.0,roe:800.0, divYield:2.20, currentPrice:85,  targetPrice:95,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"KMB",   name:"킴벌리클라크",          sector:"Consumer", per:22.0, pbr:40.0, roe:180.0, divYield:3.60, currentPrice:130, targetPrice:140, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"MO",    name:"알트리아",              sector:"Consumer", per:10.0, pbr:0.0,  roe:-250.0,divYield:8.50, currentPrice:43,  targetPrice:48,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"PM",    name:"필립모리스",            sector:"Consumer", per:18.0, pbr:0.0,  roe:-250.0,divYield:5.30, currentPrice:97,  targetPrice:110, ebitdaGrowing:true,  divGrowth:true  },
+
+    /* ===== Healthcare ===== */
+    { ticker:"LLY",   name:"일라이릴리",            sector:"Healthcare", per:65.0, pbr:55.0, roe:75.0,  divYield:0.70, currentPrice:750, targetPrice:820, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"UNH",   name:"유나이티드헬스",        sector:"Healthcare", per:22.0, pbr:5.5,  roe:25.0,  divYield:1.50, currentPrice:500, targetPrice:560, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"JNJ",   name:"존슨앤존슨",            sector:"Healthcare", per:15.3, pbr:5.1,  roe:25.0,  divYield:3.00, currentPrice:155, targetPrice:165, ebitdaGrowing:false, divGrowth:true  },
+    { ticker:"MRK",   name:"머크",                  sector:"Healthcare", per:20.0, pbr:6.5,  roe:32.0,  divYield:2.50, currentPrice:125, targetPrice:140, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"ABBV",  name:"애브비",                sector:"Healthcare", per:35.0, pbr:50.0, roe:80.0,  divYield:3.50, currentPrice:170, targetPrice:185, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"PFE",   name:"화이자",                sector:"Healthcare", per:28.0, pbr:1.8,  roe:6.0,   divYield:6.20, currentPrice:27,  targetPrice:32,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"TMO",   name:"써모피셔",              sector:"Healthcare", per:32.0, pbr:5.0,  roe:15.0,  divYield:0.30, currentPrice:570, targetPrice:625, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"ABT",   name:"애보트",                sector:"Healthcare", per:30.0, pbr:4.5,  roe:15.0,  divYield:2.00, currentPrice:110, targetPrice:125, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"DHR",   name:"다나허",                sector:"Healthcare", per:35.0, pbr:4.0,  roe:12.0,  divYield:0.50, currentPrice:250, targetPrice:275, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"AMGN",  name:"암젠",                  sector:"Healthcare", per:25.0, pbr:27.0, roe:100.0, divYield:3.00, currentPrice:290, targetPrice:320, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"GILD",  name:"길리어드",              sector:"Healthcare", per:16.0, pbr:5.0,  roe:30.0,  divYield:4.30, currentPrice:70,  targetPrice:82,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"ISRG",  name:"인튜이티브서지컬",      sector:"Healthcare", per:75.0, pbr:8.5,  roe:14.0,  divYield:0.00, currentPrice:400, targetPrice:440, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"BMY",   name:"브리스톨마이어스",      sector:"Healthcare", per:15.0, pbr:4.0,  roe:18.0,  divYield:4.80, currentPrice:50,  targetPrice:58,  ebitdaGrowing:false, divGrowth:true  },
+    { ticker:"CVS",   name:"CVS헬스",               sector:"Healthcare", per:11.0, pbr:1.3,  roe:11.0,  divYield:4.10, currentPrice:65,  targetPrice:78,  ebitdaGrowing:false, divGrowth:true  },
+    { ticker:"MDT",   name:"메드트로닉",            sector:"Healthcare", per:22.0, pbr:2.5,  roe:8.0,   divYield:3.40, currentPrice:82,  targetPrice:92,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"SYK",   name:"스트라이커",            sector:"Healthcare", per:32.0, pbr:7.5,  roe:20.0,  divYield:1.00, currentPrice:350, targetPrice:385, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"ELV",   name:"엘레반스헬스",          sector:"Healthcare", per:16.0, pbr:2.5,  roe:17.0,  divYield:1.30, currentPrice:530, targetPrice:590, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"VRTX",  name:"버텍스파마",            sector:"Healthcare", per:28.0, pbr:6.5,  roe:25.0,  divYield:0.00, currentPrice:430, targetPrice:480, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"REGN",  name:"리제네론",              sector:"Healthcare", per:24.0, pbr:4.0,  roe:18.0,  divYield:0.00, currentPrice:960, targetPrice:1060,ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"ZTS",   name:"조에티스",              sector:"Healthcare", per:32.0, pbr:14.0, roe:48.0,  divYield:1.10, currentPrice:175, targetPrice:195, ebitdaGrowing:true,  divGrowth:true  },
+
+    /* ===== Financial ===== */
+    { ticker:"JPM",   name:"JP모건",                sector:"Financial", per:11.5, pbr:1.8,  roe:17.0,  divYield:2.30, currentPrice:200, targetPrice:225, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"BAC",   name:"뱅크오브아메리카",      sector:"Financial", per:13.0, pbr:1.1,  roe:9.0,   divYield:2.70, currentPrice:38,  targetPrice:45,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"WFC",   name:"웰스파고",              sector:"Financial", per:12.0, pbr:1.3,  roe:11.0,  divYield:2.50, currentPrice:55,  targetPrice:62,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"GS",    name:"골드만삭스",            sector:"Financial", per:15.0, pbr:1.4,  roe:10.0,  divYield:2.60, currentPrice:420, targetPrice:470, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"MS",    name:"모건스탠리",            sector:"Financial", per:16.0, pbr:1.9,  roe:12.0,  divYield:3.30, currentPrice:95,  targetPrice:105, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"C",     name:"시티그룹",              sector:"Financial", per:12.0, pbr:0.6,  roe:5.0,   divYield:3.80, currentPrice:60,  targetPrice:72,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"V",     name:"비자",                  sector:"Financial", per:31.0, pbr:14.0, roe:48.0,  divYield:0.80, currentPrice:275, targetPrice:310, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"MA",    name:"마스터카드",            sector:"Financial", per:37.0, pbr:60.0, roe:170.0, divYield:0.55, currentPrice:470, targetPrice:520, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"BRK.B", name:"버크셔해서웨이",        sector:"Financial", per:10.0, pbr:1.5,  roe:15.0,  divYield:0.00, currentPrice:410, targetPrice:450, ebitdaGrowing:true,  divGrowth:false },
+    { ticker:"AXP",   name:"아메리칸익스프레스",    sector:"Financial", per:20.0, pbr:6.0,  roe:32.0,  divYield:1.20, currentPrice:235, targetPrice:260, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"BLK",   name:"블랙록",                sector:"Financial", per:22.0, pbr:3.2,  roe:14.0,  divYield:2.40, currentPrice:800, targetPrice:870, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"SCHW",  name:"찰스슈왑",              sector:"Financial", per:25.0, pbr:3.0,  roe:11.0,  divYield:1.50, currentPrice:75,  targetPrice:85,  ebitdaGrowing:false, divGrowth:true  },
+    { ticker:"SPGI",  name:"S&P글로벌",             sector:"Financial", per:35.0, pbr:9.0,  roe:14.0,  divYield:0.80, currentPrice:430, targetPrice:475, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"CB",    name:"처브",                  sector:"Financial", per:13.0, pbr:1.7,  roe:14.0,  divYield:1.40, currentPrice:260, targetPrice:290, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"PGR",   name:"프로그레시브",          sector:"Financial", per:18.0, pbr:4.5,  roe:28.0,  divYield:0.30, currentPrice:210, targetPrice:235, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"MMC",   name:"마쉬앤맥레넌",          sector:"Financial", per:26.0, pbr:8.0,  roe:32.0,  divYield:1.30, currentPrice:210, targetPrice:230, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"ICE",   name:"ICE",                   sector:"Financial", per:28.0, pbr:3.2,  roe:12.0,  divYield:1.50, currentPrice:140, targetPrice:155, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"CME",   name:"CME그룹",               sector:"Financial", per:24.0, pbr:2.7,  roe:12.0,  divYield:1.90, currentPrice:215, targetPrice:240, ebitdaGrowing:true,  divGrowth:true  },
+
+    /* ===== Energy ===== */
+    { ticker:"XOM",   name:"엑슨모빌",              sector:"Energy", per:12.0, pbr:2.1, roe:20.0, divYield:3.20, currentPrice:115, targetPrice:130, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"CVX",   name:"셰브론",                sector:"Energy", per:14.0, pbr:1.8, roe:14.0, divYield:4.20, currentPrice:155, targetPrice:175, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"COP",   name:"코노코필립스",          sector:"Energy", per:13.0, pbr:2.7, roe:22.0, divYield:2.40, currentPrice:115, targetPrice:135, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"SLB",   name:"슐럼버거",              sector:"Energy", per:15.0, pbr:3.2, roe:22.0, divYield:2.50, currentPrice:48,  targetPrice:58,  ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"EOG",   name:"EOG리소시스",           sector:"Energy", per:11.0, pbr:2.4, roe:25.0, divYield:2.80, currentPrice:130, targetPrice:150, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"MPC",   name:"마라톤석유",            sector:"Energy", per:8.0,  pbr:3.0, roe:30.0, divYield:2.00, currentPrice:180, targetPrice:210, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"PSX",   name:"필립스66",              sector:"Energy", per:10.0, pbr:2.0, roe:22.0, divYield:3.20, currentPrice:160, targetPrice:185, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"VLO",   name:"발레로",                sector:"Energy", per:9.0,  pbr:2.2, roe:25.0, divYield:3.00, currentPrice:150, targetPrice:175, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"OKE",   name:"원오크",                sector:"Energy", per:18.0, pbr:3.5, roe:22.0, divYield:5.00, currentPrice:80,  targetPrice:90,  ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"WMB",   name:"윌리엄스",              sector:"Energy", per:20.0, pbr:3.8, roe:18.0, divYield:4.80, currentPrice:40,  targetPrice:45,  ebitdaGrowing:true, divGrowth:true  },
+
+    /* ===== Industrial ===== */
+    { ticker:"CAT",   name:"캐터필러",              sector:"Industrial", per:16.0, pbr:8.0,  roe:55.0,  divYield:1.50, currentPrice:350, targetPrice:380, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"BA",    name:"보잉",                  sector:"Industrial", per:0.0,  pbr:0.0,  roe:-40.0, divYield:0.00, currentPrice:180, targetPrice:220, ebitdaGrowing:false, divGrowth:false },
+    { ticker:"HON",   name:"허니웰",                sector:"Industrial", per:24.0, pbr:7.5,  roe:30.0,  divYield:2.00, currentPrice:200, targetPrice:220, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"GE",    name:"GE에어로스페이스",      sector:"Industrial", per:35.0, pbr:6.0,  roe:18.0,  divYield:0.70, currentPrice:170, targetPrice:190, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"UPS",   name:"UPS",                   sector:"Industrial", per:18.0, pbr:5.5,  roe:35.0,  divYield:4.60, currentPrice:145, targetPrice:165, ebitdaGrowing:false, divGrowth:true  },
+    { ticker:"RTX",   name:"RTX",                   sector:"Industrial", per:23.0, pbr:2.4,  roe:10.0,  divYield:2.40, currentPrice:100, targetPrice:115, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"DE",    name:"디어",                  sector:"Industrial", per:13.0, pbr:5.0,  roe:40.0,  divYield:1.40, currentPrice:400, targetPrice:440, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"LMT",   name:"록히드마틴",            sector:"Industrial", per:18.0, pbr:18.0, roe:70.0,  divYield:2.80, currentPrice:460, targetPrice:500, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"NOC",   name:"노스럽그루먼",          sector:"Industrial", per:19.0, pbr:4.0,  roe:22.0,  divYield:1.80, currentPrice:460, targetPrice:510, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"GD",    name:"제너럴다이내믹스",      sector:"Industrial", per:22.0, pbr:3.3,  roe:17.0,  divYield:2.00, currentPrice:280, targetPrice:310, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"FDX",   name:"페덱스",                sector:"Industrial", per:14.0, pbr:2.3,  roe:16.0,  divYield:2.00, currentPrice:260, targetPrice:300, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"EMR",   name:"에머슨일렉트릭",        sector:"Industrial", per:22.0, pbr:3.0,  roe:14.0,  divYield:2.00, currentPrice:110, targetPrice:122, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"ETN",   name:"이튼",                  sector:"Industrial", per:30.0, pbr:6.5,  roe:22.0,  divYield:1.20, currentPrice:320, targetPrice:355, ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"CSX",   name:"CSX",                   sector:"Industrial", per:18.0, pbr:5.5,  roe:32.0,  divYield:1.30, currentPrice:35,  targetPrice:40,  ebitdaGrowing:true,  divGrowth:true  },
+    { ticker:"UNP",   name:"유니온퍼시픽",          sector:"Industrial", per:21.0, pbr:10.0, roe:48.0,  divYield:2.20, currentPrice:240, targetPrice:270, ebitdaGrowing:true,  divGrowth:true  },
+
+    /* ===== Utilities ===== */
+    { ticker:"NEE",   name:"넥스트에라에너지",      sector:"Utilities", per:20.0, pbr:3.0, roe:12.0, divYield:2.90, currentPrice:70,  targetPrice:80,  ebitdaGrowing:true, divGrowth:true },
+    { ticker:"DUK",   name:"듀크에너지",            sector:"Utilities", per:19.0, pbr:2.0, roe:9.0,  divYield:4.00, currentPrice:100, targetPrice:112, ebitdaGrowing:true, divGrowth:true },
+    { ticker:"SO",    name:"서던컴퍼니",            sector:"Utilities", per:21.0, pbr:2.6, roe:12.0, divYield:3.80, currentPrice:75,  targetPrice:82,  ebitdaGrowing:true, divGrowth:true },
+    { ticker:"AEP",   name:"아메리칸일렉트릭파워",  sector:"Utilities", per:18.0, pbr:2.1, roe:11.0, divYield:4.00, currentPrice:90,  targetPrice:100, ebitdaGrowing:true, divGrowth:true },
+    { ticker:"D",     name:"도미니언에너지",        sector:"Utilities", per:20.0, pbr:2.0, roe:9.0,  divYield:5.00, currentPrice:52,  targetPrice:58,  ebitdaGrowing:true, divGrowth:true },
+    { ticker:"SRE",   name:"셈프라",                sector:"Utilities", per:18.0, pbr:1.8, roe:10.0, divYield:3.20, currentPrice:75,  targetPrice:85,  ebitdaGrowing:true, divGrowth:true },
+
+    /* ===== Materials ===== */
+    { ticker:"LIN",   name:"린데",                  sector:"Materials", per:30.0, pbr:4.5,  roe:15.0, divYield:1.30, currentPrice:450, targetPrice:490, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"SHW",   name:"셔윈윌리엄스",          sector:"Materials", per:32.0, pbr:25.0, roe:75.0, divYield:0.90, currentPrice:330, targetPrice:360, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"FCX",   name:"프리포트맥모란",        sector:"Materials", per:30.0, pbr:3.0,  roe:11.0, divYield:1.20, currentPrice:45,  targetPrice:55,  ebitdaGrowing:true, divGrowth:false },
+    { ticker:"APD",   name:"에어프로덕츠",          sector:"Materials", per:22.0, pbr:3.8,  roe:16.0, divYield:2.70, currentPrice:260, targetPrice:290, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"ECL",   name:"에콜랩",                sector:"Materials", per:35.0, pbr:7.0,  roe:18.0, divYield:1.10, currentPrice:230, targetPrice:255, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"NEM",   name:"뉴몬트",                sector:"Materials", per:20.0, pbr:1.8,  roe:9.0,  divYield:2.60, currentPrice:43,  targetPrice:52,  ebitdaGrowing:true, divGrowth:false },
+    { ticker:"NUE",   name:"뉴코어",                sector:"Materials", per:13.0, pbr:1.8,  roe:16.0, divYield:1.50, currentPrice:170, targetPrice:195, ebitdaGrowing:true, divGrowth:true  },
+
+    /* ===== Real Estate ===== */
+    { ticker:"PLD",   name:"프로로지스",            sector:"RealEstate", per:35.0, pbr:2.2,  roe:7.0,  divYield:3.20, currentPrice:115, targetPrice:130, ebitdaGrowing:true, divGrowth:true },
+    { ticker:"AMT",   name:"아메리칸타워",          sector:"RealEstate", per:40.0, pbr:23.0, roe:35.0, divYield:3.30, currentPrice:200, targetPrice:225, ebitdaGrowing:true, divGrowth:true },
+    { ticker:"EQIX",  name:"에퀴닉스",              sector:"RealEstate", per:60.0, pbr:6.0,  roe:9.0,  divYield:2.20, currentPrice:800, targetPrice:880, ebitdaGrowing:true, divGrowth:true },
+    { ticker:"CCI",   name:"크라운캐슬",            sector:"RealEstate", per:35.0, pbr:10.0, roe:20.0, divYield:5.80, currentPrice:108, targetPrice:125, ebitdaGrowing:false,divGrowth:false},
+    { ticker:"PSA",   name:"퍼블릭스토리지",        sector:"RealEstate", per:28.0, pbr:6.5,  roe:24.0, divYield:4.20, currentPrice:290, targetPrice:320, ebitdaGrowing:true, divGrowth:true },
+    { ticker:"O",     name:"리얼티인컴",            sector:"RealEstate", per:40.0, pbr:1.3,  roe:4.0,  divYield:5.70, currentPrice:55,  targetPrice:65,  ebitdaGrowing:true, divGrowth:true },
+
+    /* ===== ETFs ===== */
+    { ticker:"SPY",   name:"SPDR S&P 500 ETF",             sector:"ETF", per:24.0, pbr:4.5, roe:18.0, divYield:1.30, currentPrice:520, targetPrice:560, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"IVV",   name:"iShares Core S&P 500 ETF",     sector:"ETF", per:24.0, pbr:4.5, roe:18.0, divYield:1.35, currentPrice:520, targetPrice:560, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"VOO",   name:"Vanguard S&P 500 ETF",         sector:"ETF", per:24.0, pbr:4.5, roe:18.0, divYield:1.35, currentPrice:475, targetPrice:515, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"QQQ",   name:"Invesco QQQ (Nasdaq 100)",     sector:"ETF", per:30.0, pbr:7.5, roe:25.0, divYield:0.60, currentPrice:440, targetPrice:480, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"QQQM",  name:"Invesco NASDAQ 100 ETF",       sector:"ETF", per:30.0, pbr:7.5, roe:25.0, divYield:0.65, currentPrice:180, targetPrice:200, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"VTI",   name:"Vanguard Total Stock Market",  sector:"ETF", per:23.0, pbr:4.2, roe:17.0, divYield:1.40, currentPrice:260, targetPrice:285, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"DIA",   name:"SPDR Dow Jones Industrial",    sector:"ETF", per:22.0, pbr:4.8, roe:20.0, divYield:1.60, currentPrice:395, targetPrice:425, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"SCHD",  name:"Schwab U.S. Dividend Equity",  sector:"ETF", per:15.0, pbr:3.0, roe:25.0, divYield:3.50, currentPrice:80,  targetPrice:90,  ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"VYM",   name:"Vanguard High Dividend Yield", sector:"ETF", per:14.0, pbr:2.5, roe:17.0, divYield:3.00, currentPrice:120, targetPrice:132, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"SMH",   name:"VanEck Semiconductor ETF",     sector:"ETF", per:35.0, pbr:8.0, roe:30.0, divYield:0.40, currentPrice:240, targetPrice:275, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"SOXX",  name:"iShares Semiconductor ETF",    sector:"ETF", per:35.0, pbr:8.0, roe:28.0, divYield:0.80, currentPrice:230, targetPrice:260, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"XLK",   name:"Technology Select Sector",     sector:"ETF", per:32.0, pbr:9.5, roe:30.0, divYield:0.70, currentPrice:220, targetPrice:245, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"XLF",   name:"Financial Select Sector",      sector:"ETF", per:15.0, pbr:1.8, roe:12.0, divYield:1.70, currentPrice:45,  targetPrice:52,  ebitdaGrowing:true, divGrowth:false },
+    { ticker:"XLE",   name:"Energy Select Sector",         sector:"ETF", per:12.5, pbr:2.2, roe:18.0, divYield:3.40, currentPrice:95,  targetPrice:110, ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"XLV",   name:"Health Care Select Sector",    sector:"ETF", per:21.0, pbr:4.5, roe:18.0, divYield:1.60, currentPrice:145, targetPrice:160, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"XLY",   name:"Consumer Discretionary",       sector:"ETF", per:28.0, pbr:6.5, roe:22.0, divYield:0.80, currentPrice:195, targetPrice:215, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"XLP",   name:"Consumer Staples",             sector:"ETF", per:22.0, pbr:5.5, roe:25.0, divYield:2.60, currentPrice:80,  targetPrice:88,  ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"XLI",   name:"Industrial Select Sector",     sector:"ETF", per:22.0, pbr:4.8, roe:22.0, divYield:1.60, currentPrice:125, targetPrice:138, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"XLU",   name:"Utilities Select Sector",      sector:"ETF", per:19.0, pbr:2.1, roe:11.0, divYield:3.10, currentPrice:72,  targetPrice:80,  ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"XLB",   name:"Materials Select Sector",      sector:"ETF", per:21.0, pbr:3.2, roe:15.0, divYield:1.90, currentPrice:90,  targetPrice:100, ebitdaGrowing:true, divGrowth:false },
+    { ticker:"XLRE",  name:"Real Estate Select Sector",    sector:"ETF", per:32.0, pbr:2.6, roe:8.0,  divYield:3.50, currentPrice:40,  targetPrice:45,  ebitdaGrowing:true, divGrowth:true  },
+    { ticker:"XLC",   name:"Communication Services Sector",sector:"ETF", per:22.0, pbr:4.0, roe:20.0, divYield:0.80, currentPrice:85,  targetPrice:95,  ebitdaGrowing:true, divGrowth:false },
+
+    /* ===== Leveraged / Inverse ETFs (ETF 전용 스코어링 대상) ===== */
+    { ticker:"TQQQ",  name:"ProShares UltraPro QQQ (3x)",  sector:"ETF", per:0.0,  pbr:0.0, roe:0.0,  divYield:0.00, currentPrice:65,  targetPrice:75,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"SQQQ",  name:"ProShares UltraPro Short QQQ", sector:"ETF", per:0.0,  pbr:0.0, roe:0.0,  divYield:0.00, currentPrice:11,  targetPrice:11,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"UPRO",  name:"ProShares UltraPro S&P500 (3x)",sector:"ETF",per:0.0,  pbr:0.0, roe:0.0,  divYield:0.00, currentPrice:80,  targetPrice:92,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"SOXL",  name:"Direxion Semiconductor Bull 3x",sector:"ETF",per:0.0,  pbr:0.0, roe:0.0,  divYield:0.00, currentPrice:30,  targetPrice:40,  ebitdaGrowing:false, divGrowth:false },
+    { ticker:"TMF",   name:"Direxion 20+ Year Treasury 3x",sector:"ETF", per:0.0,  pbr:0.0, roe:0.0,  divYield:3.20, currentPrice:45,  targetPrice:50,  ebitdaGrowing:false, divGrowth:false }
+  ],
+
+  /* ETF 운용보수(Expense Ratio, %) — 공개 자료 기반 근사치 (실제값과 차이 가능) */
+  ETF_EXPENSE: {
+    SPY:0.0945, IVV:0.03, VOO:0.03, QQQ:0.20, QQQM:0.15, VTI:0.03,
+    DIA:0.16, SCHD:0.06, VYM:0.06, SMH:0.35, SOXX:0.35,
+    XLK:0.09, XLF:0.09, XLE:0.09, XLV:0.09, XLY:0.09, XLP:0.09,
+    XLI:0.09, XLU:0.09, XLB:0.09, XLRE:0.09, XLC:0.09,
+    TQQQ:0.86, SQQQ:0.88, UPRO:0.91, SOXL:0.75, TMF:1.05
+  },
+
+  /* ETF 최근 1년 MDD(%) — 근사 추정치 */
+  ETF_MDD: {
+    SPY:20, IVV:20, VOO:20, QQQ:28, QQQM:28, VTI:22,
+    DIA:18, SCHD:16, VYM:15, SMH:35, SOXX:35,
+    XLK:30, XLF:22, XLE:30, XLV:18, XLY:28, XLP:14,
+    XLI:22, XLU:16, XLB:22, XLRE:25, XLC:28,
+    TQQQ:70, SQQQ:60, UPRO:55, SOXL:75, TMF:45
+  },
+
+  /* ETF 일평균 거래대금 (단위: $M) — 근사 추정치 */
+  ETF_VOLUME: {
+    SPY:30000, IVV:2500, VOO:2800, QQQ:15000, QQQM:300, VTI:1200,
+    DIA:900, SCHD:500, VYM:200, SMH:1500, SOXX:400,
+    XLK:1500, XLF:1200, XLE:1400, XLV:800, XLY:700, XLP:500,
+    XLI:500, XLU:600, XLB:400, XLRE:350, XLC:400,
+    TQQQ:3500, SQQQ:3000, UPRO:200, SOXL:2000, TMF:250
+  },
+
+  /* RSI/52주 비율 정적 데이터 ─ 티커 기반 결정적 의사값. 실제 API 연동 전 플레이스홀더 */
+  _hash(str){
+    let h = 0;
+    for (let i=0; i<str.length; i++){ h = ((h<<5) - h) + str.charCodeAt(i); h |= 0; }
+    return Math.abs(h);
+  },
+
+  /* 개별 종목에 부족한 필드(rsi14, pct52wHigh, ETF 보조지표)를 결정적 추정값으로 채움 */
+  enrich(){
+    const db = this;
+    db.stocks.forEach(s => {
+      const h = db._hash(s.ticker);
+      // 52주 최고가 대비 현재가 비율: margin이 양수일수록(=저평가) 최고가 아래에 위치 경향
+      if (s.pct52wHigh === undefined) {
+        const marginHint = (s.targetPrice > 0 && s.currentPrice > 0)
+          ? (s.targetPrice / s.currentPrice - 1) : 0;
+        const base = 0.88 - Math.max(-0.2, Math.min(0.3, marginHint)) * 0.5;
+        const jitter = ((h % 17) - 8) / 100;  // -0.08 ~ +0.08
+        s.pct52wHigh = Math.max(0.40, Math.min(1.00, base + jitter));
+      }
+      // RSI(14): margin 양수(저평가) → RSI 낮은 경향, 음수(고평가) → RSI 높은 경향
+      if (s.rsi14 === undefined) {
+        const marginHint = (s.targetPrice > 0 && s.currentPrice > 0)
+          ? (s.targetPrice / s.currentPrice - 1) : 0;
+        const base = 50 - Math.max(-0.3, Math.min(0.3, marginHint)) * 40;
+        const jitter = (h % 21) - 10;  // -10 ~ +10
+        s.rsi14 = Math.max(5, Math.min(95, Math.round(base + jitter)));
+      }
+      // ETF 전용 보조지표
+      if (s.sector === "ETF") {
+        if (s.expenseRatio === undefined) s.expenseRatio = db.ETF_EXPENSE[s.ticker] ?? 0.30;
+        if (s.mdd1y === undefined)        s.mdd1y        = db.ETF_MDD[s.ticker]     ?? 25;
+        if (s.avgVolume === undefined)    s.avgVolume    = db.ETF_VOLUME[s.ticker]  ?? 100;
+      }
+    });
+  }
+};
+
+/* =========================================================
+ * 2) UTILITIES
+ * ========================================================= */
+const Utils = {
+  clamp(v,min,max){ return Math.max(min, Math.min(max, v)); },
+  normalize(v,min,max){ if(max===min) return 0; return Utils.clamp((v-min)/(max-min),0,1); },
+  fmtPct(v,d=1){ return `${(v*100).toFixed(d)}%`; },
+  fmtNum(v,d=1){ return Number(v).toFixed(d); },
+  // PER/PBR 값이 0 이하(또는 NaN)이면 N/A 취급
+  isValidRatio(v){ return typeof v === "number" && isFinite(v) && v > 0; },
+  // Yahoo Finance 티커 포맷(점 → 하이픈). 예: BRK.B → BRK-B
+  yahooSymbol(ticker){ return String(ticker).replace(/\./g, "-"); },
+  // ROE 60% 초과는 "60%+" 표시 (자본잠식/자사주매입 왜곡 방지)
+  fmtRoe(v){
+    if (v > 60) return "60%+";
+    if (v < -60) return "-60%+";
+    return `${v.toFixed(1)}%`;
+  },
+  // 가중치 합계 기준으로 동적 정규화(합이 100이 아니어도 0~100 유지)
+  weightsSum(w){ return (w.margin||0)+(w.roe||0)+(w.ebitda||0)+(w.divYield||0); },
+  toast(msg, ms=2200){
+    const el = document.getElementById("toast");
+    el.textContent = msg;
+    el.classList.add("visible");
+    clearTimeout(Utils._toastT);
+    Utils._toastT = setTimeout(()=> el.classList.remove("visible"), ms);
+  },
+  download(filename, data, mime="text/plain;charset=utf-8"){
+    const blob = new Blob([data], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    setTimeout(()=> { document.body.removeChild(a); URL.revokeObjectURL(url); }, 100);
+  }
+};
+
+/* =========================================================
+ * 3) SCORING
+ * ========================================================= */
+const Scorer = {
+  compute(stock) {
+    // ETF는 별도 스코어링 로직 사용 (PER/ROE 대신 Expense Ratio/MDD/거래대금 기반)
+    if (stock.sector === "ETF") return Scorer.computeETF(stock);
+
+    const marginRatio = stock.currentPrice > 0
+      ? (stock.targetPrice / stock.currentPrice - 1)
+      : 0;
+
+    const nMargin   = Utils.normalize(marginRatio, NORM.margin.min, NORM.margin.max);
+    const nRoe      = Utils.normalize(stock.roe, NORM.roe.min, NORM.roe.max);
+    const nEbitda   = stock.ebitdaGrowing ? 1 : 0;
+    const nDivYield = Utils.normalize(stock.divYield, NORM.divYield.min, NORM.divYield.max);
+
+    const sum = Utils.weightsSum(WEIGHT);
+    // 가중치 합이 0이면 모든 항목 0 처리
+    const scale = sum > 0 ? (100 / sum) : 0;
+
+    const sMargin   = nMargin   * WEIGHT.margin   * scale;
+    const sRoe      = nRoe      * WEIGHT.roe      * scale;
+    const sEbitda   = nEbitda   * WEIGHT.ebitda   * scale;
+    const sDivYield = nDivYield * WEIGHT.divYield * scale;
+    const total = sMargin + sRoe + sEbitda + sDivYield;
+
+    const rateMargin = marginRatio>=0.20?"최고":marginRatio>=0.10?"우수":marginRatio>=0.05?"양호":marginRatio>=0?"보통":"주의";
+    const rateRoe    = stock.roe>=40?"최고":stock.roe>=20?"우수":stock.roe>=10?"양호":stock.roe>=0?"보통":"적자";
+    const rateDiv    = stock.divYield>=4?"최고":stock.divYield>=2?"우수":stock.divYield>=1?"양호":stock.divYield>0?"보통":"없음";
+
+    return {
+      isETF: false,
+      totalScore: Math.round(total*10)/10,
+      marginRatio,
+      parts: {
+        margin:   { score:sMargin,   label:`🎯 안전 마진: ${marginRatio>=0?"+":""}${(marginRatio*100).toFixed(1)}% (${rateMargin})` },
+        roe:      { score:sRoe,      label:`💰 수익성: ROE ${Utils.fmtRoe(stock.roe)} (${rateRoe})` },
+        ebitda:   { score:sEbitda,   label: stock.ebitdaGrowing?"📈 현금 흐름: EBITDA 성장 (안정)":"📉 현금 흐름: EBITDA 정체 (주의)" },
+        divYield: { score:sDivYield, label:`💵 주주 환원: 배당 ${stock.divYield.toFixed(2)}% (${rateDiv})` }
+      }
+    };
+  },
+
+  computeETF(stock) {
+    const marginRatio = stock.currentPrice > 0
+      ? (stock.targetPrice / stock.currentPrice - 1)
+      : 0;
+
+    // 정규화: expenseRatio/mdd1y는 낮을수록 좋음 → 1 - normalize
+    const nMargin   = Utils.normalize(marginRatio,        NORM_ETF.margin.min,       NORM_ETF.margin.max);
+    const nExpense  = 1 - Utils.normalize(stock.expenseRatio ?? 0.30, NORM_ETF.expenseRatio.min, NORM_ETF.expenseRatio.max);
+    const nMdd      = 1 - Utils.normalize(stock.mdd1y ?? 25,           NORM_ETF.mdd1y.min,        NORM_ETF.mdd1y.max);
+    const nVolume   = Utils.normalize(stock.avgVolume ?? 100,          NORM_ETF.avgVolume.min,    NORM_ETF.avgVolume.max);
+
+    const W = DEFAULT_WEIGHTS_ETF;
+    const sum = (W.margin||0)+(W.expense||0)+(W.mdd||0)+(W.volume||0);
+    const scale = sum > 0 ? (100 / sum) : 0;
+
+    const sMargin  = nMargin  * W.margin  * scale;
+    const sExpense = nExpense * W.expense * scale;
+    const sMdd     = nMdd     * W.mdd     * scale;
+    const sVolume  = nVolume  * W.volume  * scale;
+    const total    = sMargin + sExpense + sMdd + sVolume;
+
+    const rateExp = stock.expenseRatio<=0.10?"최고":stock.expenseRatio<=0.25?"우수":stock.expenseRatio<=0.50?"양호":stock.expenseRatio<=0.75?"보통":"높음";
+    const rateMdd = stock.mdd1y<=20?"최고":stock.mdd1y<=30?"우수":stock.mdd1y<=40?"양호":stock.mdd1y<=55?"보통":"위험";
+    const volTxt  = stock.avgVolume>=1000 ? `$${(stock.avgVolume/1000).toFixed(1)}B` : `$${stock.avgVolume}M`;
+    const rateVol = stock.avgVolume>=1000?"최고":stock.avgVolume>=500?"우수":stock.avgVolume>=200?"양호":stock.avgVolume>=50?"보통":"낮음";
+
+    return {
+      isETF: true,
+      totalScore: Math.round(total*10)/10,
+      marginRatio,
+      parts: {
+        margin:  { score:sMargin,  label:`🎯 목표 대비: ${marginRatio>=0?"+":""}${(marginRatio*100).toFixed(1)}%` },
+        expense: { score:sExpense, label:`💸 운용 보수: ${(stock.expenseRatio ?? 0).toFixed(2)}% (${rateExp})` },
+        mdd:     { score:sMdd,     label:`📉 1년 MDD: -${stock.mdd1y ?? 0}% (${rateMdd})` },
+        volume:  { score:sVolume,  label:`💰 일평균 거래대금: ${volTxt} (${rateVol})` }
+      }
+    };
+  },
+
+  signal(stock, score) {
+    if (score.isETF) {
+      // ETF 신호: 유동성+비용+낙폭 기반 종합점수 중심
+      if (score.totalScore>=70) return { key:"buy",  text:"우수 ETF" };
+      if (score.totalScore>=50) return { key:"hold", text:"검토 대상" };
+      return { key:"sell", text:"주의 (비용↑/유동성↓)" };
+    }
+    if (score.totalScore>=70 && score.marginRatio>=0.10) return { key:"buy",  text:"강력 매수" };
+    if (score.totalScore>=55)                             return { key:"buy",  text:"매수 고려" };
+    if (score.totalScore>=35)                             return { key:"hold", text:"관망" };
+    return { key:"sell", text:"매도/회피" };
+  }
+};
+
+/* =========================================================
+ * 4) FAVORITES & COMPARE & THEME & WEIGHTS
+ * ========================================================= */
+const Favorites = {
+  load(){ try { return new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]")); } catch { return new Set(); } },
+  save(set){ try { localStorage.setItem(FAVORITES_KEY, JSON.stringify([...set])); } catch {} },
+  toggle(t){ const s=Favorites.load(); s.has(t)?s.delete(t):s.add(t); Favorites.save(s); return s; }
+};
+
+const Compare = {
+  _set: new Set(),
+  has(t){ return this._set.has(t); },
+  size(){ return this._set.size; },
+  list(){ return [...this._set]; },
+  toggle(t){
+    if (this._set.has(t)) { this._set.delete(t); return true; }
+    if (this._set.size >= COMPARE_MAX) { Utils.toast(`비교는 최대 ${COMPARE_MAX}개까지`); return false; }
+    this._set.add(t); return true;
+  },
+  clear(){ this._set.clear(); }
+};
+
+const Theme = {
+  get(){ return document.documentElement.getAttribute("data-theme") || "light"; },
+  set(t){
+    document.documentElement.setAttribute("data-theme", t);
+    try { localStorage.setItem(THEME_KEY, t); } catch {}
+    const btn = document.getElementById("theme-toggle");
+    if (btn) btn.textContent = t === "dark" ? "☀️" : "🌙";
+  },
+  init(){
+    let saved = null;
+    try { saved = localStorage.getItem(THEME_KEY); } catch {}
+    if (!saved && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) saved = "dark";
+    Theme.set(saved || "light");
+  },
+  toggle(){ Theme.set(Theme.get() === "dark" ? "light" : "dark"); }
+};
+
+const Weights = {
+  load(){
+    try {
+      const raw = localStorage.getItem(WEIGHTS_KEY);
+      if (!raw) return { ...DEFAULT_WEIGHTS };
+      const w = JSON.parse(raw);
+      return {
+        margin:   Number(w.margin   ?? DEFAULT_WEIGHTS.margin),
+        roe:      Number(w.roe      ?? DEFAULT_WEIGHTS.roe),
+        ebitda:   Number(w.ebitda   ?? DEFAULT_WEIGHTS.ebitda),
+        divYield: Number(w.divYield ?? DEFAULT_WEIGHTS.divYield)
+      };
+    } catch { return { ...DEFAULT_WEIGHTS }; }
+  },
+  save(w){ try { localStorage.setItem(WEIGHTS_KEY, JSON.stringify(w)); } catch {} },
+  reset(){ try { localStorage.removeItem(WEIGHTS_KEY); } catch {} }
+};
+
+/* =========================================================
+ * 5) SCREENER (filter + sort)
+ * ========================================================= */
+const Screener = {
+  IDS: {
+    search:"f-search",
+    perMin:"f-per-min", per:"f-per",
+    pbrMin:"f-pbr-min", pbr:"f-pbr",
+    roe:"f-roe", div:"f-div",
+    score:"f-score", sector:"f-sector",
+    ebitda:"f-ebitda", divGrowth:"f-div-growth",
+    favOnly:"f-favorites-only", sort:"sort-select",
+    excludeLoss:"f-exclude-loss",
+    rsiMin:"f-rsi-min", rsiMax:"f-rsi-max",
+    max52w:"f-max-52w"
+  },
+  getNum(id, defaultVal){
+    const el=document.getElementById(id); if(!el) return defaultVal;
+    const raw=(el.value||"").trim(); if(raw==="") return defaultVal;
+    const v=parseFloat(raw); return isNaN(v)?defaultVal:v;
+  },
+  getBool(id){ const el=document.getElementById(id); return el?el.checked:false; },
+  getStr(id, defaultVal=""){ const el=document.getElementById(id); return el?el.value:defaultVal; },
+
+  read(){
+    const I=this.IDS;
+    // 입력 유무 판단을 위해 원시 값도 함께 조회 (minPer 등이 실제 설정되었는지 체크)
+    const perMinRaw = (document.getElementById(I.perMin)||{}).value;
+    const pbrMinRaw = (document.getElementById(I.pbrMin)||{}).value;
+    return {
+      query:       this.getStr(I.search,"").trim().toLowerCase(),
+      minPer:      this.getNum(I.perMin, -Infinity),
+      maxPer:      this.getNum(I.per, Infinity),
+      minPbr:      this.getNum(I.pbrMin, -Infinity),
+      maxPbr:      this.getNum(I.pbr, Infinity),
+      minPerSet:   typeof perMinRaw === "string" && perMinRaw.trim() !== "",
+      minPbrSet:   typeof pbrMinRaw === "string" && pbrMinRaw.trim() !== "",
+      minRoe:      this.getNum(I.roe, -Infinity),
+      minDiv:      this.getNum(I.div, -Infinity),
+      minScore:    this.getNum(I.score, 0),
+      sector:      this.getStr(I.sector, "ALL"),
+      ebitda:      this.getBool(I.ebitda),
+      divGrowth:   this.getBool(I.divGrowth),
+      favOnly:     this.getBool(I.favOnly),
+      excludeLoss: this.getBool(I.excludeLoss),
+      rsiMin:      this.getNum(I.rsiMin, -Infinity),
+      rsiMax:      this.getNum(I.rsiMax, Infinity),
+      max52w:      this.getNum(I.max52w, Infinity),  // 예: 95 = 52주 최고가 대비 95% 이하만
+      sort:        this.getStr(I.sort, "score")
+    };
+  },
+
+  filter(stocks, f, favs){
+    return stocks.filter(s => {
+      const isETF = s.sector === "ETF";
+
+      // 텍스트 검색: 티커 / 회사명 / 섹터 매칭
+      if (f.query) {
+        const hay = `${s.ticker} ${s.name} ${s.sector}`.toLowerCase();
+        if (!hay.includes(f.query)) return false;
+      }
+
+      // 적자 기업 제외 (PER<=0 또는 ROE<0). ETF는 스코어링 대상 아니므로 제외하지 않음
+      if (f.excludeLoss && !isETF) {
+        if (!Utils.isValidRatio(s.per) || s.roe < 0) return false;
+      }
+
+      // PER: 유효한 값(>0)만 상하한 체크
+      if (Utils.isValidRatio(s.per)) {
+        if (s.per > f.maxPer) return false;
+        if (s.per < f.minPer) return false;
+      } else {
+        // PER N/A(적자 포함) 종목 처리: "최소 PER"이 명시적으로 입력된 경우 일관되게 제외
+        // (이전 로직: minPer>0일 때만 제외 → minPer=0 입력 시 적자 통과되는 엣지케이스 수정)
+        // ETF는 PER 지표를 쓰지 않으므로 최소 PER 필터의 영향을 받지 않음
+        if (!isETF && f.minPerSet) return false;
+      }
+
+      // PBR: 동일 로직 적용
+      if (Utils.isValidRatio(s.pbr)) {
+        if (s.pbr > f.maxPbr) return false;
+        if (s.pbr < f.minPbr) return false;
+      } else {
+        if (!isETF && f.minPbrSet) return false;
+      }
+
+      if (s.roe < f.minRoe) return false;
+      if (s.divYield < f.minDiv) return false;
+      if (f.sector !== "ALL" && s.sector !== f.sector) return false;
+      if (f.ebitda && !s.ebitdaGrowing) return false;
+      if (f.divGrowth && !s.divGrowth) return false;
+      if (f.favOnly && !favs.has(s.ticker)) return false;
+
+      // RSI 범위 (데이터 있을 때만 체크)
+      if (typeof s.rsi14 === "number") {
+        if (s.rsi14 < f.rsiMin) return false;
+        if (s.rsi14 > f.rsiMax) return false;
+      }
+
+      // 52주 최고가 대비 비율 (%). 입력값이 "95"면 0.95 이하만 통과
+      if (typeof s.pct52wHigh === "number" && f.max52w !== Infinity) {
+        const thresh = f.max52w / 100;
+        if (s.pct52wHigh > thresh) return false;
+      }
+      return true;
+    });
+  },
+
+  sort(list, key){
+    const by = {
+      score:    (a,b) => b._score.totalScore - a._score.totalScore,
+      margin:   (a,b) => b._score.marginRatio - a._score.marginRatio,
+      roe:      (a,b) => b.roe - a.roe,
+      dividend: (a,b) => b.divYield - a.divYield,
+      ticker:   (a,b) => a.ticker.localeCompare(b.ticker),
+      signal:   (a,b) => {
+        // SIGNAL_RANK는 파일 상단에 선언된 동결 상수 — 매 비교마다 재할당 방지
+        const ra=SIGNAL_RANK[a._signal.key], rb=SIGNAL_RANK[b._signal.key];
+        if (ra!==rb) return ra-rb;
+        return b._score.totalScore - a._score.totalScore;
+      }
+    };
+    return list.sort(by[key] || by.score);
+  }
+};
+
+/* =========================================================
+ * 6) RENDERER
+ * ========================================================= */
+const Renderer = {
+  metricHTML(label, value, isNA=false){
+    const cls = isNA ? "metric-value na" : "metric-value";
+    const disp = isNA ? "N/A" : value;
+    return `<div class="metric"><div class="metric-label">${label}</div><div class="${cls}">${disp}</div></div>`;
+  },
+
+  cardHTML(stock, favs) {
+    const score  = stock._score;
+    const signal = stock._signal;
+    const isFav  = favs.has(stock.ticker);
+    const isCmp  = Compare.has(stock.ticker);
+    const isETF  = stock.sector === "ETF";
+    const sectorClass = isETF ? "sector-tag etf" : "sector-tag";
+    const marginPct = (score.marginRatio*100).toFixed(1);
+    const marginCls = score.marginRatio>=0 ? "margin-positive" : "margin-negative";
+    const yahooUrl  = `https://finance.yahoo.com/quote/${encodeURIComponent(Utils.yahooSymbol(stock.ticker))}`;
+    const scoreBarWidth = Math.max(0, Math.min(100, score.totalScore));
+
+    const perNA = !Utils.isValidRatio(stock.per);
+    const pbrNA = !Utils.isValidRatio(stock.pbr);
+    const roeDisp = Utils.fmtRoe(stock.roe);
+    const roeTitle = (stock.roe>60 || stock.roe<-60) ? `실제 ROE: ${stock.roe.toFixed(1)}% (왜곡 가능성: 자본잠식/자사주매입)` : "";
+
+    // 기술적 지표 (모든 종목 공통)
+    const rsi = typeof stock.rsi14 === "number" ? stock.rsi14 : null;
+    const pct52 = typeof stock.pct52wHigh === "number" ? Math.round(stock.pct52wHigh*100) : null;
+    const rsiTag = rsi===null ? "" : (rsi>=70 ? "과열" : rsi<=30 ? "과매도" : "중립");
+
+    // ETF는 PER/PBR/ROE/배당 대신 Expense/MDD/Volume/배당 메트릭 표시
+    const volTxt = isETF && typeof stock.avgVolume === "number"
+      ? (stock.avgVolume>=1000 ? `$${(stock.avgVolume/1000).toFixed(1)}B` : `$${stock.avgVolume}M`)
+      : "";
+
+    const metricsHTML = isETF ? `
+          <div class="metric"><div class="metric-label">운용보수</div><div class="metric-value">${(stock.expenseRatio ?? 0).toFixed(2)}%</div></div>
+          <div class="metric"><div class="metric-label">1년 MDD</div><div class="metric-value">-${stock.mdd1y ?? 0}%</div></div>
+          <div class="metric"><div class="metric-label">거래대금</div><div class="metric-value">${volTxt}</div></div>
+          <div class="metric"><div class="metric-label">배당</div><div class="metric-value">${stock.divYield.toFixed(2)}%</div></div>
+    ` : `
+          ${Renderer.metricHTML("PER", perNA ? "" : stock.per.toFixed(1), perNA)}
+          ${Renderer.metricHTML("PBR", pbrNA ? "" : stock.pbr.toFixed(1), pbrNA)}
+          <div class="metric">
+            <div class="metric-label">ROE</div>
+            <div class="metric-value" ${roeTitle?`title="${roeTitle}"`:""}>${roeDisp}</div>
+          </div>
+          <div class="metric"><div class="metric-label">배당</div><div class="metric-value">${stock.divYield.toFixed(2)}%</div></div>
+    `;
+
+    const techHTML = (rsi!==null || pct52!==null) ? `
+        <div class="metrics" style="margin-top:10px;">
+          ${rsi!==null
+            ? `<div class="metric"><div class="metric-label">RSI(14) ${rsiTag?`· ${rsiTag}`:""}</div><div class="metric-value">${rsi}</div></div>`
+            : ""}
+          ${pct52!==null
+            ? `<div class="metric"><div class="metric-label">52주 최고가 대비</div><div class="metric-value">${pct52}%</div></div>`
+            : ""}
+        </div>
+    ` : "";
+
+    const breakdownItems = Object.values(score.parts).map(p => `
+      <div class="breakdown-item">
+        <span>${p.label}</span>
+        <span class="pts">+${p.score.toFixed(1)}pt</span>
+      </div>
+    `).join("");
+
+    return `
+      <article class="card ${isCmp?"selected":""}"
+               data-ticker="${stock.ticker}"
+               data-url="${yahooUrl}"
+               title="클릭하여 Yahoo Finance에서 ${stock.ticker} 차트 열기">
+        <div class="card-head">
+          <div class="card-title">
+            <div class="card-ticker">${stock.ticker}</div>
+            <div class="card-name">${stock.name}</div>
+          </div>
+          <div class="card-actions">
+            <span class="${sectorClass}">${stock.sector}</span>
+            ${stock.divGrowth ? '<span class="div-growth-pill">배당 5년↑</span>' : ""}
+            <div style="display:flex; gap:6px;">
+              <button class="icon-ctrl compare-btn ${isCmp?"active":""}" data-cmp="${stock.ticker}" aria-label="비교에 추가" title="비교에 추가">⇌</button>
+              <button class="icon-ctrl favorite-btn ${isFav?"active":""}" data-fav="${stock.ticker}" aria-label="관심 종목">${isFav?"★":"☆"}</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="score-box">
+          <div>
+            <div class="score-label">종합 점수</div>
+            <div class="score-value">${score.totalScore.toFixed(1)}<span class="score-suffix">/100</span></div>
+          </div>
+          <div class="score-bar"><div class="score-bar-fill" style="width:${scoreBarWidth}%"></div></div>
+        </div>
+
+        <div class="metrics">
+          ${metricsHTML}
+        </div>
+        ${techHTML}
+
+        <div class="margin-box">
+          <div>
+            <div class="margin-label">현재 / 목표</div>
+            <div style="font-size:13px;font-weight:700;margin-top:2px;">$${stock.currentPrice} → $${stock.targetPrice}</div>
+          </div>
+          <div class="${marginCls} margin-value">${score.marginRatio>=0?"+":""}${marginPct}%</div>
+        </div>
+
+        <div class="signal signal-${signal.key}">${signal.text}</div>
+
+        <div class="breakdown">
+          <div class="breakdown-title">📊 산정 근거 (가중치 기반)</div>
+          <div class="breakdown-list">${breakdownItems}</div>
+        </div>
+      </article>
+    `;
+  },
+
+  render(list, favs){
+    const root = document.getElementById("results");
+    const count = document.getElementById("count");
+    count.textContent = `${list.length}개 종목`;
+    if (!list.length) {
+      root.innerHTML = `<div class="empty">조건에 맞는 종목이 없습니다.<br>필터를 완화해 보세요.</div>`;
+      return;
+    }
+    root.innerHTML = list.map(s => Renderer.cardHTML(s, favs)).join("");
+  },
+
+  renderCompareBar(){
+    const bar = document.getElementById("compare-bar");
+    const chips = document.getElementById("compare-chips");
+    const n = Compare.size();
+    if (n === 0) { bar.classList.remove("visible"); return; }
+    bar.classList.add("visible");
+    chips.innerHTML = Compare.list().map(t => `
+      <span class="compare-chip">${t}<button data-cmp-rm="${t}" aria-label="제거">✕</button></span>
+    `).join("");
+  },
+
+  compareTable(){
+    const rows = Compare.list().map(t => Database.stocks.find(s => s.ticker === t)).filter(Boolean);
+    if (rows.length === 0) return `<div class="empty">비교할 종목이 없습니다.</div>`;
+
+    // 각 지표별 베스트(행 전체) 판정을 위한 값 수집
+    const metrics = [
+      { key:"totalScore", label:"종합 점수", get:s=>s._score.totalScore,  best:"max", fmt:v=>v.toFixed(1)+" / 100" },
+      { key:"marginRatio",label:"안전 마진", get:s=>s._score.marginRatio, best:"max", fmt:v=>(v>=0?"+":"")+(v*100).toFixed(1)+"%" },
+      { key:"per",        label:"PER",      get:s=>s.per,                 best:"min", fmt:v=>Utils.isValidRatio(v)?v.toFixed(1):"N/A", valid:v=>Utils.isValidRatio(v) },
+      { key:"pbr",        label:"PBR",      get:s=>s.pbr,                 best:"min", fmt:v=>Utils.isValidRatio(v)?v.toFixed(1):"N/A", valid:v=>Utils.isValidRatio(v) },
+      { key:"roe",        label:"ROE",      get:s=>s.roe,                 best:"max", fmt:v=>Utils.fmtRoe(v) },
+      { key:"divYield",   label:"배당수익률",get:s=>s.divYield,            best:"max", fmt:v=>v.toFixed(2)+"%" },
+      { key:"currentPrice",label:"현재가",   get:s=>s.currentPrice,        best:null,  fmt:v=>"$"+v },
+      { key:"targetPrice",label:"목표가",    get:s=>s.targetPrice,         best:null,  fmt:v=>"$"+v },
+      { key:"sector",     label:"섹터",      get:s=>s.sector,              best:null,  fmt:v=>v },
+      { key:"signal",     label:"신호",      get:s=>s._signal.text,        best:null,  fmt:v=>v }
+    ];
+
+    // 헤더: 지표 | 각 종목
+    let html = `<table class="compare-table"><thead><tr><th>지표</th>`;
+    html += rows.map(s => `<th>${s.ticker}<div style="font-size:11px; color:var(--muted); font-weight:500;">${s.name}</div></th>`).join("");
+    html += `</tr></thead><tbody>`;
+
+    for (const m of metrics) {
+      html += `<tr><td><strong>${m.label}</strong></td>`;
+      let bestIdx = -1;
+      if (m.best) {
+        const vals = rows.map(s => {
+          const v = m.get(s);
+          if (m.valid && !m.valid(v)) return null;
+          return typeof v === "number" ? v : null;
+        });
+        const filtered = vals.map((v,i)=>({v,i})).filter(x=>x.v!==null);
+        if (filtered.length) {
+          bestIdx = m.best==="max"
+            ? filtered.reduce((a,b)=>b.v>a.v?b:a).i
+            : filtered.reduce((a,b)=>b.v<a.v?b:a).i;
+        }
+      }
+      for (let i=0;i<rows.length;i++){
+        const v = m.get(rows[i]);
+        const cellCls = (i===bestIdx?" class=\"num best-cell\"":" class=\"num\"");
+        const style = (i===bestIdx) ? ' style="color:var(--success); font-weight:800;"' : "";
+        html += `<td${cellCls}${style}>${m.fmt(v)}</td>`;
+      }
+      html += `</tr>`;
+    }
+    html += `</tbody></table>`;
+    html += `<div style="margin-top:10px; font-size:11px; color:var(--muted);">※ 초록색은 해당 지표 1위</div>`;
+    return html;
+  }
+};
+
+/* =========================================================
+ * 7) CSV EXPORT
+ * ========================================================= */
+const Csv = {
+  escape(v){
+    if (v === null || v === undefined) return "";
+    const s = String(v);
+    if (/[",\n\r]/.test(s)) return `"${s.replace(/"/g,'""')}"`;
+    return s;
+  },
+  build(list){
+    const headers = [
+      "티커","회사명","섹터","PER","PBR","ROE(%)","배당수익률(%)",
+      "현재가","목표가","안전마진(%)","종합점수","신호","EBITDA성장","배당5년성장",
+      "RSI(14)","52주고가대비(%)","운용보수(%)","1년MDD(%)","거래대금($M)"
+    ];
+    const rows = list.map(s => [
+      s.ticker, s.name, s.sector,
+      Utils.isValidRatio(s.per) ? s.per.toFixed(2) : "N/A",
+      Utils.isValidRatio(s.pbr) ? s.pbr.toFixed(2) : "N/A",
+      s.roe.toFixed(1),
+      s.divYield.toFixed(2),
+      s.currentPrice, s.targetPrice,
+      (s._score.marginRatio*100).toFixed(2),
+      s._score.totalScore.toFixed(1),
+      s._signal.text,
+      s.ebitdaGrowing ? "예" : "아니오",
+      s.divGrowth ? "예" : "아니오",
+      typeof s.rsi14 === "number" ? s.rsi14 : "",
+      typeof s.pct52wHigh === "number" ? (s.pct52wHigh*100).toFixed(1) : "",
+      typeof s.expenseRatio === "number" ? s.expenseRatio.toFixed(2) : "",
+      typeof s.mdd1y === "number" ? s.mdd1y : "",
+      typeof s.avgVolume === "number" ? s.avgVolume : ""
+    ]);
+    const lines = [headers, ...rows].map(r => r.map(Csv.escape).join(","));
+    // BOM + CRLF (한글 엑셀 호환)
+    return "\uFEFF" + lines.join("\r\n");
+  }
+};
+
+/* =========================================================
+ * 8) APP
+ * ========================================================= */
+const App = {
+  init(){
+    Theme.init();
+    WEIGHT = Weights.load();
+    Database.enrich();  // RSI/52주/ETF 보조지표 defaults 주입
+    App.syncWeightUI();
+    App.recomputeAll();
+    App.bindEvents();
+    App.refresh();
+  },
+
+  recomputeAll(){
+    Database.stocks.forEach(s => {
+      s._score  = Scorer.compute(s);
+      s._signal = Scorer.signal(s, s._score);
+    });
+  },
+
+  syncWeightUI(){
+    ["margin","roe","ebitda","div"].forEach((k,i) => {
+      const keys = ["margin","roe","ebitda","divYield"];
+      const range = document.getElementById(`w-${k}`);
+      const label = document.getElementById(`w-${k}-val`);
+      if (range) range.value = WEIGHT[keys[i]];
+      if (label) label.textContent = WEIGHT[keys[i]];
+    });
+    App.updateWeightsNote();
+  },
+
+  updateWeightsNote(){
+    const sum = Utils.weightsSum(WEIGHT);
+    const sumEl = document.getElementById("w-sum");
+    if (sumEl) sumEl.textContent = sum;
+    const note = document.getElementById("weights-note");
+    if (note) note.textContent = `가중치: 안전마진 ${WEIGHT.margin} · ROE ${WEIGHT.roe} · EBITDA ${WEIGHT.ebitda} · 배당 ${WEIGHT.divYield}`;
+  },
+
+  bindEvents(){
+    // 필터 관련 input/select
+    const filterIds = ["f-search","f-per-min","f-per","f-pbr-min","f-pbr","f-roe","f-div","f-score",
+                       "f-sector","f-ebitda","f-div-growth","f-favorites-only","sort-select",
+                       "f-exclude-loss","f-rsi-min","f-rsi-max","f-max-52w"];
+    filterIds.forEach(id => {
+      const el = document.getElementById(id); if (!el) return;
+      const evt = (el.type === "checkbox" || el.tagName === "SELECT") ? "change" : "input";
+      el.addEventListener(evt, App.refresh);
+    });
+
+    // 검색 지우기
+    const searchInput = document.getElementById("f-search");
+    const searchClear = document.getElementById("search-clear");
+    const syncClear = () => searchClear.classList.toggle("visible", !!searchInput.value);
+    searchInput.addEventListener("input", syncClear);
+    searchClear.addEventListener("click", () => {
+      searchInput.value = ""; syncClear(); App.refresh();
+      searchInput.focus();
+    });
+
+    // 가중치 슬라이더
+    [["w-margin","margin"],["w-roe","roe"],["w-ebitda","ebitda"],["w-div","divYield"]].forEach(([id,key]) => {
+      const el = document.getElementById(id); if (!el) return;
+      el.addEventListener("input", () => {
+        WEIGHT[key] = Number(el.value);
+        document.getElementById(`${id}-val`).textContent = el.value;
+        App.updateWeightsNote();
+        Weights.save(WEIGHT);
+        App.recomputeAll();
+        App.refresh();
+      });
+    });
+    document.getElementById("weights-reset").addEventListener("click", () => {
+      WEIGHT = { ...DEFAULT_WEIGHTS };
+      Weights.reset();
+      App.syncWeightUI();
+      App.recomputeAll();
+      App.refresh();
+      Utils.toast("가중치를 기본값으로 복원했습니다");
+    });
+
+    // 카드 클릭 위임 (관심/비교/카드 이동)
+    document.getElementById("results").addEventListener("click", (e) => {
+      const favBtn = e.target.closest("[data-fav]");
+      if (favBtn) {
+        e.stopPropagation();
+        Favorites.toggle(favBtn.dataset.fav);
+        App.refresh();
+        return;
+      }
+      const cmpBtn = e.target.closest("[data-cmp]");
+      if (cmpBtn) {
+        e.stopPropagation();
+        Compare.toggle(cmpBtn.dataset.cmp);
+        App.refresh();
+        return;
+      }
+      const card = e.target.closest(".card");
+      if (card && card.dataset.url) {
+        window.open(card.dataset.url, "_blank", "noopener,noreferrer");
+      }
+    });
+
+    // 테마 토글
+    document.getElementById("theme-toggle").addEventListener("click", Theme.toggle);
+
+    // 비교 바 컨트롤
+    document.getElementById("compare-clear").addEventListener("click", () => {
+      Compare.clear(); App.refresh();
+    });
+    document.getElementById("compare-open").addEventListener("click", App.openCompare);
+    document.getElementById("compare-chips").addEventListener("click", (e) => {
+      const rm = e.target.closest("[data-cmp-rm]");
+      if (rm) { Compare.toggle(rm.dataset.cmpRm); App.refresh(); }
+    });
+
+    // 모달 닫기
+    document.getElementById("compare-close").addEventListener("click", App.closeCompare);
+    document.getElementById("compare-modal").addEventListener("click", (e) => {
+      if (e.target.id === "compare-modal") App.closeCompare();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") App.closeCompare();
+    });
+
+    // 티커 복사 (쉼표 구분) — 구글 시트 GOOGLEFINANCE 함수 연동용
+    document.getElementById("copy-tickers").addEventListener("click", async () => {
+      const list = App.currentList();
+      if (!list.length) { Utils.toast("복사할 종목이 없습니다"); return; }
+      const text = list.map(s => s.ticker).join(", ");
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          // 폴백: execCommand (구형 브라우저/비보안 컨텍스트)
+          const ta = document.createElement("textarea");
+          ta.value = text; ta.style.position="fixed"; ta.style.opacity="0";
+          document.body.appendChild(ta); ta.select();
+          document.execCommand("copy");
+          document.body.removeChild(ta);
+        }
+        Utils.toast(`${list.length}개 티커를 복사했습니다`);
+      } catch (err) {
+        Utils.toast("클립보드 복사 실패 — 브라우저 권한을 확인하세요");
+      }
+    });
+
+    // CSV 내보내기
+    document.getElementById("export-csv").addEventListener("click", () => {
+      const list = App.currentList();
+      if (!list.length) { Utils.toast("내보낼 종목이 없습니다"); return; }
+      const csv = Csv.build(list);
+      Utils.download(`stocks_${DATA_DATE}.csv`, csv, "text/csv;charset=utf-8");
+      Utils.toast(`${list.length}개 종목을 CSV로 저장했습니다`);
+    });
+
+    // 관심종목 Export
+    document.getElementById("export-favs").addEventListener("click", () => {
+      const favs = [...Favorites.load()];
+      if (!favs.length) { Utils.toast("관심 종목이 없습니다"); return; }
+      const json = JSON.stringify({ exportedAt:new Date().toISOString(), favorites:favs }, null, 2);
+      Utils.download(`favorites_${DATA_DATE}.json`, json, "application/json;charset=utf-8");
+      Utils.toast(`${favs.length}개 관심 종목을 내보냈습니다`);
+    });
+
+    // 관심종목 Import
+    const importBtn = document.getElementById("import-favs");
+    const importFile = document.getElementById("import-file");
+    importBtn.addEventListener("click", () => importFile.click());
+    importFile.addEventListener("change", (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        try {
+          const data = JSON.parse(ev.target.result);
+          const incoming = Array.isArray(data) ? data : (Array.isArray(data.favorites) ? data.favorites : null);
+          if (!incoming) throw new Error("형식 오류");
+          const set = Favorites.load();
+          const validTickers = new Set(Database.stocks.map(s => s.ticker));
+          let added = 0;
+          incoming.forEach(t => {
+            if (typeof t === "string" && validTickers.has(t) && !set.has(t)) { set.add(t); added++; }
+          });
+          Favorites.save(set);
+          App.refresh();
+          Utils.toast(`${added}개 관심 종목을 추가했습니다 (총 ${set.size}개)`);
+        } catch (err) {
+          Utils.toast("파일을 읽을 수 없습니다 (JSON 형식 확인)");
+        } finally {
+          importFile.value = "";
+        }
+      };
+      reader.readAsText(file);
+    });
+  },
+
+  currentList(){
+    const f = Screener.read();
+    const favs = Favorites.load();
+    let list = Screener.filter(Database.stocks, f, favs);
+    list = list.filter(s => s._score.totalScore >= f.minScore);
+    return Screener.sort(list, f.sort);
+  },
+
+  refresh(){
+    const list = App.currentList();
+    const favs = Favorites.load();
+    Renderer.render(list, favs);
+    Renderer.renderCompareBar();
+  },
+
+  openCompare(){
+    if (Compare.size() < 2) { Utils.toast("비교하려면 2개 이상 선택하세요"); return; }
+    document.getElementById("compare-body").innerHTML = Renderer.compareTable();
+    document.getElementById("compare-modal").classList.add("visible");
+  },
+  closeCompare(){
+    document.getElementById("compare-modal").classList.remove("visible");
+  }
+};
+
+document.addEventListener("DOMContentLoaded", App.init);
+</script>
+</body>
+</html>
