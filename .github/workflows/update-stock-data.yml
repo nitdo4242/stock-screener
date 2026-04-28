@@ -20,7 +20,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install deps
-        run: pip install --upgrade pip yfinance pandas
+        run: pip install --upgrade pip "yfinance>=0.2.50" "curl_cffi>=0.7" pandas
 
       - name: Fetch data
         run: python scripts/fetch_stock_data.py
