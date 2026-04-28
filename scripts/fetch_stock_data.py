@@ -21,7 +21,7 @@ stock.html의 Database.stocks에서 티커 목록을 읽고, yfinance로 최신 
 주의:
 - yfinance .info는 필드 누락 / None 값이 흔함. 값이 없으면 해당 키를 payload에서 생략(프론트에서는 기존 정적값 유지).
 - ROE는 yfinance에서 소수(0.15 = 15%)로 옴. 100 곱해 % 단위로 저장.
-- divYield도 소수(0.025 = 2.5%)로 올 수 있어 분기 처리.
+- divYield는 yfinance 0.2.50+에서 이미 percent 단위로 옴 (예: 0.4 = 0.4%). 그대로 저장.
 """
 import json
 import re
@@ -136,7 +136,10 @@ def fetch_fundamentals(tkr, ticker_name=""):
 
     div = _safe_num(info.get("dividendYield"))
     if div is not None and div >= 0:
-        out["divYield"] = round(div * 100, 2) if div < 1 else round(div, 2)
+        # yfinance 0.2.50+는 dividendYield를 이미 percent 단위로 반환함
+        # (예: AAPL 0.4 = 0.4%). 과거에는 decimal(0.004)로 와서 *100 했지만
+        # 더 이상 그러면 100배로 부풀어버림. 그래서 그대로 사용.
+        out["divYield"] = round(div, 2)
 
     tgt = _safe_num(info.get("targetMeanPrice"))
     if tgt is not None and tgt > 0:
