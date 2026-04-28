@@ -1,1654 +1,1654 @@
 {
-  "generatedAt": "2026-04-26T04:14:55+00:00",
+  "generatedAt": "2026-04-28T07:40:38+00:00",
   "source": "yfinance",
   "stocks": [
     {
       "ticker": "AAPL",
-      "currentPrice": 271.06,
-      "rsi14": 62,
-      "pct52wHigh": 0.9471,
+      "currentPrice": 267.61,
+      "rsi14": 64,
+      "pct52wHigh": 0.9351,
       "mdd1y": 13.8,
-      "avgVolume": 10992.7
+      "avgVolume": 10947.5
     },
     {
       "ticker": "MSFT",
-      "currentPrice": 424.62,
+      "currentPrice": 424.82,
       "rsi14": 75,
-      "pct52wHigh": 0.7833,
+      "pct52wHigh": 0.7837,
       "mdd1y": 34.2,
-      "avgVolume": 13207.4
+      "avgVolume": 13183.3
     },
     {
       "ticker": "NVDA",
-      "currentPrice": 208.27,
-      "rsi14": 87,
+      "currentPrice": 216.61,
+      "rsi14": 89,
       "pct52wHigh": 1.0,
       "mdd1y": 20.2,
-      "avgVolume": 28453.5
+      "avgVolume": 28726.4
     },
     {
       "ticker": "AVGO",
-      "currentPrice": 422.76,
-      "rsi14": 92,
-      "pct52wHigh": 1.0,
+      "currentPrice": 418.2,
+      "rsi14": 87,
+      "pct52wHigh": 0.9892,
       "mdd1y": 29.0,
-      "avgVolume": 8343.3
+      "avgVolume": 8364.2
     },
     {
       "ticker": "ORCL",
-      "currentPrice": 173.28,
-      "rsi14": 68,
-      "pct52wHigh": 0.5278,
+      "currentPrice": 172.96,
+      "rsi14": 69,
+      "pct52wHigh": 0.5268,
       "mdd1y": 58.4,
-      "avgVolume": 4879.7
+      "avgVolume": 4960.4
     },
     {
       "ticker": "CRM",
-      "currentPrice": 178.16,
-      "rsi14": 45,
-      "pct52wHigh": 0.6119,
+      "currentPrice": 180.18,
+      "rsi14": 48,
+      "pct52wHigh": 0.6189,
       "mdd1y": 43.3,
-      "avgVolume": 2509.9
+      "avgVolume": 2528.6
     },
     {
       "ticker": "ADBE",
-      "currentPrice": 245.44,
-      "rsi14": 51,
-      "pct52wHigh": 0.5834,
+      "currentPrice": 239.31,
+      "rsi14": 50,
+      "pct52wHigh": 0.5689,
       "mdd1y": 46.4,
-      "avgVolume": 1285.4
+      "avgVolume": 1294.3
     },
     {
       "ticker": "AMD",
-      "currentPrice": 347.81,
-      "rsi14": 97,
-      "pct52wHigh": 1.0,
+      "currentPrice": 334.63,
+      "rsi14": 89,
+      "pct52wHigh": 0.9621,
       "mdd1y": 27.8,
-      "avgVolume": 9679.4
+      "avgVolume": 10211.2
     },
     {
       "ticker": "INTC",
-      "currentPrice": 82.54,
+      "currentPrice": 84.99,
       "rsi14": 88,
       "pct52wHigh": 1.0,
       "mdd1y": 24.2,
-      "avgVolume": 7156.2
+      "avgVolume": 7744.6
     },
     {
       "ticker": "QCOM",
-      "currentPrice": 148.85,
-      "rsi14": 83,
-      "pct52wHigh": 0.7931,
+      "currentPrice": 150.26,
+      "rsi14": 88,
+      "pct52wHigh": 0.8006,
       "mdd1y": 33.9,
-      "avgVolume": 1389.3
+      "avgVolume": 1618.7
     },
     {
       "ticker": "TXN",
-      "currentPrice": 277.14,
-      "rsi14": 91,
-      "pct52wHigh": 0.982,
+      "currentPrice": 269.5,
+      "rsi14": 84,
+      "pct52wHigh": 0.9549,
       "mdd1y": 30.7,
-      "avgVolume": 1599.0
+      "avgVolume": 1674.4
     },
     {
       "ticker": "IBM",
-      "currentPrice": 231.98,
-      "rsi14": 39,
-      "pct52wHigh": 0.7365,
+      "currentPrice": 228.05,
+      "rsi14": 38,
+      "pct52wHigh": 0.724,
       "mdd1y": 29.1,
-      "avgVolume": 1470.9
+      "avgVolume": 1507.3
     },
     {
       "ticker": "CSCO",
-      "currentPrice": 89.01,
-      "rsi14": 80,
-      "pct52wHigh": 0.9912,
+      "currentPrice": 88.26,
+      "rsi14": 75,
+      "pct52wHigh": 0.9829,
       "mdd1y": 13.6,
-      "avgVolume": 1534.9
+      "avgVolume": 1514.4
     },
     {
       "ticker": "ACN",
-      "currentPrice": 178.36,
+      "currentPrice": 176.97,
       "rsi14": 33,
-      "pct52wHigh": 0.5518,
-      "mdd1y": 44.8,
-      "avgVolume": 1003.1
+      "pct52wHigh": 0.5475,
+      "mdd1y": 45.2,
+      "avgVolume": 994.4
     },
     {
       "ticker": "NOW",
-      "currentPrice": 90.17,
-      "rsi14": 41,
-      "pct52wHigh": 0.4316,
+      "currentPrice": 90.45,
+      "rsi14": 42,
+      "pct52wHigh": 0.4329,
       "mdd1y": 60.3,
-      "avgVolume": 2654.4
+      "avgVolume": 2712.6
     },
     {
       "ticker": "INTU",
-      "currentPrice": 395.95,
+      "currentPrice": 389.92,
       "rsi14": 44,
-      "pct52wHigh": 0.4904,
+      "pct52wHigh": 0.4829,
       "mdd1y": 56.5,
-      "avgVolume": 1364.7
+      "avgVolume": 1354.8
     },
     {
       "ticker": "AMAT",
-      "currentPrice": 417.04,
-      "rsi14": 84,
-      "pct52wHigh": 1.0,
+      "currentPrice": 404.86,
+      "rsi14": 74,
+      "pct52wHigh": 0.9708,
       "mdd1y": 21.6,
-      "avgVolume": 2078.6
+      "avgVolume": 2091.0
     },
     {
       "ticker": "LRCX",
-      "currentPrice": 267.78,
-      "rsi14": 73,
-      "pct52wHigh": 0.983,
+      "currentPrice": 259.47,
+      "rsi14": 66,
+      "pct52wHigh": 0.9525,
       "mdd1y": 20.1,
-      "avgVolume": 2259.7
+      "avgVolume": 2276.9
     },
     {
       "ticker": "KLAC",
-      "currentPrice": 1935.0,
-      "rsi14": 85,
-      "pct52wHigh": 1.0,
+      "currentPrice": 1900.0,
+      "rsi14": 80,
+      "pct52wHigh": 0.9819,
       "mdd1y": 22.4,
-      "avgVolume": 1386.2
+      "avgVolume": 1431.2
     },
     {
       "ticker": "MU",
-      "currentPrice": 496.72,
-      "rsi14": 85,
+      "currentPrice": 524.56,
+      "rsi14": 87,
       "pct52wHigh": 1.0,
       "mdd1y": 30.3,
-      "avgVolume": 18972.2
+      "avgVolume": 19251.8
     },
     {
       "ticker": "PANW",
-      "currentPrice": 178.54,
-      "rsi14": 62,
-      "pct52wHigh": 0.8065,
+      "currentPrice": 182.9,
+      "rsi14": 60,
+      "pct52wHigh": 0.8262,
       "mdd1y": 36.0,
-      "avgVolume": 1345.7
+      "avgVolume": 1330.6
     },
     {
       "ticker": "CRWD",
-      "currentPrice": 448.13,
-      "rsi14": 63,
-      "pct52wHigh": 0.8038,
+      "currentPrice": 454.61,
+      "rsi14": 59,
+      "pct52wHigh": 0.8154,
       "mdd1y": 37.2,
-      "avgVolume": 1528.8
+      "avgVolume": 1466.7
     },
     {
       "ticker": "SNPS",
-      "currentPrice": 500.82,
-      "rsi14": 79,
-      "pct52wHigh": 0.776,
+      "currentPrice": 498.54,
+      "rsi14": 78,
+      "pct52wHigh": 0.7725,
       "mdd1y": 41.0,
-      "avgVolume": 730.4
+      "avgVolume": 736.8
     },
     {
       "ticker": "CDNS",
-      "currentPrice": 332.89,
+      "currentPrice": 336.54,
       "rsi14": 70,
-      "pct52wHigh": 0.8916,
+      "pct52wHigh": 0.9014,
       "mdd1y": 28.8,
-      "avgVolume": 661.7
+      "avgVolume": 696.3
     },
     {
       "ticker": "ADI",
-      "currentPrice": 399.57,
-      "rsi14": 86,
-      "pct52wHigh": 0.9893,
+      "currentPrice": 392.59,
+      "rsi14": 81,
+      "pct52wHigh": 0.972,
       "mdd1y": 16.0,
-      "avgVolume": 1137.2
+      "avgVolume": 1141.9
     },
     {
       "ticker": "MRVL",
-      "currentPrice": 164.31,
-      "rsi14": 96,
-      "pct52wHigh": 0.9924,
+      "currentPrice": 158.21,
+      "rsi14": 87,
+      "pct52wHigh": 0.9556,
       "mdd1y": 26.4,
-      "avgVolume": 3894.7
+      "avgVolume": 4081.6
     },
     {
       "ticker": "FTNT",
-      "currentPrice": 84.34,
+      "currentPrice": 85.67,
       "rsi14": 54,
-      "pct52wHigh": 0.776,
+      "pct52wHigh": 0.7882,
       "mdd1y": 31.6,
-      "avgVolume": 487.1
+      "avgVolume": 476.7
     },
     {
       "ticker": "ANET",
-      "currentPrice": 176.91,
-      "rsi14": 91,
-      "pct52wHigh": 0.9954,
+      "currentPrice": 172.47,
+      "rsi14": 83,
+      "pct52wHigh": 0.9704,
       "mdd1y": 28.3,
-      "avgVolume": 1044.1
+      "avgVolume": 1068.7
     },
     {
       "ticker": "MCHP",
-      "currentPrice": 89.44,
-      "rsi14": 95,
-      "pct52wHigh": 0.9868,
+      "currentPrice": 86.84,
+      "rsi14": 86,
+      "pct52wHigh": 0.9581,
       "mdd1y": 34.9,
-      "avgVolume": 667.3
+      "avgVolume": 685.3
     },
     {
       "ticker": "ADSK",
-      "currentPrice": 237.44,
+      "currentPrice": 235.03,
       "rsi14": 50,
-      "pct52wHigh": 0.7266,
+      "pct52wHigh": 0.7192,
       "mdd1y": 33.2,
-      "avgVolume": 457.8
+      "avgVolume": 451.8
     },
     {
       "ticker": "WDAY",
-      "currentPrice": 119.76,
+      "currentPrice": 117.83,
       "rsi14": 42,
-      "pct52wHigh": 0.436,
+      "pct52wHigh": 0.4289,
       "mdd1y": 59.0,
-      "avgVolume": 618.5
+      "avgVolume": 621.0
     },
     {
       "ticker": "GOOGL",
-      "currentPrice": 344.4,
+      "currentPrice": 350.34,
       "rsi14": 82,
       "pct52wHigh": 1.0,
       "mdd1y": 20.4,
-      "avgVolume": 8185.2
+      "avgVolume": 8165.4
     },
     {
       "ticker": "GOOG",
-      "currentPrice": 342.32,
+      "currentPrice": 348.52,
       "rsi14": 83,
-      "pct52wHigh": 0.9925,
+      "pct52wHigh": 1.0,
       "mdd1y": 20.8,
-      "avgVolume": 5436.2
+      "avgVolume": 5368.3
     },
     {
       "ticker": "META",
-      "currentPrice": 675.03,
+      "currentPrice": 678.62,
       "rsi14": 80,
-      "pct52wHigh": 0.8545,
+      "pct52wHigh": 0.859,
       "mdd1y": 33.5,
-      "avgVolume": 10301.9
+      "avgVolume": 9880.2
     },
     {
       "ticker": "NFLX",
-      "currentPrice": 92.44,
-      "rsi14": 37,
-      "pct52wHigh": 0.6903,
+      "currentPrice": 91.37,
+      "rsi14": 36,
+      "pct52wHigh": 0.6823,
       "mdd1y": 43.4,
-      "avgVolume": 4309.8
+      "avgVolume": 4232.0
     },
     {
       "ticker": "DIS",
-      "currentPrice": 102.6,
-      "rsi14": 69,
-      "pct52wHigh": 0.8274,
+      "currentPrice": 102.35,
+      "rsi14": 70,
+      "pct52wHigh": 0.8253,
       "mdd1y": 25.5,
-      "avgVolume": 825.8
+      "avgVolume": 799.9
     },
     {
       "ticker": "CMCSA",
-      "currentPrice": 27.56,
-      "rsi14": 50,
-      "pct52wHigh": 0.8094,
+      "currentPrice": 27.51,
+      "rsi14": 49,
+      "pct52wHigh": 0.808,
       "mdd1y": 27.2,
-      "avgVolume": 812.1
+      "avgVolume": 828.1
     },
     {
       "ticker": "T",
-      "currentPrice": 26.2,
-      "rsi14": 31,
-      "pct52wHigh": 0.8845,
+      "currentPrice": 25.52,
+      "rsi14": 29,
+      "pct52wHigh": 0.8616,
       "mdd1y": 22.3,
-      "avgVolume": 1060.1
+      "avgVolume": 1045.6
     },
     {
       "ticker": "VZ",
-      "currentPrice": 46.38,
-      "rsi14": 34,
-      "pct52wHigh": 0.9027,
+      "currentPrice": 47.1,
+      "rsi14": 42,
+      "pct52wHigh": 0.9167,
       "mdd1y": 14.8,
-      "avgVolume": 1220.3
+      "avgVolume": 1243.7
     },
     {
       "ticker": "TMUS",
-      "currentPrice": 189.8,
-      "rsi14": 39,
-      "pct52wHigh": 0.7328,
-      "mdd1y": 29.1,
-      "avgVolume": 1237.0
+      "currentPrice": 182.75,
+      "rsi14": 30,
+      "pct52wHigh": 0.7056,
+      "mdd1y": 29.4,
+      "avgVolume": 1251.3
     },
     {
       "ticker": "CHTR",
-      "currentPrice": 180.13,
-      "rsi14": 34,
-      "pct52wHigh": 0.4216,
-      "mdd1y": 57.8,
-      "avgVolume": 575.1
+      "currentPrice": 174.61,
+      "rsi14": 31,
+      "pct52wHigh": 0.4087,
+      "mdd1y": 59.1,
+      "avgVolume": 624.0
     },
     {
       "ticker": "EA",
-      "currentPrice": 202.67,
+      "currentPrice": 202.45,
       "rsi14": 37,
-      "pct52wHigh": 0.9896,
+      "pct52wHigh": 0.9886,
       "mdd1y": 8.2,
-      "avgVolume": 332.8
+      "avgVolume": 331.1
     },
     {
       "ticker": "AMZN",
-      "currentPrice": 263.99,
-      "rsi14": 95,
-      "pct52wHigh": 1.0,
+      "currentPrice": 261.12,
+      "rsi14": 90,
+      "pct52wHigh": 0.9891,
       "mdd1y": 21.7,
-      "avgVolume": 10818.6
+      "avgVolume": 10831.3
     },
     {
       "ticker": "TSLA",
-      "currentPrice": 376.3,
-      "rsi14": 61,
-      "pct52wHigh": 0.7681,
+      "currentPrice": 378.67,
+      "rsi14": 66,
+      "pct52wHigh": 0.773,
       "mdd1y": 29.9,
-      "avgVolume": 25979.2
+      "avgVolume": 26124.7
     },
     {
       "ticker": "HD",
-      "currentPrice": 335.89,
-      "rsi14": 56,
-      "pct52wHigh": 0.7933,
+      "currentPrice": 332.3,
+      "rsi14": 60,
+      "pct52wHigh": 0.7848,
       "mdd1y": 24.7,
-      "avgVolume": 1203.0
+      "avgVolume": 1193.3
     },
     {
       "ticker": "MCD",
-      "currentPrice": 299.36,
-      "rsi14": 37,
-      "pct52wHigh": 0.8777,
-      "mdd1y": 12.2,
-      "avgVolume": 900.8
+      "currentPrice": 290.21,
+      "rsi14": 34,
+      "pct52wHigh": 0.8509,
+      "mdd1y": 14.9,
+      "avgVolume": 926.6
     },
     {
       "ticker": "NKE",
-      "currentPrice": 44.69,
-      "rsi14": 53,
-      "pct52wHigh": 0.564,
+      "currentPrice": 45.14,
+      "rsi14": 64,
+      "pct52wHigh": 0.5697,
       "mdd1y": 46.2,
-      "avgVolume": 1391.6
+      "avgVolume": 1385.5
     },
     {
       "ticker": "SBUX",
-      "currentPrice": 98.67,
-      "rsi14": 67,
-      "pct52wHigh": 0.9727,
+      "currentPrice": 97.89,
+      "rsi14": 61,
+      "pct52wHigh": 0.965,
       "mdd1y": 19.1,
-      "avgVolume": 639.8
+      "avgVolume": 609.3
     },
     {
       "ticker": "KO",
-      "currentPrice": 76.63,
-      "rsi14": 47,
-      "pct52wHigh": 0.9396,
+      "currentPrice": 75.44,
+      "rsi14": 48,
+      "pct52wHigh": 0.925,
       "mdd1y": 9.5,
-      "avgVolume": 1015.3
+      "avgVolume": 1008.8
     },
     {
       "ticker": "PEP",
-      "currentPrice": 155.44,
-      "rsi14": 47,
-      "pct52wHigh": 0.9117,
+      "currentPrice": 154.1,
+      "rsi14": 52,
+      "pct52wHigh": 0.9039,
       "mdd1y": 12.0,
-      "avgVolume": 989.9
+      "avgVolume": 970.1
     },
     {
       "ticker": "PG",
-      "currentPrice": 148.18,
-      "rsi14": 60,
-      "pct52wHigh": 0.8722,
+      "currentPrice": 148.4,
+      "rsi14": 64,
+      "pct52wHigh": 0.8735,
       "mdd1y": 18.7,
-      "avgVolume": 1297.6
+      "avgVolume": 1282.8
     },
     {
       "ticker": "WMT",
-      "currentPrice": 129.92,
-      "rsi14": 56,
-      "pct52wHigh": 0.9703,
+      "currentPrice": 127.59,
+      "rsi14": 61,
+      "pct52wHigh": 0.9529,
       "mdd1y": 11.1,
-      "avgVolume": 2139.5
+      "avgVolume": 2146.5
     },
     {
       "ticker": "COST",
-      "currentPrice": 1011.15,
-      "rsi14": 47,
-      "pct52wHigh": 0.9568,
+      "currentPrice": 998.01,
+      "rsi14": 45,
+      "pct52wHigh": 0.9443,
       "mdd1y": 19.6,
-      "avgVolume": 1829.7
+      "avgVolume": 1834.8
     },
     {
       "ticker": "TGT",
-      "currentPrice": 129.26,
-      "rsi14": 62,
-      "pct52wHigh": 0.9785,
+      "currentPrice": 129.72,
+      "rsi14": 68,
+      "pct52wHigh": 0.982,
       "mdd1y": 22.1,
-      "avgVolume": 593.4
+      "avgVolume": 581.6
     },
     {
       "ticker": "LOW",
-      "currentPrice": 244.45,
-      "rsi14": 58,
-      "pct52wHigh": 0.8506,
+      "currentPrice": 242.55,
+      "rsi14": 60,
+      "pct52wHigh": 0.844,
       "mdd1y": 21.8,
-      "avgVolume": 601.0
+      "avgVolume": 600.8
     },
     {
       "ticker": "MDLZ",
-      "currentPrice": 57.61,
-      "rsi14": 46,
-      "pct52wHigh": 0.8143,
+      "currentPrice": 57.42,
+      "rsi14": 49,
+      "pct52wHigh": 0.8116,
       "mdd1y": 27.2,
-      "avgVolume": 471.5
+      "avgVolume": 449.5
     },
     {
       "ticker": "BKNG",
-      "currentPrice": 180.25,
+      "currentPrice": 177.52,
       "rsi14": 54,
-      "pct52wHigh": 0.7748,
+      "pct52wHigh": 0.7631,
       "mdd1y": 33.4,
-      "avgVolume": 1280.5
+      "avgVolume": 1257.1
     },
     {
       "ticker": "MAR",
-      "currentPrice": 367.15,
+      "currentPrice": 360.67,
       "rsi14": 69,
-      "pct52wHigh": 0.9694,
+      "pct52wHigh": 0.9523,
       "mdd1y": 12.8,
-      "avgVolume": 516.9
+      "avgVolume": 510.8
     },
     {
       "ticker": "CMG",
-      "currentPrice": 34.21,
-      "rsi14": 55,
-      "pct52wHigh": 0.5874,
+      "currentPrice": 33.64,
+      "rsi14": 54,
+      "pct52wHigh": 0.5776,
       "mdd1y": 48.8,
-      "avgVolume": 458.2
+      "avgVolume": 460.8
     },
     {
       "ticker": "ABNB",
-      "currentPrice": 142.82,
+      "currentPrice": 141.06,
       "rsi14": 76,
-      "pct52wHigh": 0.9906,
+      "pct52wHigh": 0.9784,
       "mdd1y": 21.5,
-      "avgVolume": 438.3
+      "avgVolume": 428.2
     },
     {
       "ticker": "ORLY",
-      "currentPrice": 93.13,
-      "rsi14": 54,
-      "pct52wHigh": 0.8638,
+      "currentPrice": 91.97,
+      "rsi14": 53,
+      "pct52wHigh": 0.853,
       "mdd1y": 19.0,
-      "avgVolume": 442.9
+      "avgVolume": 434.3
     },
     {
       "ticker": "GM",
-      "currentPrice": 78.05,
-      "rsi14": 64,
-      "pct52wHigh": 0.9036,
+      "currentPrice": 77.96,
+      "rsi14": 66,
+      "pct52wHigh": 0.9025,
       "mdd1y": 16.2,
-      "avgVolume": 442.1
+      "avgVolume": 446.4
     },
     {
       "ticker": "F",
-      "currentPrice": 12.38,
-      "rsi14": 64,
-      "pct52wHigh": 0.8579,
+      "currentPrice": 12.49,
+      "rsi14": 68,
+      "pct52wHigh": 0.8656,
       "mdd1y": 22.3,
-      "avgVolume": 436.0
+      "avgVolume": 439.3
     },
     {
       "ticker": "YUM",
-      "currentPrice": 160.28,
-      "rsi14": 58,
-      "pct52wHigh": 0.9531,
+      "currentPrice": 155.17,
+      "rsi14": 46,
+      "pct52wHigh": 0.9228,
       "mdd1y": 10.2,
-      "avgVolume": 214.7
+      "avgVolume": 224.0
     },
     {
       "ticker": "CL",
-      "currentPrice": 84.65,
-      "rsi14": 50,
-      "pct52wHigh": 0.8538,
-      "mdd1y": 20.2,
-      "avgVolume": 473.9
+      "currentPrice": 84.17,
+      "rsi14": 53,
+      "pct52wHigh": 0.849,
+      "mdd1y": 19.7,
+      "avgVolume": 463.8
     },
     {
       "ticker": "KMB",
-      "currentPrice": 97.85,
-      "rsi14": 53,
-      "pct52wHigh": 0.6803,
+      "currentPrice": 98.25,
+      "rsi14": 70,
+      "pct52wHigh": 0.6831,
       "mdd1y": 35.3,
-      "avgVolume": 448.7
+      "avgVolume": 466.9
     },
     {
       "ticker": "MO",
-      "currentPrice": 66.88,
-      "rsi14": 52,
-      "pct52wHigh": 0.9595,
+      "currentPrice": 66.0,
+      "rsi14": 49,
+      "pct52wHigh": 0.9469,
       "mdd1y": 19.1,
-      "avgVolume": 550.0
+      "avgVolume": 542.2
     },
     {
       "ticker": "PM",
-      "currentPrice": 164.2,
+      "currentPrice": 160.9,
       "rsi14": 54,
-      "pct52wHigh": 0.8651,
+      "pct52wHigh": 0.8477,
       "mdd1y": 22.0,
-      "avgVolume": 783.4
+      "avgVolume": 790.8
     },
     {
       "ticker": "LLY",
-      "currentPrice": 883.96,
-      "rsi14": 38,
-      "pct52wHigh": 0.7964,
+      "currentPrice": 868.27,
+      "rsi14": 34,
+      "pct52wHigh": 0.7823,
       "mdd1y": 30.4,
-      "avgVolume": 2717.3
+      "avgVolume": 2714.0
     },
     {
       "ticker": "UNH",
-      "currentPrice": 354.92,
-      "rsi14": 93,
-      "pct52wHigh": 0.845,
+      "currentPrice": 354.69,
+      "rsi14": 90,
+      "pct52wHigh": 0.8445,
       "mdd1y": 43.4,
-      "avgVolume": 2860.2
+      "avgVolume": 2850.1
     },
     {
       "ticker": "JNJ",
-      "currentPrice": 227.5,
-      "rsi14": 29,
-      "pct52wHigh": 0.9153,
-      "mdd1y": 9.0,
-      "avgVolume": 1806.0
+      "currentPrice": 225.34,
+      "rsi14": 30,
+      "pct52wHigh": 0.9066,
+      "mdd1y": 9.3,
+      "avgVolume": 1803.5
     },
     {
       "ticker": "MRK",
-      "currentPrice": 111.9,
+      "currentPrice": 110.23,
       "rsi14": 34,
-      "pct52wHigh": 0.9029,
+      "pct52wHigh": 0.8895,
       "mdd1y": 13.8,
-      "avgVolume": 1083.4
+      "avgVolume": 1083.8
     },
     {
       "ticker": "ABBV",
-      "currentPrice": 198.71,
-      "rsi14": 38,
-      "pct52wHigh": 0.8131,
-      "mdd1y": 18.7,
-      "avgVolume": 1358.7
+      "currentPrice": 197.38,
+      "rsi14": 37,
+      "pct52wHigh": 0.8077,
+      "mdd1y": 19.2,
+      "avgVolume": 1373.6
     },
     {
       "ticker": "PFE",
-      "currentPrice": 27.0,
-      "rsi14": 40,
-      "pct52wHigh": 0.9457,
+      "currentPrice": 26.79,
+      "rsi14": 46,
+      "pct52wHigh": 0.9384,
       "mdd1y": 11.5,
-      "avgVolume": 928.8
+      "avgVolume": 936.1
     },
     {
       "ticker": "TMO",
-      "currentPrice": 469.71,
-      "rsi14": 44,
-      "pct52wHigh": 0.7346,
+      "currentPrice": 468.04,
+      "rsi14": 43,
+      "pct52wHigh": 0.7319,
       "mdd1y": 27.4,
-      "avgVolume": 992.6
+      "avgVolume": 1007.1
     },
     {
       "ticker": "ABT",
-      "currentPrice": 91.13,
-      "rsi14": 24,
-      "pct52wHigh": 0.66,
+      "currentPrice": 92.8,
+      "rsi14": 30,
+      "pct52wHigh": 0.6721,
       "mdd1y": 34.0,
-      "avgVolume": 1190.3
+      "avgVolume": 1204.7
     },
     {
       "ticker": "DHR",
-      "currentPrice": 177.25,
-      "rsi14": 34,
-      "pct52wHigh": 0.7323,
+      "currentPrice": 180.62,
+      "rsi14": 39,
+      "pct52wHigh": 0.7462,
       "mdd1y": 26.8,
-      "avgVolume": 859.4
+      "avgVolume": 854.1
     },
     {
       "ticker": "AMGN",
-      "currentPrice": 344.55,
-      "rsi14": 52,
-      "pct52wHigh": 0.8876,
+      "currentPrice": 340.18,
+      "rsi14": 50,
+      "pct52wHigh": 0.8764,
       "mdd1y": 12.4,
-      "avgVolume": 856.9
+      "avgVolume": 862.3
     },
     {
       "ticker": "GILD",
-      "currentPrice": 130.4,
-      "rsi14": 27,
-      "pct52wHigh": 0.837,
-      "mdd1y": 16.3,
-      "avgVolume": 725.6
+      "currentPrice": 127.75,
+      "rsi14": 25,
+      "pct52wHigh": 0.82,
+      "mdd1y": 18.0,
+      "avgVolume": 741.2
     },
     {
       "ticker": "ISRG",
-      "currentPrice": 482.22,
-      "rsi14": 62,
-      "pct52wHigh": 0.8134,
+      "currentPrice": 470.99,
+      "rsi14": 57,
+      "pct52wHigh": 0.7945,
       "mdd1y": 24.1,
-      "avgVolume": 1013.9
+      "avgVolume": 1014.1
     },
     {
       "ticker": "BMY",
-      "currentPrice": 58.71,
-      "rsi14": 47,
-      "pct52wHigh": 0.9413,
+      "currentPrice": 57.78,
+      "rsi14": 51,
+      "pct52wHigh": 0.9264,
       "mdd1y": 16.0,
-      "avgVolume": 562.8
+      "avgVolume": 570.7
     },
     {
       "ticker": "CVS",
-      "currentPrice": 77.94,
-      "rsi14": 63,
-      "pct52wHigh": 0.9293,
+      "currentPrice": 78.36,
+      "rsi14": 51,
+      "pct52wHigh": 0.9343,
       "mdd1y": 16.4,
-      "avgVolume": 567.9
+      "avgVolume": 569.6
     },
     {
       "ticker": "MDT",
-      "currentPrice": 83.32,
-      "rsi14": 40,
-      "pct52wHigh": 0.7909,
+      "currentPrice": 82.92,
+      "rsi14": 38,
+      "pct52wHigh": 0.7871,
       "mdd1y": 22.2,
-      "avgVolume": 710.0
+      "avgVolume": 692.5
     },
     {
       "ticker": "SYK",
-      "currentPrice": 327.51,
-      "rsi14": 45,
-      "pct52wHigh": 0.8116,
+      "currentPrice": 329.01,
+      "rsi14": 47,
+      "pct52wHigh": 0.8153,
       "mdd1y": 19.2,
-      "avgVolume": 606.9
+      "avgVolume": 611.0
     },
     {
       "ticker": "ELV",
-      "currentPrice": 344.76,
+      "currentPrice": 356.13,
       "rsi14": 78,
-      "pct52wHigh": 0.8176,
-      "mdd1y": 34.9,
-      "avgVolume": 537.2
+      "pct52wHigh": 0.8468,
+      "mdd1y": 34.7,
+      "avgVolume": 561.3
     },
     {
       "ticker": "VRTX",
-      "currentPrice": 430.29,
-      "rsi14": 47,
-      "pct52wHigh": 0.8445,
+      "currentPrice": 426.01,
+      "rsi14": 45,
+      "pct52wHigh": 0.8361,
       "mdd1y": 28.1,
-      "avgVolume": 525.5
+      "avgVolume": 504.3
     },
     {
       "ticker": "REGN",
-      "currentPrice": 751.57,
-      "rsi14": 45,
-      "pct52wHigh": 0.9253,
+      "currentPrice": 744.44,
+      "rsi14": 43,
+      "pct52wHigh": 0.9165,
       "mdd1y": 21.4,
-      "avgVolume": 499.9
+      "avgVolume": 504.3
     },
     {
       "ticker": "ZTS",
-      "currentPrice": 116.87,
-      "rsi14": 47,
-      "pct52wHigh": 0.6863,
+      "currentPrice": 117.87,
+      "rsi14": 52,
+      "pct52wHigh": 0.6921,
       "mdd1y": 33.4,
-      "avgVolume": 383.5
+      "avgVolume": 381.6
     },
     {
       "ticker": "JPM",
-      "currentPrice": 308.28,
-      "rsi14": 64,
-      "pct52wHigh": 0.9213,
+      "currentPrice": 311.63,
+      "rsi14": 65,
+      "pct52wHigh": 0.9313,
       "mdd1y": 15.5,
-      "avgVolume": 2666.7
+      "avgVolume": 2649.5
     },
     {
       "ticker": "BAC",
-      "currentPrice": 52.05,
-      "rsi14": 63,
-      "pct52wHigh": 0.9092,
+      "currentPrice": 52.63,
+      "rsi14": 64,
+      "pct52wHigh": 0.9193,
       "mdd1y": 18.4,
-      "avgVolume": 1847.1
+      "avgVolume": 1834.5
     },
     {
       "ticker": "WFC",
-      "currentPrice": 79.42,
-      "rsi14": 43,
-      "pct52wHigh": 0.8239,
+      "currentPrice": 80.56,
+      "rsi14": 47,
+      "pct52wHigh": 0.8358,
       "mdd1y": 23.1,
-      "avgVolume": 1303.0
+      "avgVolume": 1332.0
     },
     {
       "ticker": "GS",
-      "currentPrice": 926.91,
-      "rsi14": 68,
-      "pct52wHigh": 0.9498,
+      "currentPrice": 937.81,
+      "rsi14": 71,
+      "pct52wHigh": 0.961,
       "mdd1y": 19.8,
-      "avgVolume": 1835.4
+      "avgVolume": 1809.6
     },
     {
       "ticker": "MS",
-      "currentPrice": 188.07,
+      "currentPrice": 190.18,
       "rsi14": 77,
-      "pct52wHigh": 0.9815,
+      "pct52wHigh": 0.9925,
       "mdd1y": 19.3,
-      "avgVolume": 1100.7
+      "avgVolume": 1090.7
     },
     {
       "ticker": "C",
-      "currentPrice": 127.98,
-      "rsi14": 70,
-      "pct52wHigh": 0.9619,
+      "currentPrice": 129.14,
+      "rsi14": 72,
+      "pct52wHigh": 0.9706,
       "mdd1y": 14.8,
-      "avgVolume": 1582.6
+      "avgVolume": 1490.9
     },
     {
       "ticker": "V",
-      "currentPrice": 309.42,
-      "rsi14": 58,
-      "pct52wHigh": 0.8289,
+      "currentPrice": 309.65,
+      "rsi14": 60,
+      "pct52wHigh": 0.8295,
       "mdd1y": 20.8,
-      "avgVolume": 2001.7
+      "avgVolume": 1949.1
     },
     {
       "ticker": "MA",
-      "currentPrice": 504.17,
-      "rsi14": 52,
-      "pct52wHigh": 0.8417,
+      "currentPrice": 506.43,
+      "rsi14": 56,
+      "pct52wHigh": 0.8455,
       "mdd1y": 19.2,
-      "avgVolume": 1629.6
+      "avgVolume": 1596.9
     },
     {
       "ticker": "BRK.B",
-      "currentPrice": 469.32,
-      "rsi14": 41,
-      "pct52wHigh": 0.8694,
+      "currentPrice": 472.81,
+      "rsi14": 43,
+      "pct52wHigh": 0.8759,
       "mdd1y": 14.9,
-      "avgVolume": 2185.1
+      "avgVolume": 2174.4
     },
     {
       "ticker": "AXP",
-      "currentPrice": 314.08,
-      "rsi14": 56,
-      "pct52wHigh": 0.816,
+      "currentPrice": 318.84,
+      "rsi14": 59,
+      "pct52wHigh": 0.8284,
       "mdd1y": 24.1,
-      "avgVolume": 931.9
+      "avgVolume": 932.7
     },
     {
       "ticker": "BLK",
-      "currentPrice": 1044.97,
-      "rsi14": 71,
-      "pct52wHigh": 0.8689,
+      "currentPrice": 1056.86,
+      "rsi14": 73,
+      "pct52wHigh": 0.8788,
       "mdd1y": 23.3,
-      "avgVolume": 770.1
+      "avgVolume": 757.3
     },
     {
       "ticker": "SCHW",
-      "currentPrice": 88.5,
-      "rsi14": 41,
-      "pct52wHigh": 0.8255,
+      "currentPrice": 90.76,
+      "rsi14": 45,
+      "pct52wHigh": 0.8466,
       "mdd1y": 17.5,
-      "avgVolume": 1122.1
+      "avgVolume": 1126.5
     },
     {
       "ticker": "SPGI",
-      "currentPrice": 436.79,
-      "rsi14": 52,
-      "pct52wHigh": 0.7742,
+      "currentPrice": 437.22,
+      "rsi14": 54,
+      "pct52wHigh": 0.775,
       "mdd1y": 30.7,
-      "avgVolume": 726.9
+      "avgVolume": 742.4
     },
     {
       "ticker": "CB",
-      "currentPrice": 326.12,
-      "rsi14": 49,
-      "pct52wHigh": 0.9515,
+      "currentPrice": 324.6,
+      "rsi14": 47,
+      "pct52wHigh": 0.947,
       "mdd1y": 11.3,
-      "avgVolume": 499.6
+      "avgVolume": 498.2
     },
     {
       "ticker": "PGR",
-      "currentPrice": 200.89,
-      "rsi14": 55,
-      "pct52wHigh": 0.6957,
+      "currentPrice": 201.98,
+      "rsi14": 56,
+      "pct52wHigh": 0.6995,
       "mdd1y": 33.0,
-      "avgVolume": 541.5
+      "avgVolume": 540.6
     },
     {
       "ticker": "ICE",
-      "currentPrice": 158.45,
-      "rsi14": 35,
-      "pct52wHigh": 0.8408,
+      "currentPrice": 156.95,
+      "rsi14": 33,
+      "pct52wHigh": 0.8328,
       "mdd1y": 22.7,
-      "avgVolume": 467.5
+      "avgVolume": 470.2
     },
     {
       "ticker": "CME",
-      "currentPrice": 285.06,
-      "rsi14": 21,
-      "pct52wHigh": 0.8732,
-      "mdd1y": 12.9,
-      "avgVolume": 693.5
+      "currentPrice": 281.94,
+      "rsi14": 16,
+      "pct52wHigh": 0.8636,
+      "mdd1y": 13.6,
+      "avgVolume": 698.5
     },
     {
       "ticker": "XOM",
-      "currentPrice": 148.91,
-      "rsi14": 26,
-      "pct52wHigh": 0.8684,
+      "currentPrice": 148.19,
+      "rsi14": 24,
+      "pct52wHigh": 0.8642,
       "mdd1y": 14.6,
-      "avgVolume": 3482.0
+      "avgVolume": 3329.7
     },
     {
       "ticker": "CVX",
-      "currentPrice": 185.21,
-      "rsi14": 33,
-      "pct52wHigh": 0.8771,
+      "currentPrice": 184.78,
+      "rsi14": 28,
+      "pct52wHigh": 0.8751,
       "mdd1y": 13.2,
-      "avgVolume": 2289.7
+      "avgVolume": 2244.7
     },
     {
       "ticker": "COP",
-      "currentPrice": 121.76,
-      "rsi14": 36,
-      "pct52wHigh": 0.91,
+      "currentPrice": 121.68,
+      "rsi14": 35,
+      "pct52wHigh": 0.9094,
       "mdd1y": 13.5,
-      "avgVolume": 1115.1
+      "avgVolume": 1128.5
     },
     {
       "ticker": "SLB",
-      "currentPrice": 56.15,
-      "rsi14": 80,
-      "pct52wHigh": 1.0,
+      "currentPrice": 55.23,
+      "rsi14": 72,
+      "pct52wHigh": 0.9836,
       "mdd1y": 15.0,
-      "avgVolume": 840.9
+      "avgVolume": 829.3
     },
     {
       "ticker": "EOG",
-      "currentPrice": 133.13,
-      "rsi14": 32,
-      "pct52wHigh": 0.8882,
+      "currentPrice": 133.22,
+      "rsi14": 30,
+      "pct52wHigh": 0.8888,
       "mdd1y": 19.3,
-      "avgVolume": 607.6
+      "avgVolume": 592.2
     },
     {
       "ticker": "MPC",
-      "currentPrice": 224.14,
-      "rsi14": 36,
-      "pct52wHigh": 0.8898,
+      "currentPrice": 227.21,
+      "rsi14": 35,
+      "pct52wHigh": 0.9019,
       "mdd1y": 18.7,
-      "avgVolume": 512.5
+      "avgVolume": 503.3
     },
     {
       "ticker": "PSX",
-      "currentPrice": 162.85,
-      "rsi14": 33,
-      "pct52wHigh": 0.8649,
+      "currentPrice": 164.1,
+      "rsi14": 37,
+      "pct52wHigh": 0.8716,
       "mdd1y": 17.3,
-      "avgVolume": 505.6
+      "avgVolume": 495.3
     },
     {
       "ticker": "VLO",
-      "currentPrice": 235.85,
-      "rsi14": 43,
-      "pct52wHigh": 0.9274,
+      "currentPrice": 238.25,
+      "rsi14": 41,
+      "pct52wHigh": 0.9368,
       "mdd1y": 14.9,
-      "avgVolume": 795.8
+      "avgVolume": 766.5
     },
     {
       "ticker": "OKE",
-      "currentPrice": 87.5,
-      "rsi14": 47,
-      "pct52wHigh": 0.9312,
+      "currentPrice": 87.75,
+      "rsi14": 39,
+      "pct52wHigh": 0.9339,
       "mdd1y": 26.8,
-      "avgVolume": 388.0
+      "avgVolume": 389.4
     },
     {
       "ticker": "WMB",
-      "currentPrice": 72.18,
-      "rsi14": 47,
-      "pct52wHigh": 0.9465,
+      "currentPrice": 71.61,
+      "rsi14": 32,
+      "pct52wHigh": 0.939,
       "mdd1y": 12.4,
-      "avgVolume": 423.4
+      "avgVolume": 422.8
     },
     {
       "ticker": "CAT",
-      "currentPrice": 830.79,
-      "rsi14": 83,
-      "pct52wHigh": 0.9947,
+      "currentPrice": 828.79,
+      "rsi14": 82,
+      "pct52wHigh": 0.9923,
       "mdd1y": 13.9,
-      "avgVolume": 1677.4
+      "avgVolume": 1690.7
     },
     {
       "ticker": "BA",
-      "currentPrice": 232.44,
-      "rsi14": 68,
-      "pct52wHigh": 0.9218,
+      "currentPrice": 231.33,
+      "rsi14": 70,
+      "pct52wHigh": 0.9174,
       "mdd1y": 25.0,
-      "avgVolume": 1452.1
+      "avgVolume": 1448.4
     },
     {
       "ticker": "HON",
-      "currentPrice": 213.17,
-      "rsi14": 34,
-      "pct52wHigh": 0.8594,
+      "currentPrice": 212.05,
+      "rsi14": 37,
+      "pct52wHigh": 0.8549,
       "mdd1y": 17.0,
-      "avgVolume": 842.8
+      "avgVolume": 844.2
     },
     {
       "ticker": "GE",
-      "currentPrice": 284.6,
+      "currentPrice": 284.56,
       "rsi14": 48,
-      "pct52wHigh": 0.8232,
+      "pct52wHigh": 0.823,
       "mdd1y": 21.0,
-      "avgVolume": 1958.5
+      "avgVolume": 1974.6
     },
     {
       "ticker": "UPS",
-      "currentPrice": 107.02,
-      "rsi14": 83,
-      "pct52wHigh": 0.8918,
+      "currentPrice": 108.24,
+      "rsi14": 84,
+      "pct52wHigh": 0.902,
       "mdd1y": 21.8,
-      "avgVolume": 486.6
+      "avgVolume": 493.1
     },
     {
       "ticker": "RTX",
-      "currentPrice": 174.26,
+      "currentPrice": 173.38,
       "rsi14": 19,
-      "pct52wHigh": 0.8214,
-      "mdd1y": 17.9,
-      "avgVolume": 929.9
+      "pct52wHigh": 0.8172,
+      "mdd1y": 18.3,
+      "avgVolume": 951.6
     },
     {
       "ticker": "DE",
-      "currentPrice": 562.64,
-      "rsi14": 46,
-      "pct52wHigh": 0.8493,
+      "currentPrice": 567.69,
+      "rsi14": 47,
+      "pct52wHigh": 0.8569,
       "mdd1y": 17.4,
-      "avgVolume": 686.0
+      "avgVolume": 673.8
     },
     {
       "ticker": "LMT",
-      "currentPrice": 513.45,
+      "currentPrice": 513.35,
       "rsi14": 5,
-      "pct52wHigh": 0.7588,
+      "pct52wHigh": 0.7586,
       "mdd1y": 24.1,
-      "avgVolume": 848.9
+      "avgVolume": 872.9
     },
     {
       "ticker": "NOC",
-      "currentPrice": 575.11,
+      "currentPrice": 575.28,
       "rsi14": 8,
-      "pct52wHigh": 0.7488,
+      "pct52wHigh": 0.749,
       "mdd1y": 25.1,
-      "avgVolume": 543.0
+      "avgVolume": 550.3
     },
     {
       "ticker": "GD",
-      "currentPrice": 313.21,
-      "rsi14": 15,
-      "pct52wHigh": 0.8495,
-      "mdd1y": 15.0,
-      "avgVolume": 459.7
+      "currentPrice": 312.53,
+      "rsi14": 16,
+      "pct52wHigh": 0.8477,
+      "mdd1y": 15.2,
+      "avgVolume": 455.8
     },
     {
       "ticker": "FDX",
-      "currentPrice": 387.98,
-      "rsi14": 67,
-      "pct52wHigh": 0.9832,
+      "currentPrice": 387.89,
+      "rsi14": 69,
+      "pct52wHigh": 0.983,
       "mdd1y": 12.0,
-      "avgVolume": 567.4
+      "avgVolume": 560.8
     },
     {
       "ticker": "EMR",
-      "currentPrice": 141.35,
-      "rsi14": 65,
-      "pct52wHigh": 0.8742,
+      "currentPrice": 141.47,
+      "rsi14": 62,
+      "pct52wHigh": 0.8749,
       "mdd1y": 23.7,
-      "avgVolume": 400.3
+      "avgVolume": 396.5
     },
     {
       "ticker": "ETN",
-      "currentPrice": 423.92,
-      "rsi14": 86,
-      "pct52wHigh": 0.9986,
+      "currentPrice": 416.77,
+      "rsi14": 78,
+      "pct52wHigh": 0.9818,
       "mdd1y": 19.6,
-      "avgVolume": 856.5
+      "avgVolume": 869.1
     },
     {
       "ticker": "CSX",
-      "currentPrice": 45.41,
+      "currentPrice": 45.46,
       "rsi14": 75,
-      "pct52wHigh": 0.9833,
+      "pct52wHigh": 0.9844,
       "mdd1y": 12.2,
-      "avgVolume": 574.6
+      "avgVolume": 573.2
     },
     {
       "ticker": "UNP",
-      "currentPrice": 268.7,
+      "currentPrice": 268.91,
       "rsi14": 77,
-      "pct52wHigh": 0.9906,
+      "pct52wHigh": 0.9913,
       "mdd1y": 12.3,
-      "avgVolume": 789.1
+      "avgVolume": 795.8
     },
     {
       "ticker": "NEE",
-      "currentPrice": 95.28,
-      "rsi14": 59,
-      "pct52wHigh": 0.9899,
+      "currentPrice": 94.83,
+      "rsi14": 54,
+      "pct52wHigh": 0.9852,
       "mdd1y": 10.7,
-      "avgVolume": 803.6
+      "avgVolume": 805.2
     },
     {
       "ticker": "DUK",
-      "currentPrice": 127.27,
-      "rsi14": 36,
-      "pct52wHigh": 0.9536,
+      "currentPrice": 127.09,
+      "rsi14": 34,
+      "pct52wHigh": 0.9523,
       "mdd1y": 11.6,
-      "avgVolume": 430.3
+      "avgVolume": 413.8
     },
     {
       "ticker": "SO",
-      "currentPrice": 93.49,
-      "rsi14": 32,
-      "pct52wHigh": 0.9375,
+      "currentPrice": 93.77,
+      "rsi14": 34,
+      "pct52wHigh": 0.9403,
       "mdd1y": 15.7,
-      "avgVolume": 419.0
+      "avgVolume": 409.6
     },
     {
       "ticker": "AEP",
-      "currentPrice": 134.73,
+      "currentPrice": 135.07,
       "rsi14": 57,
-      "pct52wHigh": 0.9824,
+      "pct52wHigh": 0.9848,
       "mdd1y": 9.1,
-      "avgVolume": 331.8
+      "avgVolume": 321.2
     },
     {
       "ticker": "D",
-      "currentPrice": 62.58,
-      "rsi14": 52,
-      "pct52wHigh": 0.9409,
+      "currentPrice": 62.5,
+      "rsi14": 49,
+      "pct52wHigh": 0.9397,
       "mdd1y": 10.7,
-      "avgVolume": 250.8
+      "avgVolume": 250.4
     },
     {
       "ticker": "SRE",
-      "currentPrice": 93.2,
-      "rsi14": 30,
-      "pct52wHigh": 0.9343,
+      "currentPrice": 92.46,
+      "rsi14": 26,
+      "pct52wHigh": 0.9269,
       "mdd1y": 9.5,
-      "avgVolume": 313.8
+      "avgVolume": 312.7
     },
     {
       "ticker": "LIN",
-      "currentPrice": 510.3,
-      "rsi14": 58,
+      "currentPrice": 510.75,
+      "rsi14": 64,
       "pct52wHigh": 1.0,
       "mdd1y": 19.5,
-      "avgVolume": 978.8
+      "avgVolume": 971.2
     },
     {
       "ticker": "SHW",
-      "currentPrice": 337.7,
-      "rsi14": 67,
-      "pct52wHigh": 0.9,
+      "currentPrice": 336.1,
+      "rsi14": 68,
+      "pct52wHigh": 0.8957,
       "mdd1y": 19.1,
-      "avgVolume": 517.6
+      "avgVolume": 528.2
     },
     {
       "ticker": "FCX",
-      "currentPrice": 61.05,
+      "currentPrice": 60.57,
       "rsi14": 50,
-      "pct52wHigh": 0.8677,
+      "pct52wHigh": 0.8609,
       "mdd1y": 25.1,
-      "avgVolume": 1072.1
+      "avgVolume": 1085.0
     },
     {
       "ticker": "APD",
-      "currentPrice": 301.76,
-      "rsi14": 61,
-      "pct52wHigh": 0.9938,
+      "currentPrice": 302.38,
+      "rsi14": 65,
+      "pct52wHigh": 0.9958,
       "mdd1y": 22.9,
-      "avgVolume": 322.8
+      "avgVolume": 322.1
     },
     {
       "ticker": "ECL",
-      "currentPrice": 269.49,
-      "rsi14": 53,
-      "pct52wHigh": 0.874,
+      "currentPrice": 267.88,
+      "rsi14": 57,
+      "pct52wHigh": 0.8688,
       "mdd1y": 16.8,
-      "avgVolume": 356.5
+      "avgVolume": 351.1
     },
     {
       "ticker": "NEM",
-      "currentPrice": 120.7,
-      "rsi14": 59,
-      "pct52wHigh": 0.9147,
+      "currentPrice": 116.08,
+      "rsi14": 51,
+      "pct52wHigh": 0.8797,
       "mdd1y": 27.4,
-      "avgVolume": 954.5
+      "avgVolume": 946.0
     },
     {
       "ticker": "NUE",
-      "currentPrice": 214.29,
+      "currentPrice": 215.0,
       "rsi14": 96,
       "pct52wHigh": 1.0,
       "mdd1y": 18.4,
-      "avgVolume": 266.6
+      "avgVolume": 273.4
     },
     {
       "ticker": "PLD",
-      "currentPrice": 142.1,
-      "rsi14": 75,
-      "pct52wHigh": 0.9793,
+      "currentPrice": 140.02,
+      "rsi14": 67,
+      "pct52wHigh": 0.965,
       "mdd1y": 10.3,
-      "avgVolume": 511.4
+      "avgVolume": 512.2
     },
     {
       "ticker": "AMT",
-      "currentPrice": 178.21,
-      "rsi14": 53,
-      "pct52wHigh": 0.767,
+      "currentPrice": 175.3,
+      "rsi14": 52,
+      "pct52wHigh": 0.7545,
       "mdd1y": 28.0,
-      "avgVolume": 541.0
+      "avgVolume": 547.0
     },
     {
       "ticker": "EQIX",
-      "currentPrice": 1108.76,
-      "rsi14": 80,
-      "pct52wHigh": 0.9941,
+      "currentPrice": 1089.85,
+      "rsi14": 75,
+      "pct52wHigh": 0.9772,
       "mdd1y": 20.6,
-      "avgVolume": 509.2
+      "avgVolume": 522.3
     },
     {
       "ticker": "CCI",
-      "currentPrice": 86.34,
-      "rsi14": 49,
-      "pct52wHigh": 0.758,
+      "currentPrice": 83.44,
+      "rsi14": 46,
+      "pct52wHigh": 0.7325,
       "mdd1y": 32.4,
-      "avgVolume": 261.6
+      "avgVolume": 265.3
     },
     {
       "ticker": "PSA",
-      "currentPrice": 308.29,
-      "rsi14": 73,
-      "pct52wHigh": 0.9876,
+      "currentPrice": 305.48,
+      "rsi14": 72,
+      "pct52wHigh": 0.9786,
       "mdd1y": 17.1,
-      "avgVolume": 301.4
+      "avgVolume": 310.3
     },
     {
       "ticker": "O",
-      "currentPrice": 63.33,
-      "rsi14": 60,
-      "pct52wHigh": 0.9374,
+      "currentPrice": 62.75,
+      "rsi14": 53,
+      "pct52wHigh": 0.9288,
       "mdd1y": 11.1,
-      "avgVolume": 329.9
+      "avgVolume": 328.6
     },
     {
       "ticker": "SPY",
-      "currentPrice": 713.94,
-      "rsi14": 87,
+      "currentPrice": 715.17,
+      "rsi14": 88,
       "pct52wHigh": 1.0,
       "mdd1y": 9.1,
-      "avgVolume": 46531.2
+      "avgVolume": 44392.4
     },
     {
       "ticker": "IVV",
-      "currentPrice": 717.28,
-      "rsi14": 87,
+      "currentPrice": 718.5,
+      "rsi14": 88,
       "pct52wHigh": 1.0,
       "mdd1y": 9.1,
-      "avgVolume": 4358.0
+      "avgVolume": 4237.0
     },
     {
       "ticker": "VOO",
-      "currentPrice": 656.42,
+      "currentPrice": 657.5,
       "rsi14": 87,
       "pct52wHigh": 1.0,
       "mdd1y": 9.2,
-      "avgVolume": 4783.6
+      "avgVolume": 4610.7
     },
     {
       "ticker": "QQQ",
-      "currentPrice": 663.88,
+      "currentPrice": 664.23,
       "rsi14": 91,
       "pct52wHigh": 1.0,
       "mdd1y": 12.2,
-      "avgVolume": 31626.3
+      "avgVolume": 30337.7
     },
     {
       "ticker": "QQQM",
-      "currentPrice": 273.38,
+      "currentPrice": 273.51,
       "rsi14": 91,
       "pct52wHigh": 1.0,
       "mdd1y": 12.2,
-      "avgVolume": 931.7
+      "avgVolume": 909.2
     },
     {
       "ticker": "VTI",
-      "currentPrice": 352.05,
-      "rsi14": 87,
+      "currentPrice": 352.53,
+      "rsi14": 88,
       "pct52wHigh": 1.0,
       "mdd1y": 9.2,
-      "avgVolume": 1426.1
+      "avgVolume": 1363.3
     },
     {
       "ticker": "DIA",
-      "currentPrice": 492.21,
-      "rsi14": 78,
-      "pct52wHigh": 0.9807,
+      "currentPrice": 491.83,
+      "rsi14": 79,
+      "pct52wHigh": 0.9799,
       "mdd1y": 10.1,
-      "avgVolume": 2471.1
+      "avgVolume": 2365.9
     },
     {
       "ticker": "SCHD",
-      "currentPrice": 31.2,
+      "currentPrice": 31.13,
       "rsi14": 63,
-      "pct52wHigh": 0.9793,
+      "pct52wHigh": 0.9771,
       "mdd1y": 5.4,
-      "avgVolume": 679.0
+      "avgVolume": 673.7
     },
     {
       "ticker": "VYM",
-      "currentPrice": 154.95,
-      "rsi14": 78,
-      "pct52wHigh": 0.9901,
+      "currentPrice": 154.6,
+      "rsi14": 75,
+      "pct52wHigh": 0.9879,
       "mdd1y": 7.2,
-      "avgVolume": 185.8
+      "avgVolume": 181.8
     },
     {
       "ticker": "SMH",
-      "currentPrice": 506.44,
+      "currentPrice": 506.26,
       "rsi14": 100,
-      "pct52wHigh": 1.0,
+      "pct52wHigh": 0.9996,
       "mdd1y": 14.9,
-      "avgVolume": 3726.0
+      "avgVolume": 3722.7
     },
     {
       "ticker": "SOXX",
-      "currentPrice": 461.6,
-      "rsi14": 100,
-      "pct52wHigh": 1.0,
+      "currentPrice": 455.41,
+      "rsi14": 95,
+      "pct52wHigh": 0.9866,
       "mdd1y": 15.8,
-      "avgVolume": 2637.1
+      "avgVolume": 2733.0
     },
     {
       "ticker": "XLK",
-      "currentPrice": 160.22,
+      "currentPrice": 160.57,
       "rsi14": 92,
       "pct52wHigh": 1.0,
       "mdd1y": 16.2,
-      "avgVolume": 1770.0
+      "avgVolume": 1738.1
     },
     {
       "ticker": "XLF",
-      "currentPrice": 51.42,
-      "rsi14": 64,
-      "pct52wHigh": 0.9117,
+      "currentPrice": 51.81,
+      "rsi14": 67,
+      "pct52wHigh": 0.9186,
       "mdd1y": 15.2,
-      "avgVolume": 2089.4
+      "avgVolume": 1997.8
     },
     {
       "ticker": "XLE",
-      "currentPrice": 56.87,
-      "rsi14": 35,
-      "pct52wHigh": 0.909,
+      "currentPrice": 56.77,
+      "rsi14": 32,
+      "pct52wHigh": 0.9074,
       "mdd1y": 12.1,
-      "avgVolume": 3076.8
+      "avgVolume": 2985.2
     },
     {
       "ticker": "XLV",
-      "currentPrice": 144.18,
-      "rsi14": 44,
-      "pct52wHigh": 0.9,
+      "currentPrice": 143.46,
+      "rsi14": 41,
+      "pct52wHigh": 0.8955,
       "mdd1y": 10.6,
-      "avgVolume": 1386.6
+      "avgVolume": 1340.0
     },
     {
       "ticker": "XLY",
-      "currentPrice": 118.69,
-      "rsi14": 76,
-      "pct52wHigh": 0.9532,
+      "currentPrice": 117.84,
+      "rsi14": 78,
+      "pct52wHigh": 0.9464,
       "mdd1y": 15.1,
-      "avgVolume": 997.3
+      "avgVolume": 982.4
     },
     {
       "ticker": "XLP",
-      "currentPrice": 83.23,
-      "rsi14": 53,
-      "pct52wHigh": 0.9247,
+      "currentPrice": 82.34,
+      "rsi14": 56,
+      "pct52wHigh": 0.9148,
       "mdd1y": 9.9,
-      "avgVolume": 1148.7
+      "avgVolume": 1088.2
     },
     {
       "ticker": "XLI",
-      "currentPrice": 172.47,
-      "rsi14": 66,
-      "pct52wHigh": 0.9641,
+      "currentPrice": 172.51,
+      "rsi14": 67,
+      "pct52wHigh": 0.9643,
       "mdd1y": 12.5,
-      "avgVolume": 1769.7
+      "avgVolume": 1715.5
     },
     {
       "ticker": "XLU",
-      "currentPrice": 46.18,
-      "rsi14": 50,
-      "pct52wHigh": 0.9675,
+      "currentPrice": 46.19,
+      "rsi14": 49,
+      "pct52wHigh": 0.9677,
       "mdd1y": 9.9,
-      "avgVolume": 1027.9
+      "avgVolume": 1001.7
     },
     {
       "ticker": "XLB",
-      "currentPrice": 51.92,
+      "currentPrice": 51.78,
       "rsi14": 68,
-      "pct52wHigh": 0.9683,
+      "pct52wHigh": 0.9657,
       "mdd1y": 12.4,
-      "avgVolume": 612.6
+      "avgVolume": 607.3
     },
     {
       "ticker": "XLRE",
-      "currentPrice": 43.83,
-      "rsi14": 72,
-      "pct52wHigh": 0.9819,
+      "currentPrice": 43.49,
+      "rsi14": 67,
+      "pct52wHigh": 0.9742,
       "mdd1y": 8.9,
-      "avgVolume": 254.5
+      "avgVolume": 251.2
     },
     {
       "ticker": "XLC",
-      "currentPrice": 115.54,
+      "currentPrice": 115.81,
       "rsi14": 65,
-      "pct52wHigh": 0.9622,
+      "pct52wHigh": 0.9644,
       "mdd1y": 10.9,
-      "avgVolume": 602.7
+      "avgVolume": 575.8
     },
     {
       "ticker": "TQQQ",
-      "currentPrice": 62.56,
+      "currentPrice": 62.64,
       "rsi14": 90,
       "pct52wHigh": 1.0,
       "mdd1y": 37.2,
-      "avgVolume": 4751.8
+      "avgVolume": 4685.5
     },
     {
       "ticker": "SQQQ",
-      "currentPrice": 52.5,
+      "currentPrice": 52.45,
       "rsi14": 8,
-      "pct52wHigh": 0.3313,
+      "pct52wHigh": 0.331,
       "mdd1y": 66.9,
-      "avgVolume": 3974.2
+      "avgVolume": 3793.3
     },
     {
       "ticker": "UPRO",
-      "currentPrice": 126.99,
+      "currentPrice": 127.59,
       "rsi14": 86,
       "pct52wHigh": 1.0,
       "mdd1y": 26.9,
-      "avgVolume": 426.8
+      "avgVolume": 418.2
     },
     {
       "ticker": "SOXL",
-      "currentPrice": 128.32,
-      "rsi14": 100,
-      "pct52wHigh": 1.0,
+      "currentPrice": 123.39,
+      "rsi14": 94,
+      "pct52wHigh": 0.9616,
       "mdd1y": 43.5,
-      "avgVolume": 6661.7
+      "avgVolume": 6887.6
     },
     {
       "ticker": "TMF",
-      "currentPrice": 36.18,
-      "rsi14": 48,
-      "pct52wHigh": 0.8197,
+      "currentPrice": 35.69,
+      "rsi14": 44,
+      "pct52wHigh": 0.8086,
       "mdd1y": 21.1,
-      "avgVolume": 129.4
+      "avgVolume": 120.8
     },
     {
       "ticker": "ASML",
-      "currentPrice": 1457.7,
-      "rsi14": 66,
-      "pct52wHigh": 0.9549,
+      "currentPrice": 1432.44,
+      "rsi14": 62,
+      "pct52wHigh": 0.9384,
       "mdd1y": 17.9,
-      "avgVolume": 2689.4
+      "avgVolume": 2671.1
     },
     {
       "ticker": "PLTR",
-      "currentPrice": 143.09,
-      "rsi14": 46,
+      "currentPrice": 143.1,
+      "rsi14": 44,
       "pct52wHigh": 0.6907,
       "mdd1y": 38.2,
-      "avgVolume": 7087.2
+      "avgVolume": 7055.1
     },
     {
       "ticker": "DDOG",
-      "currentPrice": 129.48,
-      "rsi14": 64,
-      "pct52wHigh": 0.6483,
+      "currentPrice": 132.66,
+      "rsi14": 67,
+      "pct52wHigh": 0.6642,
       "mdd1y": 48.6,
-      "avgVolume": 566.1
+      "avgVolume": 555.7
     },
     {
       "ticker": "TEAM",
-      "currentPrice": 71.55,
-      "rsi14": 54,
-      "pct52wHigh": 0.3113,
+      "currentPrice": 69.22,
+      "rsi14": 55,
+      "pct52wHigh": 0.3012,
       "mdd1y": 75.1,
-      "avgVolume": 517.9
+      "avgVolume": 519.5
     },
     {
       "ticker": "NXPI",
-      "currentPrice": 244.04,
-      "rsi14": 93,
-      "pct52wHigh": 0.9771,
+      "currentPrice": 236.87,
+      "rsi14": 85,
+      "pct52wHigh": 0.9484,
       "mdd1y": 25.0,
-      "avgVolume": 624.6
+      "avgVolume": 652.2
     },
     {
       "ticker": "WDC",
-      "currentPrice": 404.0,
-      "rsi14": 95,
-      "pct52wHigh": 1.0,
+      "currentPrice": 400.73,
+      "rsi14": 92,
+      "pct52wHigh": 0.9919,
       "mdd1y": 20.6,
-      "avgVolume": 2434.3
+      "avgVolume": 2458.9
     },
     {
       "ticker": "ADP",
-      "currentPrice": 196.53,
-      "rsi14": 39,
-      "pct52wHigh": 0.6014,
+      "currentPrice": 197.23,
+      "rsi14": 41,
+      "pct52wHigh": 0.6035,
       "mdd1y": 42.2,
-      "avgVolume": 592.8
+      "avgVolume": 582.9
     },
     {
       "ticker": "ROP",
-      "currentPrice": 353.4,
-      "rsi14": 44,
-      "pct52wHigh": 0.6063,
+      "currentPrice": 352.45,
+      "rsi14": 45,
+      "pct52wHigh": 0.6047,
       "mdd1y": 45.9,
-      "avgVolume": 426.9
+      "avgVolume": 424.8
     },
     {
       "ticker": "HCA",
-      "currentPrice": 432.46,
-      "rsi14": 29,
-      "pct52wHigh": 0.7933,
+      "currentPrice": 445.77,
+      "rsi14": 33,
+      "pct52wHigh": 0.8177,
       "mdd1y": 20.7,
-      "avgVolume": 476.3
+      "avgVolume": 490.7
     },
     {
       "ticker": "CI",
-      "currentPrice": 275.64,
-      "rsi14": 50,
-      "pct52wHigh": 0.8106,
+      "currentPrice": 282.58,
+      "rsi14": 58,
+      "pct52wHigh": 0.831,
       "mdd1y": 28.1,
-      "avgVolume": 392.1
+      "avgVolume": 382.8
     },
     {
       "ticker": "HUM",
-      "currentPrice": 215.23,
-      "rsi14": 80,
-      "pct52wHigh": 0.6898,
+      "currentPrice": 223.62,
+      "rsi14": 78,
+      "pct52wHigh": 0.7167,
       "mdd1y": 47.5,
-      "avgVolume": 347.3
+      "avgVolume": 348.9
     },
     {
       "ticker": "DXCM",
-      "currentPrice": 61.57,
+      "currentPrice": 61.41,
       "rsi14": 45,
-      "pct52wHigh": 0.6877,
+      "pct52wHigh": 0.6859,
       "mdd1y": 38.7,
-      "avgVolume": 254.0
+      "avgVolume": 250.9
     },
     {
       "ticker": "IDXX",
-      "currentPrice": 565.93,
-      "rsi14": 46,
-      "pct52wHigh": 0.7382,
+      "currentPrice": 574.95,
+      "rsi14": 50,
+      "pct52wHigh": 0.7499,
       "mdd1y": 27.3,
-      "avgVolume": 300.0
+      "avgVolume": 306.7
     },
     {
       "ticker": "PYPL",
-      "currentPrice": 50.48,
+      "currentPrice": 49.77,
       "rsi14": 71,
-      "pct52wHigh": 0.6454,
+      "pct52wHigh": 0.6363,
       "mdd1y": 50.0,
-      "avgVolume": 630.5
+      "avgVolume": 612.0
     },
     {
       "ticker": "BX",
-      "currentPrice": 121.65,
-      "rsi14": 63,
-      "pct52wHigh": 0.6447,
+      "currentPrice": 120.37,
+      "rsi14": 60,
+      "pct52wHigh": 0.638,
       "mdd1y": 45.9,
-      "avgVolume": 841.4
+      "avgVolume": 827.0
     },
     {
       "ticker": "KKR",
-      "currentPrice": 101.83,
-      "rsi14": 69,
-      "pct52wHigh": 0.6692,
+      "currentPrice": 100.7,
+      "rsi14": 67,
+      "pct52wHigh": 0.6618,
       "mdd1y": 44.9,
-      "avgVolume": 533.0
+      "avgVolume": 515.1
     },
     {
       "ticker": "USB",
-      "currentPrice": 55.58,
+      "currentPrice": 55.97,
       "rsi14": 62,
-      "pct52wHigh": 0.9158,
+      "pct52wHigh": 0.9222,
       "mdd1y": 16.2,
-      "avgVolume": 515.8
+      "avgVolume": 507.2
     },
     {
       "ticker": "AFL",
-      "currentPrice": 114.62,
-      "rsi14": 67,
-      "pct52wHigh": 0.9757,
+      "currentPrice": 114.68,
+      "rsi14": 66,
+      "pct52wHigh": 0.9762,
       "mdd1y": 9.7,
-      "avgVolume": 231.9
+      "avgVolume": 229.7
     },
     {
       "ticker": "KHC",
-      "currentPrice": 21.94,
-      "rsi14": 27,
-      "pct52wHigh": 0.744,
-      "mdd1y": 28.1,
-      "avgVolume": 313.2
+      "currentPrice": 21.92,
+      "rsi14": 30,
+      "pct52wHigh": 0.7533,
+      "mdd1y": 27.1,
+      "avgVolume": 304.7
     },
     {
       "ticker": "MNST",
-      "currentPrice": 78.23,
-      "rsi14": 65,
-      "pct52wHigh": 0.9027,
+      "currentPrice": 76.86,
+      "rsi14": 66,
+      "pct52wHigh": 0.8869,
       "mdd1y": 17.7,
-      "avgVolume": 352.3
+      "avgVolume": 351.2
     },
     {
       "ticker": "ROST",
-      "currentPrice": 226.37,
-      "rsi14": 58,
-      "pct52wHigh": 0.9918,
+      "currentPrice": 226.17,
+      "rsi14": 67,
+      "pct52wHigh": 0.9909,
       "mdd1y": 17.9,
-      "avgVolume": 486.1
+      "avgVolume": 473.8
     },
     {
       "ticker": "WELL",
-      "currentPrice": 208.75,
-      "rsi14": 60,
-      "pct52wHigh": 0.9688,
+      "currentPrice": 210.0,
+      "rsi14": 61,
+      "pct52wHigh": 0.9746,
       "mdd1y": 12.6,
-      "avgVolume": 528.3
+      "avgVolume": 529.3
     },
     {
       "ticker": "DLR",
-      "currentPrice": 200.0,
-      "rsi14": 85,
-      "pct52wHigh": 0.9808,
+      "currentPrice": 196.34,
+      "rsi14": 74,
+      "pct52wHigh": 0.9629,
       "mdd1y": 17.8,
-      "avgVolume": 410.0
+      "avgVolume": 416.6
     },
     {
       "ticker": "SPG",
-      "currentPrice": 201.16,
-      "rsi14": 68,
-      "pct52wHigh": 0.9692,
+      "currentPrice": 201.29,
+      "rsi14": 67,
+      "pct52wHigh": 0.9698,
       "mdd1y": 12.5,
-      "avgVolume": 278.0
+      "avgVolume": 273.6
     },
     {
       "ticker": "CEG",
-      "currentPrice": 313.53,
-      "rsi14": 70,
-      "pct52wHigh": 0.7762,
+      "currentPrice": 315.17,
+      "rsi14": 72,
+      "pct52wHigh": 0.7802,
       "mdd1y": 38.8,
-      "avgVolume": 846.1
+      "avgVolume": 846.3
     },
     {
       "ticker": "VST",
-      "currentPrice": 164.35,
+      "currentPrice": 166.58,
       "rsi14": 65,
-      "pct52wHigh": 0.7542,
+      "pct52wHigh": 0.7644,
       "mdd1y": 34.6,
-      "avgVolume": 563.2
+      "avgVolume": 565.3
     },
     {
       "ticker": "XEL",
-      "currentPrice": 79.15,
-      "rsi14": 45,
-      "pct52wHigh": 0.9433,
+      "currentPrice": 79.41,
+      "rsi14": 46,
+      "pct52wHigh": 0.9464,
       "mdd1y": 11.5,
-      "avgVolume": 348.1
+      "avgVolume": 348.8
     },
     {
       "ticker": "OXY",
-      "currentPrice": 57.12,
-      "rsi14": 33,
-      "pct52wHigh": 0.8623,
+      "currentPrice": 57.27,
+      "rsi14": 34,
+      "pct52wHigh": 0.8646,
       "mdd1y": 19.1,
-      "avgVolume": 1000.0
+      "avgVolume": 956.1
     },
     {
       "ticker": "FANG",
-      "currentPrice": 194.79,
+      "currentPrice": 196.42,
       "rsi14": 51,
-      "pct52wHigh": 0.9634,
+      "pct52wHigh": 0.9715,
       "mdd1y": 13.2,
-      "avgVolume": 652.1
+      "avgVolume": 616.0
     },
     {
       "ticker": "WBD",
-      "currentPrice": 27.07,
-      "rsi14": 40,
-      "pct52wHigh": 0.9029,
+      "currentPrice": 26.82,
+      "rsi14": 35,
+      "pct52wHigh": 0.8946,
       "mdd1y": 21.3,
-      "avgVolume": 596.4
+      "avgVolume": 587.6
     }
   ],
   "failed": [
