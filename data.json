@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-28T11:28:46+00:00",
+  "generatedAt": "2026-04-28T11:37:39+00:00",
   "source": "yfinance",
   "stocks": [
     {
@@ -514,7 +514,7 @@
       "mdd1y": 59.1,
       "avgVolume": 624.0,
       "per": 4.72,
-      "pbr": 1.38,
+      "pbr": 1.31,
       "roe": 27.5,
       "targetPrice": 251.53
     },
@@ -879,7 +879,7 @@
       "mdd1y": 9.3,
       "avgVolume": 1803.5,
       "per": 26.11,
-      "pbr": 6.68,
+      "pbr": 6.65,
       "roe": 26.42,
       "divYield": 2.38,
       "targetPrice": 252.42
@@ -2182,7 +2182,7 @@
       "pbr": 1249.55,
       "roe": 52.24,
       "divYield": 61.0,
-      "targetPrice": 1657.98
+      "targetPrice": 1657.21
     },
     {
       "ticker": "PLTR",
