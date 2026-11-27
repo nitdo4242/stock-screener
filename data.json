@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T03:58:29+00:00",
+  "generatedAt": "2026-11-27T03:58:30+00:00",
   "source": "yfinance",
   "stocks": [
     {
@@ -8,11 +8,11 @@
       "rsi14": 62,
       "pct52wHigh": 0.9981,
       "mdd1y": 13.8,
-      "avgVolume": 17971.1,
+      "avgVolume": 17971.9,
       "per": 39.6,
       "pbr": 46.1,
       "roe": 142.26,
-      "divYield": 0.31,
+      "divYield": 0.3,
       "targetPrice": 345.63
     },
     {
@@ -21,11 +21,11 @@
       "rsi14": 29,
       "pct52wHigh": 0.8815,
       "mdd1y": 28.3,
-      "avgVolume": 15856.8,
+      "avgVolume": 15857.5,
       "per": 25.57,
       "pbr": 7.73,
       "roe": 34.22,
-      "divYield": 0.79,
+      "divYield": 0.8,
       "targetPrice": 637.36
     },
     {
@@ -34,11 +34,11 @@
       "rsi14": 38,
       "pct52wHigh": 0.6241,
       "mdd1y": 47.5,
-      "avgVolume": 60508.6,
-      "per": 16.68,
+      "avgVolume": 60536.2,
+      "per": 16.04,
       "pbr": 13.5,
       "roe": 117.36,
-      "divYield": 0.64,
+      "divYield": 0.67,
       "targetPrice": 242.43
     },
     {
@@ -47,7 +47,7 @@
       "rsi14": 52,
       "pct52wHigh": 0.6247,
       "mdd1y": 39.5,
-      "avgVolume": 10588.9,
+      "avgVolume": 10590.4,
       "per": 38.42,
       "pbr": 14.41,
       "roe": 44.25,
@@ -60,11 +60,11 @@
       "rsi14": 41,
       "pct52wHigh": 0.4186,
       "mdd1y": 59.2,
-      "avgVolume": 4822.4,
-      "per": 17.17,
+      "avgVolume": 4823.4,
+      "per": 16.28,
       "pbr": 5.08,
       "roe": 41.19,
-      "divYield": 1.83,
+      "divYield": 1.93,
       "targetPrice": 236.18
     },
     {
@@ -77,8 +77,8 @@
       "per": 18.04,
       "pbr": 4.23,
       "roe": 19.38,
-      "divYield": 0.91,
-      "targetPrice": 284.44
+      "divYield": 0.89,
+      "targetPrice": 282.37
     },
     {
       "ticker": "ADBE",
@@ -87,7 +87,7 @@
       "pct52wHigh": 0.6512,
       "mdd1y": 45.9,
       "avgVolume": 944.5,
-      "per": 12.96,
+      "per": 13.0,
       "pbr": 7.74,
       "roe": 61.9,
       "divYield": 0.0,
@@ -99,7 +99,7 @@
       "rsi14": 50,
       "pct52wHigh": 0.6252,
       "mdd1y": 37.7,
-      "avgVolume": 23042.1,
+      "avgVolume": 23049.2,
       "per": 86.76,
       "pbr": 9.74,
       "roe": 11.96,
@@ -112,7 +112,7 @@
       "rsi14": 53,
       "pct52wHigh": 0.3865,
       "mdd1y": 63.6,
-      "avgVolume": 9585.0,
+      "avgVolume": 9587.0,
       "pbr": 2.52,
       "roe": -9.62,
       "divYield": 0.0,
@@ -124,11 +124,11 @@
       "rsi14": 58,
       "pct52wHigh": 0.6719,
       "mdd1y": 41.2,
-      "avgVolume": 2617.0,
+      "avgVolume": 2617.2,
       "per": 13.28,
       "pbr": 5.95,
       "roe": 52.81,
-      "divYield": 2.23,
+      "divYield": 2.18,
       "targetPrice": 185.25
     },
     {
@@ -138,10 +138,10 @@
       "pct52wHigh": 0.8131,
       "mdd1y": 23.8,
       "avgVolume": 2815.8,
-      "per": 33.52,
+      "per": 35.04,
       "pbr": 12.87,
       "roe": 39.72,
-      "divYield": 2.35,
+      "divYield": 2.25,
       "targetPrice": 339.66
     },
     {
@@ -154,7 +154,7 @@
       "per": 20.77,
       "pbr": 6.48,
       "roe": 34.77,
-      "divYield": 2.87,
+      "divYield": 2.78,
       "targetPrice": 260.52
     },
     {
@@ -167,7 +167,7 @@
       "per": 25.05,
       "pbr": 7.18,
       "roe": 30.38,
-      "divYield": 1.79,
+      "divYield": 1.78,
       "targetPrice": 129.04
     },
     {
@@ -180,7 +180,7 @@
       "per": 17.74,
       "pbr": 4.54,
       "roe": 26.02,
-      "divYield": 2.94,
+      "divYield": 2.84,
       "targetPrice": 237.16
     },
     {
@@ -203,10 +203,10 @@
       "pct52wHigh": 0.4016,
       "mdd1y": 62.3,
       "avgVolume": 1117.9,
-      "per": 15.46,
-      "pbr": 3.94,
+      "per": 16.51,
+      "pbr": 3.84,
       "roe": 25.64,
-      "divYield": 1.98,
+      "divYield": 2.03,
       "targetPrice": 358.63
     },
     {
@@ -215,11 +215,11 @@
       "rsi14": 48,
       "pct52wHigh": 0.4304,
       "mdd1y": 58.1,
-      "avgVolume": 3281.5,
-      "per": 25.65,
+      "avgVolume": 3281.8,
+      "per": 24.66,
       "pbr": 9.45,
       "roe": 43.37,
-      "divYield": 0.65,
+      "divYield": 0.68,
       "targetPrice": 556.06
     },
     {
@@ -228,11 +228,11 @@
       "rsi14": 50,
       "pct52wHigh": 0.4269,
       "mdd1y": 57.7,
-      "avgVolume": 3168.8,
+      "avgVolume": 3169.1,
       "per": 27.57,
       "pbr": 16.62,
       "roe": 70.12,
-      "divYield": 0.67,
+      "divYield": 0.71,
       "targetPrice": 360.43
     },
     {
@@ -242,7 +242,7 @@
       "pct52wHigh": 0.4448,
       "mdd1y": 57.9,
       "avgVolume": 2310.9,
-      "per": 33.63,
+      "per": 29.24,
       "pbr": 26.81,
       "roe": 91.38,
       "divYield": 0.69,
@@ -254,8 +254,8 @@
       "rsi14": 45,
       "pct52wHigh": 0.4954,
       "mdd1y": 51.0,
-      "avgVolume": 27503.6,
-      "per": 8.47,
+      "avgVolume": 27522.9,
+      "per": 8.09,
       "pbr": 4.91,
       "roe": 88.26,
       "divYield": 0.1,
@@ -267,8 +267,8 @@
       "rsi14": 65,
       "pct52wHigh": 0.8481,
       "mdd1y": 28.8,
-      "avgVolume": 2780.8,
-      "per": 614.03,
+      "avgVolume": 2781.4,
+      "per": 624.81,
       "pbr": 10.18,
       "roe": 2.44,
       "divYield": 0.0,
@@ -280,12 +280,12 @@
       "rsi14": 46,
       "pct52wHigh": 0.7506,
       "mdd1y": 33.2,
-      "avgVolume": 2705.9,
+      "avgVolume": 2706.5,
       "per": 1744.17,
-      "pbr": 36.32,
+      "pbr": 36.48,
       "roe": 2.33,
       "divYield": 0.0,
-      "targetPrice": 249.11
+      "targetPrice": 249.42
     },
     {
       "ticker": "SNPS",
@@ -320,10 +320,10 @@
       "pct52wHigh": 0.7478,
       "mdd1y": 29.7,
       "avgVolume": 2396.9,
-      "per": 30.64,
+      "per": 32.63,
       "pbr": 4.74,
       "roe": 14.76,
-      "divYield": 1.41,
+      "divYield": 1.32,
       "targetPrice": 441.34
     },
     {
@@ -332,7 +332,7 @@
       "rsi14": 49,
       "pct52wHigh": 0.4138,
       "mdd1y": 61.4,
-      "avgVolume": 5461.1,
+      "avgVolume": 5462.4,
       "per": 43.07,
       "pbr": 6.19,
       "roe": 16.52,
@@ -375,7 +375,7 @@
       "per": 43.35,
       "pbr": 4.73,
       "roe": 12.57,
-      "divYield": 3.23,
+      "divYield": 3.16,
       "targetPrice": 85.28
     },
     {
@@ -385,11 +385,11 @@
       "pct52wHigh": 0.7955,
       "mdd1y": 39.5,
       "avgVolume": 556.2,
-      "per": 32.01,
+      "per": 30.66,
       "pbr": 15.25,
-      "roe": 53.85,
+      "roe": 55.48,
       "divYield": 0.0,
-      "targetPrice": 307.54
+      "targetPrice": 307.69
     },
     {
       "ticker": "WDAY",
@@ -400,7 +400,7 @@
       "avgVolume": 448.1,
       "per": 36.75,
       "pbr": 6.73,
-      "roe": 16.01,
+      "roe": 16.31,
       "divYield": 0.0,
       "targetPrice": 201.66
     },
@@ -410,7 +410,7 @@
       "rsi14": 44,
       "pct52wHigh": 0.6783,
       "mdd1y": 34.1,
-      "avgVolume": 12870.4,
+      "avgVolume": 12872.1,
       "per": 14.26,
       "pbr": 5.09,
       "roe": 44.29,
@@ -423,7 +423,7 @@
       "rsi14": 43,
       "pct52wHigh": 0.6791,
       "mdd1y": 33.8,
-      "avgVolume": 8447.0,
+      "avgVolume": 8448.1,
       "per": 14.15,
       "pbr": 5.05,
       "roe": 44.29,
@@ -436,11 +436,11 @@
       "rsi14": 51,
       "pct52wHigh": 0.7843,
       "mdd1y": 28.8,
-      "avgVolume": 11256.3,
-      "per": 20.81,
+      "avgVolume": 11258.4,
+      "per": 20.12,
       "pbr": 5.72,
       "roe": 32.26,
-      "divYield": 0.36,
+      "divYield": 0.34,
       "targetPrice": 842.54
     },
     {
@@ -449,8 +449,8 @@
       "rsi14": 30,
       "pct52wHigh": 0.5433,
       "mdd1y": 48.1,
-      "avgVolume": 2494.3,
-      "per": 17.02,
+      "avgVolume": 2494.5,
+      "per": 17.17,
       "pbr": 8.33,
       "roe": 53.46,
       "divYield": 0.0,
@@ -466,7 +466,7 @@
       "per": 22.31,
       "pbr": 1.95,
       "roe": 9.13,
-      "divYield": 1.63,
+      "divYield": 1.59,
       "targetPrice": 131.34
     },
     {
@@ -476,10 +476,10 @@
       "pct52wHigh": 0.7922,
       "mdd1y": 36.4,
       "avgVolume": 703.5,
-      "per": 8.04,
+      "per": 8.14,
       "pbr": 0.99,
       "roe": 11.43,
-      "divYield": 5.2,
+      "divYield": 5.13,
       "targetPrice": 27.98
     },
     {
@@ -489,10 +489,10 @@
       "pct52wHigh": 0.7893,
       "mdd1y": 29.6,
       "avgVolume": 972.3,
-      "per": 12.22,
+      "per": 12.28,
       "pbr": 1.45,
       "roe": 11.61,
-      "divYield": 4.85,
+      "divYield": 4.83,
       "targetPrice": 27.59
     },
     {
@@ -505,7 +505,7 @@
       "per": 12.06,
       "pbr": 1.85,
       "roe": 15.79,
-      "divYield": 6.0,
+      "divYield": 5.99,
       "targetPrice": 50.65
     },
     {
@@ -518,7 +518,7 @@
       "per": 16.03,
       "pbr": 3.14,
       "roe": 19.35,
-      "divYield": 2.8,
+      "divYield": 2.82,
       "targetPrice": 226.24
     },
     {
@@ -553,7 +553,7 @@
       "rsi14": 40,
       "pct52wHigh": 0.8606,
       "mdd1y": 19.6,
-      "avgVolume": 14234.4,
+      "avgVolume": 14237.0,
       "per": 19.76,
       "pbr": 4.31,
       "roe": 27.42,
@@ -566,7 +566,7 @@
       "rsi14": 62,
       "pct52wHigh": 0.776,
       "mdd1y": 39.1,
-      "avgVolume": 13590.6,
+      "avgVolume": 13593.0,
       "per": 417.74,
       "pbr": 16.83,
       "roe": 3.84,
@@ -581,9 +581,9 @@
       "mdd1y": 28.1,
       "avgVolume": 1849.0,
       "per": 25.09,
-      "pbr": 19.88,
+      "pbr": 19.82,
       "roe": 94.8,
-      "divYield": 2.64,
+      "divYield": 2.58,
       "targetPrice": 375.41
     },
     {
@@ -593,8 +593,8 @@
       "pct52wHigh": 0.8312,
       "mdd1y": 32.3,
       "avgVolume": 1577.3,
-      "per": 22.2,
-      "divYield": 2.75,
+      "per": 22.43,
+      "divYield": 2.72,
       "targetPrice": 299.0
     },
     {
@@ -603,11 +603,11 @@
       "rsi14": 40,
       "pct52wHigh": 0.5409,
       "mdd1y": 51.4,
-      "avgVolume": 978.6,
+      "avgVolume": 978.7,
       "per": 17.62,
       "pbr": 3.57,
       "roe": 21.56,
-      "divYield": 4.59,
+      "divYield": 4.47,
       "targetPrice": 36.5
     },
     {
@@ -618,7 +618,7 @@
       "mdd1y": 16.4,
       "avgVolume": 932.7,
       "per": 48.75,
-      "divYield": 2.37,
+      "divYield": 2.34,
       "targetPrice": 111.07
     },
     {
@@ -627,7 +627,7 @@
       "rsi14": 58,
       "pct52wHigh": 0.981,
       "mdd1y": 8.5,
-      "avgVolume": 1984.4,
+      "avgVolume": 1984.5,
       "per": 28.79,
       "pbr": 11.23,
       "roe": 40.59,
@@ -641,10 +641,10 @@
       "pct52wHigh": 0.8442,
       "mdd1y": 27.4,
       "avgVolume": 1430.4,
-      "per": 17.95,
+      "per": 18.1,
       "pbr": 8.81,
       "roe": 52.19,
-      "divYield": 4.15,
+      "divYield": 4.11,
       "targetPrice": 141.27
     },
     {
@@ -657,7 +657,7 @@
       "per": 26.09,
       "pbr": 7.39,
       "roe": 29.61,
-      "divYield": 2.52,
+      "divYield": 2.51,
       "targetPrice": 176.7
     },
     {
@@ -666,12 +666,12 @@
       "rsi14": 65,
       "pct52wHigh": 0.9832,
       "mdd1y": 23.5,
-      "avgVolume": 3177.0,
+      "avgVolume": 3177.2,
       "per": 47.8,
       "pbr": 10.67,
       "roe": 20.55,
       "divYield": 0.75,
-      "targetPrice": 136.15
+      "targetPrice": 136.8
     },
     {
       "ticker": "COST",
@@ -696,7 +696,7 @@
       "per": 16.01,
       "pbr": 4.25,
       "roe": 29.02,
-      "divYield": 2.64,
+      "divYield": 2.69,
       "targetPrice": 172.54
     },
     {
@@ -707,7 +707,7 @@
       "mdd1y": 37.5,
       "avgVolume": 841.4,
       "per": 19.77,
-      "divYield": 2.16,
+      "divYield": 2.12,
       "targetPrice": 249.91
     },
     {
@@ -720,7 +720,7 @@
       "per": 21.39,
       "pbr": 3.24,
       "roe": 15.48,
-      "divYield": 3.1,
+      "divYield": 3.07,
       "targetPrice": 70.64
     },
     {
@@ -730,8 +730,8 @@
       "pct52wHigh": 0.6805,
       "mdd1y": 34.0,
       "avgVolume": 1188.1,
-      "per": 15.9,
-      "divYield": 1.15,
+      "per": 16.21,
+      "divYield": 1.12,
       "targetPrice": 215.06
     },
     {
@@ -752,7 +752,7 @@
       "pct52wHigh": 0.9151,
       "mdd1y": 32.7,
       "avgVolume": 609.2,
-      "per": 34.95,
+      "per": 34.31,
       "pbr": 19.27,
       "roe": 48.52,
       "divYield": 0.0,
@@ -765,7 +765,7 @@
       "pct52wHigh": 0.9037,
       "mdd1y": 21.5,
       "avgVolume": 937.0,
-      "per": 32.54,
+      "per": 32.3,
       "pbr": 10.89,
       "roe": 35.79,
       "divYield": 0.0,
@@ -778,7 +778,7 @@
       "pct52wHigh": 0.9507,
       "mdd1y": 18.7,
       "avgVolume": 650.3,
-      "per": 29.3,
+      "per": 29.66,
       "divYield": 0.0,
       "targetPrice": 106.41
     },
@@ -792,7 +792,7 @@
       "per": 18.38,
       "pbr": 1.14,
       "roe": 6.28,
-      "divYield": 0.87,
+      "divYield": 0.86,
       "targetPrice": 101.38
     },
     {
@@ -804,7 +804,7 @@
       "avgVolume": 559.1,
       "pbr": 1.32,
       "roe": -18.43,
-      "divYield": 5.02,
+      "divYield": 4.93,
       "targetPrice": 14.96
     },
     {
@@ -825,10 +825,10 @@
       "pct52wHigh": 0.9868,
       "mdd1y": 17.5,
       "avgVolume": 571.8,
-      "per": 38.63,
+      "per": 38.78,
       "pbr": 275.3,
       "roe": 231.74,
-      "divYield": 2.14,
+      "divYield": 2.13,
       "targetPrice": 101.9
     },
     {
@@ -841,7 +841,7 @@
       "per": 20.89,
       "pbr": 12.42,
       "roe": 78.38,
-      "divYield": 4.71,
+      "divYield": 4.68,
       "targetPrice": 118.12
     },
     {
@@ -851,8 +851,8 @@
       "pct52wHigh": 0.9668,
       "mdd1y": 14.6,
       "avgVolume": 680.9,
-      "per": 15.44,
-      "divYield": 5.93,
+      "per": 15.73,
+      "divYield": 5.82,
       "targetPrice": 73.45
     },
     {
@@ -862,8 +862,8 @@
       "pct52wHigh": 0.8724,
       "mdd1y": 19.3,
       "avgVolume": 1150.7,
-      "per": 26.87,
-      "divYield": 3.48,
+      "per": 26.91,
+      "divYield": 3.47,
       "targetPrice": 212.69
     },
     {
@@ -873,10 +873,10 @@
       "pct52wHigh": 0.9645,
       "mdd1y": 23.2,
       "avgVolume": 4641.8,
-      "per": 45.69,
+      "per": 45.19,
       "pbr": 30.81,
       "roe": 86.02,
-      "divYield": 0.49,
+      "divYield": 0.5,
       "targetPrice": 1470.06
     },
     {
@@ -886,10 +886,10 @@
       "pct52wHigh": 0.7934,
       "mdd1y": 27.3,
       "avgVolume": 2918.9,
-      "per": 19.51,
+      "per": 19.76,
       "pbr": 3.16,
       "roe": 15.77,
-      "divYield": 2.71,
+      "divYield": 2.68,
       "targetPrice": 478.48
     },
     {
@@ -899,10 +899,10 @@
       "pct52wHigh": 0.9587,
       "mdd1y": 11.0,
       "avgVolume": 2285.1,
-      "per": 41.95,
+      "per": 41.57,
       "pbr": 8.09,
       "roe": 20.02,
-      "divYield": 1.94,
+      "divYield": 1.96,
       "targetPrice": 279.85
     },
     {
@@ -915,7 +915,7 @@
       "per": 141.71,
       "pbr": 7.71,
       "roe": 5.06,
-      "divYield": 2.49,
+      "divYield": 2.51,
       "targetPrice": 161.53
     },
     {
@@ -926,7 +926,7 @@
       "mdd1y": 16.4,
       "avgVolume": 1670.2,
       "per": 50.6,
-      "divYield": 2.3,
+      "divYield": 2.35,
       "targetPrice": 315.88
     },
     {
@@ -935,7 +935,7 @@
       "rsi14": 33,
       "pct52wHigh": 0.9243,
       "mdd1y": 17.1,
-      "avgVolume": 1111.2,
+      "avgVolume": 1111.3,
       "per": 40.66,
       "pbr": 1.82,
       "roe": 4.47,
@@ -962,10 +962,10 @@
       "pct52wHigh": 0.8379,
       "mdd1y": 36.0,
       "avgVolume": 883.9,
-      "per": 39.27,
+      "per": 40.3,
       "pbr": 3.67,
       "roe": 9.14,
-      "divYield": 2.39,
+      "divYield": 2.33,
       "targetPrice": 119.25
     },
     {
@@ -975,7 +975,7 @@
       "pct52wHigh": 0.9393,
       "mdd1y": 33.1,
       "avgVolume": 788.1,
-      "per": 37.95,
+      "per": 37.64,
       "pbr": 2.98,
       "roe": 8.19,
       "divYield": 0.7,
@@ -991,7 +991,7 @@
       "per": 27.2,
       "pbr": 17.68,
       "roe": 78.35,
-      "divYield": 2.13,
+      "divYield": 2.15,
       "targetPrice": 440.78
     },
     {
@@ -1003,7 +1003,7 @@
       "avgVolume": 1144.6,
       "pbr": 16.82,
       "roe": -22.45,
-      "divYield": 1.84,
+      "divYield": 1.86,
       "targetPrice": 175.92
     },
     {
@@ -1029,8 +1029,8 @@
       "per": 13.65,
       "pbr": 5.38,
       "roe": 44.01,
-      "divYield": 4.06,
-      "targetPrice": 65.25
+      "divYield": 4.09,
+      "targetPrice": 65.29
     },
     {
       "ticker": "CVS",
@@ -1042,7 +1042,7 @@
       "per": 9.41,
       "pbr": 1.29,
       "roe": 14.36,
-      "divYield": 3.3,
+      "divYield": 3.28,
       "targetPrice": 109.31
     },
     {
@@ -1055,7 +1055,7 @@
       "per": 23.6,
       "pbr": 2.45,
       "divYield": 3.0,
-      "targetPrice": 107.65
+      "targetPrice": 107.73
     },
     {
       "ticker": "SYK",
@@ -1067,7 +1067,7 @@
       "per": 35.45,
       "pbr": 5.4,
       "roe": 16.02,
-      "divYield": 1.09,
+      "divYield": 1.06,
       "targetPrice": 341.48
     },
     {
@@ -1080,7 +1080,7 @@
       "per": 16.55,
       "pbr": 1.88,
       "roe": 11.48,
-      "divYield": 1.76,
+      "divYield": 1.77,
       "targetPrice": 482.38
     },
     {
@@ -1119,7 +1119,7 @@
       "per": 14.05,
       "pbr": 10.19,
       "roe": 57.63,
-      "divYield": 2.6,
+      "divYield": 2.57,
       "targetPrice": 89.69
     },
     {
@@ -1129,7 +1129,7 @@
       "pct52wHigh": 0.8674,
       "mdd1y": 15.5,
       "avgVolume": 2464.6,
-      "per": 13.3,
+      "per": 13.29,
       "pbr": 2.39,
       "roe": 18.01,
       "divYield": 2.08,
@@ -1158,7 +1158,7 @@
       "per": 11.42,
       "pbr": 1.53,
       "roe": 12.91,
-      "divYield": 2.46,
+      "divYield": 2.47,
       "targetPrice": 97.38
     },
     {
@@ -1171,7 +1171,7 @@
       "per": 11.52,
       "pbr": 2.18,
       "roe": 17.71,
-      "divYield": 2.48,
+      "divYield": 2.5,
       "targetPrice": 1030.71
     },
     {
@@ -1184,7 +1184,7 @@
       "per": 13.29,
       "pbr": 2.44,
       "roe": 18.04,
-      "divYield": 2.73,
+      "divYield": 2.75,
       "targetPrice": 211.5
     },
     {
@@ -1197,7 +1197,7 @@
       "per": 11.05,
       "pbr": 0.98,
       "roe": 9.35,
-      "divYield": 2.35,
+      "divYield": 2.36,
       "targetPrice": 150.6
     },
     {
@@ -1210,7 +1210,7 @@
       "per": 34.45,
       "pbr": 22.14,
       "roe": 63.51,
-      "divYield": 0.75,
+      "divYield": 0.74,
       "targetPrice": 454.1
     },
     {
@@ -1223,7 +1223,7 @@
       "per": 34.54,
       "pbr": 85.23,
       "roe": 231.37,
-      "divYield": 0.54,
+      "divYield": 0.53,
       "targetPrice": 722.73
     },
     {
@@ -1233,7 +1233,7 @@
       "pct52wHigh": 0.977,
       "mdd1y": 9.4,
       "avgVolume": 3113.1,
-      "per": 16.16,
+      "per": 16.21,
       "pbr": 0.0,
       "roe": 10.57,
       "divYield": 0.0,
@@ -1249,7 +1249,7 @@
       "per": 17.6,
       "pbr": 5.86,
       "roe": 35.93,
-      "divYield": 1.23,
+      "divYield": 1.22,
       "targetPrice": 364.79
     },
     {
@@ -1259,10 +1259,10 @@
       "pct52wHigh": 0.9311,
       "mdd1y": 20.7,
       "avgVolume": 800.6,
-      "per": 26.09,
+      "per": 26.0,
       "pbr": 3.04,
       "roe": 11.61,
-      "divYield": 2.0,
+      "divYield": 2.01,
       "targetPrice": 1366.0
     },
     {
@@ -1275,7 +1275,7 @@
       "per": 15.97,
       "pbr": 3.56,
       "roe": 21.11,
-      "divYield": 1.36,
+      "divYield": 1.37,
       "targetPrice": 116.55
     },
     {
@@ -1288,7 +1288,7 @@
       "per": 27.52,
       "pbr": 6.78,
       "roe": 17.88,
-      "divYield": 0.85,
+      "divYield": 0.84,
       "targetPrice": 529.35
     },
     {
@@ -1301,7 +1301,7 @@
       "per": 13.34,
       "pbr": 1.99,
       "roe": 14.25,
-      "divYield": 1.09,
+      "divYield": 1.07,
       "targetPrice": 375.61
     },
     {
@@ -1311,7 +1311,7 @@
       "pct52wHigh": 1.0,
       "mdd1y": 19.4,
       "avgVolume": 555.6,
-      "per": 11.88,
+      "per": 12.03,
       "pbr": 4.01,
       "roe": 33.24,
       "divYield": 0.17,
@@ -1324,10 +1324,10 @@
       "pct52wHigh": 0.9846,
       "mdd1y": 29.8,
       "avgVolume": 585.8,
-      "per": 23.84,
+      "per": 24.22,
       "pbr": 3.32,
       "roe": 14.4,
-      "divYield": 1.19,
+      "divYield": 1.17,
       "targetPrice": 193.53
     },
     {
@@ -1340,7 +1340,7 @@
       "per": 25.55,
       "pbr": 4.2,
       "roe": 16.13,
-      "divYield": 1.68,
+      "divYield": 1.67,
       "targetPrice": 318.12
     },
     {
@@ -1353,7 +1353,7 @@
       "per": 16.26,
       "pbr": 2.43,
       "roe": 15.53,
-      "divYield": 2.7,
+      "divYield": 2.71,
       "targetPrice": 184.18
     },
     {
@@ -1366,7 +1366,7 @@
       "per": 15.49,
       "pbr": 2.12,
       "roe": 13.85,
-      "divYield": 3.41,
+      "divYield": 3.38,
       "targetPrice": 241.62
     },
     {
@@ -1392,7 +1392,7 @@
       "per": 23.55,
       "pbr": 2.75,
       "roe": 11.66,
-      "divYield": 2.51,
+      "divYield": 2.43,
       "targetPrice": 62.21
     },
     {
@@ -1405,7 +1405,7 @@
       "per": 9.57,
       "pbr": 2.33,
       "roe": 25.83,
-      "divYield": 3.0,
+      "divYield": 2.97,
       "targetPrice": 167.59
     },
     {
@@ -1415,10 +1415,10 @@
       "pct52wHigh": 0.7141,
       "mdd1y": 28.6,
       "avgVolume": 997.1,
-      "per": 7.04,
+      "per": 6.86,
       "pbr": 4.1,
       "roe": 60.46,
-      "divYield": 1.24,
+      "divYield": 1.27,
       "targetPrice": 447.18
     },
     {
@@ -1428,7 +1428,7 @@
       "pct52wHigh": 0.7941,
       "mdd1y": 20.6,
       "avgVolume": 946.4,
-      "per": 7.6,
+      "per": 7.57,
       "pbr": 2.68,
       "roe": 39.84,
       "divYield": 2.25,
@@ -1444,7 +1444,7 @@
       "per": 7.35,
       "pbr": 3.22,
       "roe": 46.87,
-      "divYield": 1.48,
+      "divYield": 1.49,
       "targetPrice": 413.47
     },
     {
@@ -1457,7 +1457,7 @@
       "per": 13.42,
       "pbr": 2.34,
       "roe": 15.02,
-      "divYield": 5.05,
+      "divYield": 4.95,
       "targetPrice": 102.43
     },
     {
@@ -1470,7 +1470,7 @@
       "per": 26.16,
       "pbr": 5.3,
       "roe": 18.31,
-      "divYield": 3.18,
+      "divYield": 3.16,
       "targetPrice": 85.42
     },
     {
@@ -1483,7 +1483,7 @@
       "per": 21.34,
       "pbr": 11.58,
       "roe": 56.14,
-      "divYield": 1.21,
+      "divYield": 1.2,
       "targetPrice": 807.26
     },
     {
@@ -1493,7 +1493,7 @@
       "pct52wHigh": 0.6525,
       "mdd1y": 38.2,
       "avgVolume": 1348.6,
-      "per": 16.87,
+      "per": 16.98,
       "pbr": 19.92,
       "divYield": 0.0,
       "targetPrice": 233.04
@@ -1508,7 +1508,7 @@
       "per": 11.16,
       "pbr": 3.19,
       "roe": 44.39,
-      "divYield": 1.25,
+      "divYield": 1.24,
       "targetPrice": 253.87
     },
     {
@@ -1518,7 +1518,7 @@
       "pct52wHigh": 0.8315,
       "mdd1y": 25.1,
       "avgVolume": 1500.1,
-      "per": 36.35,
+      "per": 36.23,
       "pbr": 18.69,
       "roe": 50.17,
       "divYield": 0.59,
@@ -1534,7 +1534,7 @@
       "per": 21.48,
       "pbr": 6.33,
       "roe": 28.64,
-      "divYield": 5.92,
+      "divYield": 5.89,
       "targetPrice": 115.85
     },
     {
@@ -1559,9 +1559,9 @@
       "avgVolume": 917.1,
       "per": 35.63,
       "pbr": 6.17,
-      "roe": 18.24,
-      "divYield": 1.06,
-      "targetPrice": 689.19
+      "roe": 17.89,
+      "divYield": 1.01,
+      "targetPrice": 699.18
     },
     {
       "ticker": "LMT",
@@ -1570,10 +1570,10 @@
       "pct52wHigh": 0.8855,
       "mdd1y": 27.3,
       "avgVolume": 813.9,
-      "per": 20.83,
+      "per": 21.28,
       "pbr": 13.7,
       "roe": 80.19,
-      "divYield": 2.45,
+      "divYield": 2.4,
       "targetPrice": 660.86
     },
     {
@@ -1586,7 +1586,7 @@
       "per": 17.54,
       "pbr": 4.23,
       "roe": 26.07,
-      "divYield": 1.79,
+      "divYield": 1.78,
       "targetPrice": 638.24
     },
     {
@@ -1599,7 +1599,7 @@
       "per": 21.2,
       "pbr": 3.56,
       "roe": 18.01,
-      "divYield": 1.81,
+      "divYield": 1.77,
       "targetPrice": 417.96
     },
     {
@@ -1609,7 +1609,7 @@
       "pct52wHigh": 0.9102,
       "mdd1y": 17.6,
       "avgVolume": 456.6,
-      "per": 16.61,
+      "per": 16.65,
       "pbr": 2.09,
       "roe": 14.85,
       "divYield": 1.58,
@@ -1625,7 +1625,7 @@
       "per": 32.82,
       "pbr": 4.22,
       "roe": 13.12,
-      "divYield": 1.52,
+      "divYield": 1.51,
       "targetPrice": 183.11
     },
     {
@@ -1651,7 +1651,7 @@
       "per": 26.65,
       "pbr": 6.56,
       "roe": 26.39,
-      "divYield": 1.12,
+      "divYield": 1.09,
       "targetPrice": 53.81
     },
     {
@@ -1661,10 +1661,10 @@
       "pct52wHigh": 0.9606,
       "mdd1y": 13.2,
       "avgVolume": 920.2,
-      "per": 22.69,
+      "per": 23.27,
       "pbr": 8.05,
       "roe": 38.75,
-      "divYield": 1.95,
+      "divYield": 1.9,
       "targetPrice": 329.96
     },
     {
@@ -1677,7 +1677,7 @@
       "per": 15.39,
       "pbr": 2.91,
       "roe": 14.06,
-      "divYield": 2.95,
+      "divYield": 2.92,
       "targetPrice": 94.47
     },
     {
@@ -1687,10 +1687,10 @@
       "pct52wHigh": 0.9883,
       "mdd1y": 15.2,
       "avgVolume": 693.4,
-      "per": 19.2,
+      "per": 19.34,
       "pbr": 1.89,
       "roe": 10.1,
-      "divYield": 3.31,
+      "divYield": 3.29,
       "targetPrice": 134.66
     },
     {
@@ -1703,7 +1703,7 @@
       "per": 21.69,
       "pbr": 2.63,
       "roe": 11.9,
-      "divYield": 3.23,
+      "divYield": 3.2,
       "targetPrice": 97.22
     },
     {
@@ -1716,7 +1716,7 @@
       "per": 20.85,
       "pbr": 2.12,
       "roe": 10.6,
-      "divYield": 3.05,
+      "divYield": 3.04,
       "targetPrice": 142.02
     },
     {
@@ -1729,7 +1729,7 @@
       "per": 22.44,
       "pbr": 2.09,
       "roe": 8.82,
-      "divYield": 3.97,
+      "divYield": 3.93,
       "targetPrice": 70.42
     },
     {
@@ -1742,7 +1742,7 @@
       "per": 16.94,
       "pbr": 1.55,
       "roe": 8.73,
-      "divYield": 3.34,
+      "divYield": 3.33,
       "targetPrice": 96.81
     },
     {
@@ -1755,7 +1755,7 @@
       "per": 34.83,
       "pbr": 6.11,
       "roe": 17.72,
-      "divYield": 1.24,
+      "divYield": 1.22,
       "targetPrice": 555.15
     },
     {
@@ -1768,7 +1768,7 @@
       "per": 33.21,
       "pbr": 21.8,
       "roe": 63.7,
-      "divYield": 0.91,
+      "divYield": 0.89,
       "targetPrice": 373.83
     },
     {
@@ -1778,10 +1778,10 @@
       "pct52wHigh": 0.6076,
       "mdd1y": 42.4,
       "avgVolume": 960.2,
-      "per": 20.06,
+      "per": 20.4,
       "pbr": 3.32,
       "roe": 15.72,
-      "divYield": 1.26,
+      "divYield": 1.24,
       "targetPrice": 78.22
     },
     {
@@ -1791,10 +1791,10 @@
       "pct52wHigh": 0.9855,
       "mdd1y": 13.0,
       "avgVolume": 333.5,
-      "per": 129.33,
+      "per": 131.49,
       "pbr": 4.9,
       "roe": 3.19,
-      "divYield": 2.35,
+      "divYield": 2.3,
       "targetPrice": 346.95
     },
     {
@@ -1816,11 +1816,11 @@
       "rsi14": 31,
       "pct52wHigh": 0.7506,
       "mdd1y": 32.4,
-      "avgVolume": 869.3,
+      "avgVolume": 869.4,
       "per": 11.77,
       "pbr": 2.97,
       "roe": 27.26,
-      "divYield": 1.04,
+      "divYield": 1.03,
       "targetPrice": 133.8
     },
     {
@@ -1830,7 +1830,7 @@
       "pct52wHigh": 0.8944,
       "mdd1y": 18.4,
       "avgVolume": 408.8,
-      "per": 15.82,
+      "per": 15.83,
       "pbr": 2.45,
       "roe": 17.58,
       "divYield": 0.9,
@@ -1843,10 +1843,10 @@
       "pct52wHigh": 0.8465,
       "mdd1y": 18.4,
       "avgVolume": 483.8,
-      "per": 28.04,
+      "per": 27.98,
       "pbr": 2.16,
       "roe": 7.71,
-      "divYield": 3.36,
+      "divYield": 3.37,
       "targetPrice": 152.07
     },
     {
@@ -1859,7 +1859,7 @@
       "per": 26.0,
       "pbr": 24.37,
       "roe": 32.96,
-      "divYield": 3.92,
+      "divYield": 3.88,
       "targetPrice": 216.12
     },
     {
@@ -1872,7 +1872,7 @@
       "per": 58.75,
       "pbr": 6.66,
       "roe": 11.45,
-      "divYield": 2.1,
+      "divYield": 2.11,
       "targetPrice": 1234.88
     },
     {
@@ -1882,8 +1882,8 @@
       "pct52wHigh": 0.8851,
       "mdd1y": 30.0,
       "avgVolume": 331.7,
-      "per": 33.19,
-      "divYield": 5.14,
+      "per": 33.59,
+      "divYield": 5.08,
       "targetPrice": 93.61
     },
     {
@@ -1893,10 +1893,10 @@
       "pct52wHigh": 0.9861,
       "mdd1y": 14.8,
       "avgVolume": 357.4,
-      "per": 34.92,
+      "per": 35.54,
       "pbr": 6.46,
       "roe": 15.6,
-      "divYield": 3.62,
+      "divYield": 3.55,
       "targetPrice": 344.39
     },
     {
@@ -1909,7 +1909,7 @@
       "per": 41.27,
       "pbr": 1.45,
       "roe": 3.48,
-      "divYield": 5.52,
+      "divYield": 5.46,
       "targetPrice": 63.77
     },
     {
@@ -1918,7 +1918,7 @@
       "rsi14": 44,
       "pct52wHigh": 0.9199,
       "mdd1y": 11.5,
-      "avgVolume": 48169.9,
+      "avgVolume": 48177.1,
       "per": 22.8,
       "pbr": 1.67,
       "divYield": 1.0
@@ -1940,9 +1940,8 @@
       "rsi14": 44,
       "pct52wHigh": 0.92,
       "mdd1y": 11.3,
-      "avgVolume": 7339.1,
+      "avgVolume": 7340.1,
       "per": 22.26,
-      "pbr": 1.69,
       "divYield": 1.07
     },
     {
@@ -1951,7 +1950,7 @@
       "rsi14": 47,
       "pct52wHigh": 0.8345,
       "mdd1y": 19.9,
-      "avgVolume": 42426.9,
+      "avgVolume": 42440.1,
       "per": 26.11,
       "pbr": 1.77,
       "divYield": 0.45
@@ -1962,7 +1961,7 @@
       "rsi14": 46,
       "pct52wHigh": 0.8347,
       "mdd1y": 19.7,
-      "avgVolume": 1813.8,
+      "avgVolume": 1814.2,
       "per": 26.11,
       "divYield": 0.46
     },
@@ -1974,7 +1973,6 @@
       "mdd1y": 11.5,
       "avgVolume": 1784.1,
       "per": 21.68,
-      "pbr": 2.53,
       "divYield": 1.06
     },
     {
@@ -1985,7 +1983,6 @@
       "mdd1y": 11.4,
       "avgVolume": 2198.0,
       "per": 19.85,
-      "pbr": 1.4,
       "divYield": 1.39
     },
     {
@@ -1994,7 +1991,7 @@
       "rsi14": 49,
       "pct52wHigh": 0.9746,
       "mdd1y": 7.6,
-      "avgVolume": 971.7,
+      "avgVolume": 972.0,
       "per": 18.98,
       "divYield": 2.95
     },
@@ -2014,7 +2011,7 @@
       "rsi14": 45,
       "pct52wHigh": 0.6316,
       "mdd1y": 40.2,
-      "avgVolume": 6565.0,
+      "avgVolume": 6565.8,
       "per": 22.81,
       "divYield": 0.21
     },
@@ -2024,7 +2021,7 @@
       "rsi14": 48,
       "pct52wHigh": 0.5862,
       "mdd1y": 43.5,
-      "avgVolume": 7038.5,
+      "avgVolume": 7042.1,
       "per": 27.09,
       "pbr": 0.3,
       "divYield": 0.27
@@ -2035,9 +2032,8 @@
       "rsi14": 45,
       "pct52wHigh": 0.7712,
       "mdd1y": 26.2,
-      "avgVolume": 2874.3,
+      "avgVolume": 2874.6,
       "per": 27.47,
-      "pbr": 1.04,
       "divYield": 0.47
     },
     {
@@ -2046,7 +2042,7 @@
       "rsi14": 44,
       "pct52wHigh": 0.9546,
       "mdd1y": 15.2,
-      "avgVolume": 2438.6,
+      "avgVolume": 2438.7,
       "per": 15.26,
       "pbr": 1.66,
       "divYield": 1.46
@@ -2070,7 +2066,6 @@
       "mdd1y": 10.8,
       "avgVolume": 2563.5,
       "per": 29.94,
-      "pbr": 1.44,
       "divYield": 1.38
     },
     {
@@ -2081,7 +2076,6 @@
       "mdd1y": 15.1,
       "avgVolume": 1198.4,
       "per": 24.59,
-      "pbr": 0.7,
       "divYield": 0.81
     },
     {
@@ -2090,7 +2084,7 @@
       "rsi14": 55,
       "pct52wHigh": 0.9968,
       "mdd1y": 10.8,
-      "avgVolume": 2044.7,
+      "avgVolume": 2044.9,
       "per": 24.84,
       "pbr": 1.35,
       "divYield": 2.46
@@ -2112,7 +2106,7 @@
       "rsi14": 54,
       "pct52wHigh": 0.9137,
       "mdd1y": 17.8,
-      "avgVolume": 1137.5,
+      "avgVolume": 1137.6,
       "per": 17.94,
       "pbr": 0.68,
       "divYield": 2.79
@@ -2154,7 +2148,7 @@
       "rsi14": 44,
       "pct52wHigh": 0.5191,
       "mdd1y": 52.8,
-      "avgVolume": 6519.3,
+      "avgVolume": 6529.1,
       "per": 20.78,
       "divYield": 0.78
     },
@@ -2164,7 +2158,7 @@
       "rsi14": 50,
       "pct52wHigh": 0.5547,
       "mdd1y": 64.4,
-      "avgVolume": 3169.8,
+      "avgVolume": 3171.8,
       "divYield": 7.78
     },
     {
@@ -2173,7 +2167,7 @@
       "rsi14": 42,
       "pct52wHigh": 0.7407,
       "mdd1y": 33.2,
-      "avgVolume": 499.3,
+      "avgVolume": 499.6,
       "per": 19.88,
       "divYield": 0.8
     },
@@ -2183,7 +2177,7 @@
       "rsi14": 45,
       "pct52wHigh": 0.1065,
       "mdd1y": 89.7,
-      "avgVolume": 15732.7,
+      "avgVolume": 15767.0,
       "per": 12.06,
       "divYield": 0.12
     },
@@ -2193,7 +2187,7 @@
       "rsi14": 51,
       "pct52wHigh": 0.723,
       "mdd1y": 40.0,
-      "avgVolume": 144.2,
+      "avgVolume": 144.3,
       "divYield": 4.69
     },
     {
@@ -2206,8 +2200,8 @@
       "per": 32.06,
       "pbr": 1118.89,
       "roe": 65.64,
-      "divYield": 0.7,
-      "targetPrice": 2109.63
+      "divYield": 0.71,
+      "targetPrice": 2112.88
     },
     {
       "ticker": "PLTR",
@@ -2215,7 +2209,7 @@
       "rsi14": 56,
       "pct52wHigh": 0.7825,
       "mdd1y": 44.8,
-      "avgVolume": 4295.1,
+      "avgVolume": 4295.7,
       "per": 115.2,
       "pbr": 35.1,
       "roe": 40.91,
@@ -2258,8 +2252,8 @@
       "per": 19.12,
       "pbr": 5.07,
       "roe": 28.67,
-      "divYield": 1.69,
-      "targetPrice": 302.63
+      "divYield": 1.67,
+      "targetPrice": 302.21
     },
     {
       "ticker": "WDC",
@@ -2267,8 +2261,8 @@
       "rsi14": 51,
       "pct52wHigh": 0.3651,
       "mdd1y": 65.0,
-      "avgVolume": 2380.5,
-      "per": 9.64,
+      "avgVolume": 2380.8,
+      "per": 9.58,
       "pbr": 10.9,
       "roe": 129.6,
       "divYield": 0.26,
@@ -2281,10 +2275,10 @@
       "pct52wHigh": 1.0,
       "mdd1y": 29.1,
       "avgVolume": 712.5,
-      "per": 27.54,
+      "per": 28.08,
       "pbr": 24.61,
       "roe": 78.94,
-      "divYield": 2.45,
+      "divYield": 2.4,
       "targetPrice": 304.94
     },
     {
@@ -2294,10 +2288,10 @@
       "pct52wHigh": 0.9815,
       "mdd1y": 30.2,
       "avgVolume": 495.6,
-      "per": 18.85,
+      "per": 19.12,
       "pbr": 2.49,
       "roe": 13.23,
-      "divYield": 0.84,
+      "divYield": 0.83,
       "targetPrice": 469.18
     },
     {
@@ -2307,8 +2301,8 @@
       "pct52wHigh": 0.9007,
       "mdd1y": 33.7,
       "avgVolume": 645.3,
-      "per": 15.98,
-      "divYield": 0.65,
+      "per": 16.29,
+      "divYield": 0.64,
       "targetPrice": 485.68
     },
     {
@@ -2318,10 +2312,10 @@
       "pct52wHigh": 0.8593,
       "mdd1y": 14.4,
       "avgVolume": 616.7,
-      "per": 12.13,
+      "per": 11.97,
       "pbr": 1.65,
       "roe": 15.65,
-      "divYield": 2.27,
+      "divYield": 2.3,
       "targetPrice": 344.4
     },
     {
@@ -2334,7 +2328,7 @@
       "per": 39.66,
       "pbr": 2.59,
       "roe": 6.74,
-      "divYield": 0.88,
+      "divYield": 0.87,
       "targetPrice": 510.4
     },
     {
@@ -2344,7 +2338,7 @@
       "pct52wHigh": 0.9188,
       "mdd1y": 22.6,
       "avgVolume": 357.3,
-      "per": 33.27,
+      "per": 33.4,
       "pbr": 12.48,
       "roe": 37.67,
       "divYield": 0.0,
@@ -2373,7 +2367,7 @@
       "per": 11.03,
       "pbr": 2.48,
       "roe": 23.82,
-      "divYield": 1.0,
+      "divYield": 0.97,
       "targetPrice": 57.45
     },
     {
@@ -2386,7 +2380,7 @@
       "per": 26.49,
       "pbr": 10.76,
       "roe": 32.38,
-      "divYield": 4.24,
+      "divYield": 4.25,
       "targetPrice": 139.04
     },
     {
@@ -2399,7 +2393,7 @@
       "per": 27.6,
       "pbr": 3.04,
       "roe": 6.32,
-      "divYield": 0.84,
+      "divYield": 0.83,
       "targetPrice": 122.54
     },
     {
@@ -2409,10 +2403,10 @@
       "pct52wHigh": 0.895,
       "mdd1y": 16.2,
       "avgVolume": 390.9,
-      "per": 11.3,
+      "per": 11.39,
       "pbr": 1.53,
       "roe": 12.84,
-      "divYield": 3.72,
+      "divYield": 3.69,
       "targetPrice": 68.8
     },
     {
@@ -2425,7 +2419,7 @@
       "per": 18.61,
       "pbr": 2.16,
       "roe": 12.16,
-      "divYield": 2.04,
+      "divYield": 2.01,
       "targetPrice": 120.6
     },
     {
@@ -2437,7 +2431,7 @@
       "avgVolume": 392.8,
       "pbr": 0.87,
       "roe": -8.95,
-      "divYield": 6.26,
+      "divYield": 6.04,
       "targetPrice": 25.15
     },
     {
@@ -2463,7 +2457,7 @@
       "per": 25.99,
       "pbr": 10.21,
       "roe": 43.01,
-      "divYield": 0.79,
+      "divYield": 0.8,
       "targetPrice": 265.11
     },
     {
@@ -2476,7 +2470,7 @@
       "per": 104.31,
       "pbr": 3.71,
       "roe": 3.92,
-      "divYield": 1.39,
+      "divYield": 1.38,
       "targetPrice": 265.45
     },
     {
@@ -2489,7 +2483,7 @@
       "per": 70.22,
       "pbr": 2.28,
       "roe": 3.34,
-      "divYield": 2.95,
+      "divYield": 2.93,
       "targetPrice": 224.0
     },
     {
@@ -2502,7 +2496,7 @@
       "per": 16.89,
       "pbr": 18.65,
       "roe": 125.2,
-      "divYield": 4.0,
+      "divYield": 3.93,
       "targetPrice": 235.24
     },
     {
@@ -2515,8 +2509,8 @@
       "per": 18.91,
       "pbr": 2.53,
       "roe": 18.34,
-      "divYield": 0.7,
-      "targetPrice": 340.38
+      "divYield": 0.73,
+      "targetPrice": 339.68
     },
     {
       "ticker": "VST",
@@ -2525,11 +2519,11 @@
       "pct52wHigh": 0.6733,
       "mdd1y": 37.3,
       "avgVolume": 852.0,
-      "per": 16.31,
+      "per": 16.39,
       "pbr": 10.6,
       "roe": 46.33,
-      "divYield": 0.77,
-      "targetPrice": 197.18
+      "divYield": 0.76,
+      "targetPrice": 197.05
     },
     {
       "ticker": "XEL",
@@ -2541,8 +2535,8 @@
       "per": 18.91,
       "pbr": 2.02,
       "roe": 11.44,
-      "divYield": 2.93,
-      "targetPrice": 90.55
+      "divYield": 2.92,
+      "targetPrice": 90.87
     },
     {
       "ticker": "OXY",
@@ -2554,7 +2548,7 @@
       "per": 12.02,
       "pbr": 1.55,
       "roe": 13.18,
-      "divYield": 2.1,
+      "divYield": 2.08,
       "targetPrice": 70.63
     },
     {
@@ -2567,7 +2561,7 @@
       "per": 24.25,
       "pbr": 1.29,
       "roe": 4.86,
-      "divYield": 2.68,
+      "divYield": 2.62,
       "targetPrice": 237.38
     },
     {
